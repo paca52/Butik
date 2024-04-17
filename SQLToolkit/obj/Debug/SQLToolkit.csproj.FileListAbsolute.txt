@@ -1,0 +1,12 @@
+D:\code\c#\SQLToolkit\bin\Debug\SQLToolkit.dll
+D:\code\c#\SQLToolkit\bin\Debug\SQLToolkit.pdb
+D:\code\c#\SQLToolkit\obj\Debug\SQLToolkit.csproj.AssemblyReference.cache
+D:\code\c#\SQLToolkit\obj\Debug\SQLToolkit.csproj.CoreCompileInputs.cache
+D:\code\c#\SQLToolkit\obj\Debug\SQLToolkit.dll
+D:\code\c#\SQLToolkit\obj\Debug\SQLToolkit.pdb
+D:\code\bazePodataka\butik\SQLToolkit\bin\Debug\SQLToolkit.dll
+D:\code\bazePodataka\butik\SQLToolkit\bin\Debug\SQLToolkit.pdb
+D:\code\bazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.csproj.AssemblyReference.cache
+D:\code\bazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.csproj.CoreCompileInputs.cache
+D:\code\bazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.dll
+D:\code\bazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.pdb
