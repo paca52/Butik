@@ -73,9 +73,29 @@ namespace butik.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap artikl_icon_white {
+            get {
+                object obj = ResourceManager.GetObject("artikl_icon_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bill_icon {
             get {
                 object obj = ResourceManager.GetObject("bill_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bill_icon_white {
+            get {
+                object obj = ResourceManager.GetObject("bill_icon_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +113,29 @@ namespace butik.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dashboard_icon_white {
+            get {
+                object obj = ResourceManager.GetObject("dashboard_icon_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exit_icon {
             get {
                 object obj = ResourceManager.GetObject("exit_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit_icon_white {
+            get {
+                object obj = ResourceManager.GetObject("exit_icon_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +156,16 @@ namespace butik.Properties {
         internal static System.Drawing.Bitmap home_ic_icon1 {
             get {
                 object obj = ResourceManager.GetObject("home_ic_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_dashboard_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-dashboard-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +253,29 @@ namespace butik.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap user_icon_64_white {
+            get {
+                object obj = ResourceManager.GetObject("user_icon_64_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap zaposleni_icon {
             get {
                 object obj = ResourceManager.GetObject("zaposleni_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zaposleni_icon_white {
+            get {
+                object obj = ResourceManager.GetObject("zaposleni_icon_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

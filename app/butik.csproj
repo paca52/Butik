@@ -146,5 +146,23 @@
   <ItemGroup>
     <None Include="Resources\dashboard_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_icon_64_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artikl_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zaposleni_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_icon_white.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
