@@ -35,6 +35,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlScreen = new System.Windows.Forms.Panel();
             this.pBoxUser = new System.Windows.Forms.PictureBox();
             this.btnRacuni = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -127,6 +128,14 @@
             this.panel2.Size = new System.Drawing.Size(151, 44);
             this.panel2.TabIndex = 4;
             // 
+            // pnlScreen
+            // 
+            this.pnlScreen.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlScreen.Location = new System.Drawing.Point(168, 0);
+            this.pnlScreen.Name = "pnlScreen";
+            this.pnlScreen.Size = new System.Drawing.Size(709, 531);
+            this.pnlScreen.TabIndex = 1;
+            // 
             // pBoxUser
             // 
             this.pBoxUser.Image = global::butik.Properties.Resources.user_icon_64_white;
@@ -191,8 +200,6 @@
             this.btnDashboard.Text = "        Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
-            this.btnDashboard.Paint += new System.Windows.Forms.PaintEventHandler(this.btnDashboard_Paint);
             // 
             // btnArtikli
             // 
@@ -235,6 +242,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(105)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(877, 531);
             this.ControlBox = false;
+            this.Controls.Add(this.pnlScreen);
             this.Controls.Add(this.pnlSideBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmTemplate";
@@ -253,19 +261,19 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlSideBar;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnRacuni;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnArtikli;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnZaposleni;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.PictureBox pBoxUser;
-        private System.Windows.Forms.Panel pnlTop;
+        protected System.Windows.Forms.Panel pnlScreen;
+        protected System.Windows.Forms.Panel pnlSideBar;
+        protected System.Windows.Forms.Panel panel3;
+        protected System.Windows.Forms.Button btnDashboard;
+        protected System.Windows.Forms.Panel panel5;
+        protected System.Windows.Forms.Button btnRacuni;
+        protected System.Windows.Forms.Panel panel4;
+        protected System.Windows.Forms.Button btnArtikli;
+        protected System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Button btnZaposleni;
+        protected System.Windows.Forms.Panel panel7;
+        protected System.Windows.Forms.Button btnExit;
+        protected System.Windows.Forms.PictureBox pBoxUser;
+        protected System.Windows.Forms.Panel pnlTop;
     }
 }

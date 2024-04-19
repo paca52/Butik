@@ -12,15 +12,12 @@ using System.Windows.Forms;
 
 namespace butik
 {
-    public partial class frmMain : Form
+    public partial class frmMain : frmTemplate
     {
         public frmMain()
         {
             SQLToolkit.setConnStr(global::butik.Properties.Settings.Default.connStr);
             InitializeComponent();
-            frmTemplate fmr = new frmTemplate();
-            fmr.ShowDialog();
-            fmr.Close();
         }
     }
 }

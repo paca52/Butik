@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="forms\frmTemplate.cs">
+    <Compile Include="forms\templates\frmTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmTemplate.Designer.cs">
+    <Compile Include="forms\templates\frmTemplate.Designer.cs">
       <DependentUpon>frmTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\templates\frmEmbeddedTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\templates\frmEmbeddedTemplate.Designer.cs">
+      <DependentUpon>frmEmbeddedTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -60,8 +66,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="forms\frmTemplate.resx">
+    <EmbeddedResource Include="forms\templates\frmTemplate.resx">
       <DependentUpon>frmTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\templates\frmEmbeddedTemplate.resx">
+      <DependentUpon>frmEmbeddedTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -163,6 +172,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="forms\artikli\" />
+    <Folder Include="forms\racuni\" />
+    <Folder Include="forms\zaposleni\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
