@@ -24,14 +24,12 @@ namespace butik.forms
             this.Close();
         }
 
-        private void btnDashboard_Paint(object sender, PaintEventArgs e)
+        protected void showForm(Form frm)
         {
-            // ControlPaint.DrawBorder(e.Graphics, this.panel1, )
-        }
-
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+            pnlScreen.Controls.Add(frm);
+            frm.Show();
         }
     }
 }
