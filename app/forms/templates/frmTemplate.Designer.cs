@@ -30,26 +30,26 @@
         {
             this.pnlSideBar = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlScreen = new System.Windows.Forms.Panel();
             this.pBoxUser = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.btnRacuni = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnArtikli = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnZaposleni = new System.Windows.Forms.Button();
+            this.pnlScreen = new System.Windows.Forms.Panel();
             this.pnlSideBar.SuspendLayout();
             this.pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxUser)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxUser)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSideBar
@@ -75,6 +75,16 @@
             this.pnlTop.Size = new System.Drawing.Size(174, 159);
             this.pnlTop.TabIndex = 8;
             // 
+            // pBoxUser
+            // 
+            this.pBoxUser.Image = global::butik.Properties.Resources.user_icon_64_white;
+            this.pBoxUser.InitialImage = null;
+            this.pBoxUser.Location = new System.Drawing.Point(52, 22);
+            this.pBoxUser.Name = "pBoxUser";
+            this.pBoxUser.Size = new System.Drawing.Size(67, 67);
+            this.pBoxUser.TabIndex = 7;
+            this.pBoxUser.TabStop = false;
+            // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -85,66 +95,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(151, 44);
             this.panel5.TabIndex = 4;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.btnExit);
-            this.panel7.Location = new System.Drawing.Point(11, 451);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(151, 44);
-            this.panel7.TabIndex = 6;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.btnDashboard);
-            this.panel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(11, 184);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(151, 44);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.btnArtikli);
-            this.panel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Location = new System.Drawing.Point(11, 234);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(151, 44);
-            this.panel4.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnZaposleni);
-            this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(11, 284);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(151, 44);
-            this.panel2.TabIndex = 4;
-            // 
-            // pnlScreen
-            // 
-            this.pnlScreen.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlScreen.Location = new System.Drawing.Point(168, 0);
-            this.pnlScreen.Name = "pnlScreen";
-            this.pnlScreen.Size = new System.Drawing.Size(709, 531);
-            this.pnlScreen.TabIndex = 1;
-            // 
-            // pBoxUser
-            // 
-            this.pBoxUser.Image = global::butik.Properties.Resources.user_icon_64_white;
-            this.pBoxUser.InitialImage = null;
-            this.pBoxUser.Location = new System.Drawing.Point(52, 22);
-            this.pBoxUser.Name = "pBoxUser";
-            this.pBoxUser.Size = new System.Drawing.Size(67, 67);
-            this.pBoxUser.TabIndex = 7;
-            this.pBoxUser.TabStop = false;
             // 
             // btnRacuni
             // 
@@ -162,6 +112,15 @@
             this.btnRacuni.Text = "        Racuni";
             this.btnRacuni.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRacuni.UseVisualStyleBackColor = false;
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.btnExit);
+            this.panel7.Location = new System.Drawing.Point(11, 451);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(151, 44);
+            this.panel7.TabIndex = 6;
             // 
             // btnExit
             // 
@@ -183,6 +142,17 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnDashboard);
+            this.panel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel3.Location = new System.Drawing.Point(11, 184);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(151, 44);
+            this.panel3.TabIndex = 2;
+            // 
             // btnDashboard
             // 
             this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
@@ -201,6 +171,17 @@
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.UseVisualStyleBackColor = false;
             // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btnArtikli);
+            this.panel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel4.Location = new System.Drawing.Point(11, 234);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(151, 44);
+            this.panel4.TabIndex = 5;
+            // 
             // btnArtikli
             // 
             this.btnArtikli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
@@ -217,6 +198,17 @@
             this.btnArtikli.Text = "        Artikli";
             this.btnArtikli.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnArtikli.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnZaposleni);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Location = new System.Drawing.Point(11, 284);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(151, 44);
+            this.panel2.TabIndex = 4;
             // 
             // btnZaposleni
             // 
@@ -235,6 +227,14 @@
             this.btnZaposleni.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnZaposleni.UseVisualStyleBackColor = false;
             // 
+            // pnlScreen
+            // 
+            this.pnlScreen.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlScreen.Location = new System.Drawing.Point(168, 0);
+            this.pnlScreen.Name = "pnlScreen";
+            this.pnlScreen.Size = new System.Drawing.Size(709, 531);
+            this.pnlScreen.TabIndex = 1;
+            // 
             // frmTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,12 +250,12 @@
             this.Text = "frmTemplate";
             this.pnlSideBar.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxUser)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxUser)).EndInit();
             this.ResumeLayout(false);
 
         }

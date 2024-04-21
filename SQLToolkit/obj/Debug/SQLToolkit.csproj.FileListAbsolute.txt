@@ -10,3 +10,9 @@ D:\code\bazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.csproj.AssemblyRefere
 D:\code\bazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.csproj.CoreCompileInputs.cache
 D:\code\bazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.dll
 D:\code\bazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.pdb
+C:\Users\Danilo\Desktop\BazePodataka\butik\SQLToolkit\bin\Debug\SQLToolkit.dll
+C:\Users\Danilo\Desktop\BazePodataka\butik\SQLToolkit\bin\Debug\SQLToolkit.pdb
+C:\Users\Danilo\Desktop\BazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.csproj.AssemblyReference.cache
+C:\Users\Danilo\Desktop\BazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.csproj.CoreCompileInputs.cache
+C:\Users\Danilo\Desktop\BazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.dll
+C:\Users\Danilo\Desktop\BazePodataka\butik\SQLToolkit\obj\Debug\SQLToolkit.pdb

@@ -18,7 +18,7 @@ namespace butik.forms
             InitializeComponent();
         }
 
-        protected void LoadTable(DataGridView dgw, String sql)
+        protected void LoadTable(ref DataGridView dgw, String sql)
         {
             String err = String.Empty;
             DataSet ds = null;
@@ -38,5 +38,6 @@ namespace butik.forms
             }
 
         }
+
     }
 }

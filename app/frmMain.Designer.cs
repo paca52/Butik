@@ -68,6 +68,7 @@
             // 
             this.btnZaposleni.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnZaposleni.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.btnZaposleni.Click += new System.EventHandler(this.btnZaposleni_Click);
             // 
             // btnExit
             // 
