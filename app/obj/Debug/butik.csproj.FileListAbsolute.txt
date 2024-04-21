@@ -28,3 +28,5 @@ C:\Users\Danilo\Desktop\BazePodataka\Butik\app\obj\Debug\butik.csproj.Up2Date
 C:\Users\Danilo\Desktop\BazePodataka\Butik\app\obj\Debug\butik.exe
 C:\Users\Danilo\Desktop\BazePodataka\Butik\app\obj\Debug\butik.pdb
 D:\code\bazePodataka\butik\app\obj\Debug\butik.forms.frmEmbeddedTemplate.resources
+C:\Users\Danilo\Desktop\BazePodataka\butik\app\obj\Debug\butik.forms.frmEmbeddedTemplate.resources
+C:\Users\Danilo\Desktop\BazePodataka\butik\app\obj\Debug\butik.forms.zaposleni.frmZaposleniIndex.resources

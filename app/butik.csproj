@@ -58,6 +58,12 @@
     <Compile Include="forms\templates\frmEmbeddedTemplate.Designer.cs">
       <DependentUpon>frmEmbeddedTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\zaposleni\frmZaposleniIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\zaposleni\frmZaposleniIndex.Designer.cs">
+      <DependentUpon>frmZaposleniIndex.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\templates\frmEmbeddedTemplate.resx">
       <DependentUpon>frmEmbeddedTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\zaposleni\frmZaposleniIndex.resx">
+      <DependentUpon>frmZaposleniIndex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -176,7 +185,6 @@
   <ItemGroup>
     <Folder Include="forms\artikli\" />
     <Folder Include="forms\racuni\" />
-    <Folder Include="forms\zaposleni\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

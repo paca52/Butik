@@ -18,10 +18,12 @@ namespace butik.forms
             InitializeComponent();
         }
 
-        protected void LoadTable(DataGridView dgw, String sql)
+        protected void LoadTable(ref DataGridView dgw, String sql)
         {
             String err = String.Empty;
             DataSet ds = null;
+
+            SQLToolkit.setConnStr("Data Source=DESKTOP-FKAKD51;Initial Catalog=db_butik;Integrated Security=True;TrustServerCertificate=True");
 
             if (SQLToolkit.SelectQuery(sql, ref ds, ref err))
             {
@@ -36,6 +38,11 @@ namespace butik.forms
                     MessageBoxIcon.Error
                 );
             }
+
+        }
+
+        private void frmEmbeddedTemplate_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -1,4 +1,5 @@
 ﻿using butik.forms;
+using butik.forms.zaposleni;
 using SQLToolkitNS;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,12 @@ namespace butik
         {
             SQLToolkit.setConnStr(global::butik.Properties.Settings.Default.connStr);
             InitializeComponent();
+        }
+
+        private void btnZaposleni_Click(object sender, EventArgs e)
+        {
+            frmZaposleniIndex f = new frmZaposleniIndex();
+            f.ShowDialog();
         }
     }
 }
