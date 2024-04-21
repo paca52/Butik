@@ -18,7 +18,7 @@ namespace butik.forms
             InitializeComponent();
         }
 
-        protected void LoadTable(ref DataGridView dgw, String sql)
+        protected Boolean LoadTable(ref DataGridView dgw, String sql)
         {
             String err = String.Empty;
             DataSet ds = null;
@@ -26,6 +26,7 @@ namespace butik.forms
             if (SQLToolkit.SelectQuery(sql, ref ds, ref err))
             {
                 dgw.DataSource = ds.Tables[0];
+                return true;
             }
             else
             {
@@ -35,6 +36,7 @@ namespace butik.forms
                     MessageBoxButtons.OK, 
                     MessageBoxIcon.Error
                 );
+                return false;
             }
 
         }
