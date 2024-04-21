@@ -21,7 +21,14 @@ namespace butik.forms.zaposleni
         {
             dgvZaposleni.Enabled = true;
             dgvZaposleni.Visible = true;
-            LoadTable(ref dgvZaposleni, "SELECT jmbg,ime,prezime,kategorija,datum_zaposlenja,satnica,broj_radnih_sati,premija,broj_slobodnih_dana FROM table_zaposleni");
+            if(!LoadTable(
+                ref dgvZaposleni, 
+                "SELECT jmbg, ime, prezime, kategorija, datum_zaposlenja, satnica, broj_radnih_sati, premija, broj_slobodnih_dana " +
+                "FROM table_zaposleni"
+            ))
+            {
+                return;
+            }
             designTable();
         }
 
