@@ -63,6 +63,10 @@ namespace butik.forms.zaposleni
             dgvZaposleni.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvZaposleni.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            int preferredWidth = dgvZaposleni.Columns["jmbg"].GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, false);
+            dgvZaposleni.Columns["jmbg"].MinimumWidth = preferredWidth;
+            dgvZaposleni.Columns["jmbg"].Width = preferredWidth;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -23,8 +23,6 @@ namespace butik.forms
             String err = String.Empty;
             DataSet ds = null;
 
-            SQLToolkit.setConnStr("Data Source=DESKTOP-FKAKD51;Initial Catalog=db_butik;Integrated Security=True;TrustServerCertificate=True");
-
             if (SQLToolkit.SelectQuery(sql, ref ds, ref err))
             {
                 dgw.DataSource = ds.Tables[0];
@@ -41,9 +39,5 @@ namespace butik.forms
 
         }
 
-        private void frmEmbeddedTemplate_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

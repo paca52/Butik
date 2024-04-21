@@ -196,7 +196,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvZaposleni.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvZaposleni.Location = new System.Drawing.Point(48, 22);
+            this.dgvZaposleni.Location = new System.Drawing.Point(32, 25);
             this.dgvZaposleni.Name = "dgvZaposleni";
             this.dgvZaposleni.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -211,7 +211,7 @@
             this.dgvZaposleni.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvZaposleni.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvZaposleni.Size = new System.Drawing.Size(444, 486);
+            this.dgvZaposleni.Size = new System.Drawing.Size(460, 484);
             this.dgvZaposleni.TabIndex = 6;
             // 
             // frmZaposleniIndex
