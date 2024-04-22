@@ -10,9 +10,13 @@ namespace butik
 {
     public partial class frmMain : frmTemplate
     {
-        public frmMain()
+        private String name = String.Empty;
+
+        public frmMain(String name)
         {
             InitializeComponent();
+            this.name = name;
+            lblWelcome.Text = lblWelcome.Text + "\n" + name;
         }
 
         private void btnZaposleni_Click(object sender, EventArgs e)

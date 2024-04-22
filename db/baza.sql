@@ -174,6 +174,7 @@ VALUES
 ('1234567890139', 'Olivia', 'Evans', 40, 12, NULL, '2024-01-17', 'Marketing', 21, 'OliviaEvansMarketing', 'Marketing'),
 ('1234567890140', 'Peter', 'Ford', 38, 9, NULL, '2024-01-18', 'IT', 17, 'PeterFordIT', 'IT'),
 ('1234567890141', 'Quincy', 'Graham', 44, 11, NULL, '2024-01-19', 'Sales', 20, 'QuincyGrahamSales', 'Sales'),
+('0000000000000', 'admin', 'admin', 0, 0, NULL, '2024-01-01', 'admin', 0, 'admin', 'admin'),
 ('1234567890142', 'Rachel', 'Harris', 37, 10, NULL, '2024-01-20', 'Marketing', 22, 'RachelHarrisMarketing', 'Marketing');
 
 -- Insert 20 rows into table_artikli

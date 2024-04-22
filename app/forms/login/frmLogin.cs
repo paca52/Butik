@@ -5,8 +5,10 @@ using System.Windows.Forms;
 
 namespace butik.forms.login
 {
-    public partial class frmLogin : frmEmbeddedTemplate
+    public partial class frmLogin : Form
     {
+        String name = String.Empty;
+
         public frmLogin()
         {
             InitializeComponent();
@@ -20,15 +22,19 @@ namespace butik.forms.login
         public Boolean LogIn(String username, String password)
         {
             String err = String.Empty;
-            String sql = "SELECT username, password " +
+            String sql = 
+                "SELECT ime, username, password " +
                 "FROM table_zaposleni " +
                 "WHERE username='" + username + "' AND password='" + password + "'";
 
             Boolean loggedIn = false;
+
             if (!SQLToolkit.SelectQuery(
                 sql,
                 (ref SqlDataReader dr) =>
                 {
+                    this.name = dr.GetString(0);
+                    MessageBox.Show(this.name);
                     loggedIn = true;
                 },
                 ref err
@@ -51,9 +57,10 @@ namespace butik.forms.login
             if (LogIn(username, password))
             {
                 this.Hide();
-                frmMain frm = new frmMain();
+                frmMain frm = new frmMain(this.name);
                 frm.ShowDialog();
                 frm.Close();
+                Application.Exit();
             }
             else
             {
