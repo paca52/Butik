@@ -22,7 +22,7 @@ namespace butik.forms.login
         public Boolean LogIn(String username, String password)
         {
             String err = String.Empty;
-            String sql = 
+            String sql =
                 "SELECT ime, username, password " +
                 "FROM table_zaposleni " +
                 "WHERE username='" + username + "' AND password='" + password + "'";
@@ -34,7 +34,6 @@ namespace butik.forms.login
                 (ref SqlDataReader dr) =>
                 {
                     this.name = dr.GetString(0);
-                    MessageBox.Show(this.name);
                     loggedIn = true;
                 },
                 ref err
@@ -65,9 +64,9 @@ namespace butik.forms.login
             else
             {
                 MessageBox.Show(
-                    "Pogresan login. Pokušajte ponovo!", 
-                    "GREŠKA", 
-                    MessageBoxButtons.OK, 
+                    "Pogresan login. Pokušajte ponovo!",
+                    "GREŠKA",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
             }
