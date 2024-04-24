@@ -17,6 +17,8 @@ namespace butik.forms.zaposleni
         public frmZaposleniIndex()
         {
             InitializeComponent();
+            dgvZaposleni.CellClick += dgvZaposleni_CellClick;
+            this.Click += frmZaposleniIndex_Click;
         }
 
         private void frmZaposleniIndex_Load(object sender, EventArgs e)
@@ -25,7 +27,7 @@ namespace butik.forms.zaposleni
             dgvZaposleni.Visible = true;
             if(!LoadTable(
                 ref dgvZaposleni, 
-                "SELECT jmbg, ime, prezime, kategorija, datum_zaposlenja, satnica, broj_radnih_sati, premija, broj_slobodnih_dana " +
+                "SELECT jmbg, ime, prezime, tip_zaposlenog, datum_zaposlenja, satnica, broj_radnih_sati, premija, broj_slobodnih_dana " +
                 "FROM table_zaposleni"
             ))
             {
@@ -61,7 +63,7 @@ namespace butik.forms.zaposleni
             dgvZaposleni.Columns["jmbg"].HeaderText = "Jmbg";
             dgvZaposleni.Columns["ime"].HeaderText = "Ime";
             dgvZaposleni.Columns["prezime"].HeaderText = "Prezime";
-            dgvZaposleni.Columns["kategorija"].HeaderText = "Kategorija";
+            dgvZaposleni.Columns["tip_zaposlenog"].HeaderText = "Tip zaposlenog";
             dgvZaposleni.Columns["datum_zaposlenja"].HeaderText = "Datum zaposlenja";
             dgvZaposleni.Columns["satnica"].HeaderText = "Satnica";
             dgvZaposleni.Columns["broj_radnih_sati"].HeaderText = "Broj radnih sati";
@@ -98,7 +100,7 @@ namespace butik.forms.zaposleni
                 string jmbg = selectedRow.Cells["jmbg"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["jmbg"].Value) : "";
                 string ime = selectedRow.Cells["ime"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["ime"].Value) : "";
                 string prezime = selectedRow.Cells["prezime"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["prezime"].Value) : "";
-                string kategorija = selectedRow.Cells["kategorija"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["kategorija"].Value) : "";
+                string tip_zaposlenog = selectedRow.Cells["tip_zaposlenog"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["tip_zaposlenog"].Value) : "";
                 string datumZaposlenja = selectedRow.Cells["datum_zaposlenja"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["datum_zaposlenja"].Value) : "";
                 decimal satnica = selectedRow.Cells["satnica"].Value != DBNull.Value ? Convert.ToDecimal(selectedRow.Cells["satnica"].Value) : 0;
                 int brojRadnihSati = selectedRow.Cells["broj_radnih_sati"].Value != DBNull.Value ? Convert.ToInt32(selectedRow.Cells["broj_radnih_sati"].Value) : 0;
