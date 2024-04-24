@@ -27,8 +27,9 @@ namespace butik.forms.zaposleni
             dgvZaposleni.Visible = true;
             if(!LoadTable(
                 ref dgvZaposleni, 
-                "SELECT jmbg, ime, prezime, tip_zaposlenog, datum_zaposlenja, satnica, broj_radnih_sati, premija, broj_slobodnih_dana " +
-                "FROM table_zaposleni"
+                "SELECT jmbg, ime, prezime, naziv AS tip_zaposlenog, datum_zaposlenja, satnica, broj_radnih_sati, premija, broj_slobodnih_dana " +
+                "FROM table_zaposleni " +
+                "INNER JOIN table_tip_zaposlenog ON table_zaposleni.tip_zaposlenog = table_tip_zaposlenog.id"
             ))
             {
                 return;
@@ -97,15 +98,15 @@ namespace butik.forms.zaposleni
                 // Get the data from the clicked row
                 DataGridViewRow selectedRow = dgvZaposleni.Rows[e.RowIndex];
                 // Modify the column names according to your DataGridView
-                string jmbg = selectedRow.Cells["jmbg"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["jmbg"].Value) : "";
-                string ime = selectedRow.Cells["ime"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["ime"].Value) : "";
-                string prezime = selectedRow.Cells["prezime"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["prezime"].Value) : "";
-                string tip_zaposlenog = selectedRow.Cells["tip_zaposlenog"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["tip_zaposlenog"].Value) : "";
-                string datumZaposlenja = selectedRow.Cells["datum_zaposlenja"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["datum_zaposlenja"].Value) : "";
-                decimal satnica = selectedRow.Cells["satnica"].Value != DBNull.Value ? Convert.ToDecimal(selectedRow.Cells["satnica"].Value) : 0;
-                int brojRadnihSati = selectedRow.Cells["broj_radnih_sati"].Value != DBNull.Value ? Convert.ToInt32(selectedRow.Cells["broj_radnih_sati"].Value) : 0;
-                decimal premija = selectedRow.Cells["premija"].Value != DBNull.Value ? Convert.ToDecimal(selectedRow.Cells["premija"].Value) : 0;
-                int brojSlobodnihDana = selectedRow.Cells["broj_slobodnih_dana"].Value != DBNull.Value ? Convert.ToInt32(selectedRow.Cells["broj_slobodnih_dana"].Value) : 0;
+                ZaposleniModel.jmbg = Convert.ToString(selectedRow.Cells["jmbg"].Value);
+                ZaposleniModel.ime = Convert.ToString(selectedRow.Cells["ime"].Value);
+                ZaposleniModel.prezime = Convert.ToString(selectedRow.Cells["prezime"].Value);
+                ZaposleniModel.tip_zaposlenog = Convert.ToString(selectedRow.Cells["tip_zaposlenog"].Value);
+                ZaposleniModel.datumZaposlenja = Convert.ToString(selectedRow.Cells["datum_zaposlenja"].Value);
+                ZaposleniModel.satnica = Convert.ToInt32(selectedRow.Cells["satnica"].Value);
+                ZaposleniModel.brojRadnihSati = Convert.ToInt32(selectedRow.Cells["broj_radnih_sati"].Value);
+                ZaposleniModel.premija = selectedRow.Cells["premija"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["premija"].Value) : "";
+                ZaposleniModel.brojSlobodnihDana = Convert.ToInt32(selectedRow.Cells["broj_slobodnih_dana"].Value);
 
                 btnAzuriraj.Enabled = true;
                 btnAzuriraj.BackColor = Color.FromArgb(40, 46, 54);

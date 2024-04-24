@@ -91,6 +91,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\PanelHandler.cs" />
+    <Compile Include="util\ZaposleniModel.cs" />
     <EmbeddedResource Include="forms\login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>

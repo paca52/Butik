@@ -14,6 +14,7 @@ namespace butik.forms
 {
     public partial class frmEmbeddedTemplate : Form
     {
+
         public frmEmbeddedTemplate()
         {
             InitializeComponent();
