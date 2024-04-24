@@ -24,6 +24,7 @@ namespace butik.forms
             this.Close();
         }
 
+        /*
         protected void showForm(Form frm)
         {
             frm.TopLevel = false;
@@ -31,5 +32,6 @@ namespace butik.forms
             pnlScreen.Controls.Add(frm);
             frm.Show();
         }
+        */
     }
 }

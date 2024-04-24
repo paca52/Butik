@@ -1,29 +1,29 @@
 ﻿using butik.forms;
+using butik.forms.login;
 using butik.forms.zaposleni;
+using butik.util;
 using SQLToolkitNS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace butik
 {
     public partial class frmMain : frmTemplate
     {
-        public frmMain()
+        private String name = String.Empty;
+
+        public frmMain(String name)
         {
-            SQLToolkit.setConnStr(global::butik.Properties.Settings.Default.connStr);
             InitializeComponent();
+            this.name = name;
+            lblWelcome.Text = lblWelcome.Text + "\n" + name;
         }
 
         private void btnZaposleni_Click(object sender, EventArgs e)
         {
-            showForm(new frmZaposleniIndex());
+            PanelHandler.AddForm(new frmZaposleniIndex());
+            PanelHandler.ShowTopForm();
         }
     }
 }
