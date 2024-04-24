@@ -30,21 +30,27 @@
         {
             this.tbJmbg = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblIme = new System.Windows.Forms.TextBox();
+            this.tbIme = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblPrezime = new System.Windows.Forms.TextBox();
+            this.tbPrezime = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbBrojRadnihSati = new System.Windows.Forms.TextBox();
+            this.tbSatnica = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbPremija = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lblWarningCifre = new System.Windows.Forms.Label();
+            this.dtpDatumZaposlenja = new System.Windows.Forms.DateTimePicker();
+            this.cbTipZaposlenog = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnZaposliSubmit = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnZaposliExit = new System.Windows.Forms.Button();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbJmbg
@@ -54,7 +60,7 @@
             this.tbJmbg.Location = new System.Drawing.Point(163, 61);
             this.tbJmbg.Name = "tbJmbg";
             this.tbJmbg.Size = new System.Drawing.Size(382, 26);
-            this.tbJmbg.TabIndex = 0;
+            this.tbJmbg.TabIndex = 1;
             // 
             // label1
             // 
@@ -67,14 +73,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "JMBG";
             // 
-            // lblIme
+            // tbIme
             // 
-            this.lblIme.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIme.Location = new System.Drawing.Point(163, 129);
-            this.lblIme.Name = "lblIme";
-            this.lblIme.Size = new System.Drawing.Size(184, 26);
-            this.lblIme.TabIndex = 0;
+            this.tbIme.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tbIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIme.Location = new System.Drawing.Point(163, 129);
+            this.tbIme.Name = "tbIme";
+            this.tbIme.Size = new System.Drawing.Size(184, 26);
+            this.tbIme.TabIndex = 2;
             // 
             // label2
             // 
@@ -87,15 +93,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "IME";
             // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(163, 321);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(382, 26);
-            this.textBox3.TabIndex = 0;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -107,15 +104,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "DATUM ZAPOSLENJA";
             // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(163, 387);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(382, 26);
-            this.textBox4.TabIndex = 0;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -123,18 +111,18 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Location = new System.Drawing.Point(159, 364);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 20);
+            this.label4.Size = new System.Drawing.Size(147, 20);
             this.label4.TabIndex = 1;
-            this.label4.Text = "KATEGORIJA";
+            this.label4.Text = "TIP ZAPOSLENOG";
             // 
-            // lblPrezime
+            // tbPrezime
             // 
-            this.lblPrezime.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrezime.Location = new System.Drawing.Point(361, 129);
-            this.lblPrezime.Name = "lblPrezime";
-            this.lblPrezime.Size = new System.Drawing.Size(184, 26);
-            this.lblPrezime.TabIndex = 0;
+            this.tbPrezime.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tbPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrezime.Location = new System.Drawing.Point(361, 129);
+            this.tbPrezime.Name = "tbPrezime";
+            this.tbPrezime.Size = new System.Drawing.Size(184, 26);
+            this.tbPrezime.TabIndex = 3;
             // 
             // label5
             // 
@@ -147,23 +135,23 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "PREZIME";
             // 
-            // textBox6
+            // tbBrojRadnihSati
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(163, 193);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(184, 26);
-            this.textBox6.TabIndex = 0;
+            this.tbBrojRadnihSati.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tbBrojRadnihSati.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBrojRadnihSati.Location = new System.Drawing.Point(163, 193);
+            this.tbBrojRadnihSati.Name = "tbBrojRadnihSati";
+            this.tbBrojRadnihSati.Size = new System.Drawing.Size(184, 26);
+            this.tbBrojRadnihSati.TabIndex = 4;
             // 
-            // textBox7
+            // tbSatnica
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(361, 193);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(184, 26);
-            this.textBox7.TabIndex = 0;
+            this.tbSatnica.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tbSatnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSatnica.Location = new System.Drawing.Point(361, 193);
+            this.tbSatnica.Name = "tbSatnica";
+            this.tbSatnica.Size = new System.Drawing.Size(184, 26);
+            this.tbSatnica.TabIndex = 5;
             // 
             // label6
             // 
@@ -187,14 +175,14 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "SATNICA";
             // 
-            // textBox8
+            // tbPremija
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(163, 257);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(382, 26);
-            this.textBox8.TabIndex = 0;
+            this.tbPremija.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tbPremija.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPremija.Location = new System.Drawing.Point(163, 257);
+            this.tbPremija.Name = "tbPremija";
+            this.tbPremija.Size = new System.Drawing.Size(382, 26);
+            this.tbPremija.TabIndex = 6;
             // 
             // label8
             // 
@@ -218,10 +206,85 @@
             this.lblWarningCifre.Text = "Dozvoljeni karakteri su samo cifre.";
             this.lblWarningCifre.Visible = false;
             // 
+            // dtpDatumZaposlenja
+            // 
+            this.dtpDatumZaposlenja.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDatumZaposlenja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDatumZaposlenja.Location = new System.Drawing.Point(163, 321);
+            this.dtpDatumZaposlenja.Name = "dtpDatumZaposlenja";
+            this.dtpDatumZaposlenja.Size = new System.Drawing.Size(382, 20);
+            this.dtpDatumZaposlenja.TabIndex = 9;
+            // 
+            // cbTipZaposlenog
+            // 
+            this.cbTipZaposlenog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipZaposlenog.FormattingEnabled = true;
+            this.cbTipZaposlenog.Location = new System.Drawing.Point(163, 387);
+            this.cbTipZaposlenog.Name = "cbTipZaposlenog";
+            this.cbTipZaposlenog.Size = new System.Drawing.Size(382, 28);
+            this.cbTipZaposlenog.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnZaposliSubmit);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Location = new System.Drawing.Point(163, 467);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(149, 44);
+            this.panel2.TabIndex = 11;
+            // 
+            // btnZaposliSubmit
+            // 
+            this.btnZaposliSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnZaposliSubmit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.btnZaposliSubmit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.btnZaposliSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnZaposliSubmit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnZaposliSubmit.Location = new System.Drawing.Point(-3, -9);
+            this.btnZaposliSubmit.Name = "btnZaposliSubmit";
+            this.btnZaposliSubmit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnZaposliSubmit.Size = new System.Drawing.Size(153, 62);
+            this.btnZaposliSubmit.TabIndex = 3;
+            this.btnZaposliSubmit.Text = "Zaposli";
+            this.btnZaposliSubmit.UseVisualStyleBackColor = false;
+            this.btnZaposliSubmit.Click += new System.EventHandler(this.btnZaposliSubmit_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnZaposliExit);
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Location = new System.Drawing.Point(396, 467);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(149, 44);
+            this.panel1.TabIndex = 11;
+            // 
+            // btnZaposliExit
+            // 
+            this.btnZaposliExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnZaposliExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.btnZaposliExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.btnZaposliExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnZaposliExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnZaposliExit.Location = new System.Drawing.Point(-3, -9);
+            this.btnZaposliExit.Name = "btnZaposliExit";
+            this.btnZaposliExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnZaposliExit.Size = new System.Drawing.Size(153, 62);
+            this.btnZaposliExit.TabIndex = 3;
+            this.btnZaposliExit.Text = "Nazad";
+            this.btnZaposliExit.UseVisualStyleBackColor = false;
+            // 
             // frmZaposleniZaposli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(709, 531);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.cbTipZaposlenog);
+            this.Controls.Add(this.dtpDatumZaposlenja);
             this.Controls.Add(this.lblWarningCifre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label8);
@@ -231,15 +294,15 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.lblPrezime);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.lblIme);
+            this.Controls.Add(this.tbSatnica);
+            this.Controls.Add(this.tbPrezime);
+            this.Controls.Add(this.tbBrojRadnihSati);
+            this.Controls.Add(this.tbPremija);
+            this.Controls.Add(this.tbIme);
             this.Controls.Add(this.tbJmbg);
             this.Name = "frmZaposleniZaposli";
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,20 +312,24 @@
 
         private System.Windows.Forms.TextBox tbJmbg;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox lblIme;
+        private System.Windows.Forms.TextBox tbIme;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox lblPrezime;
+        private System.Windows.Forms.TextBox tbPrezime;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbBrojRadnihSati;
+        private System.Windows.Forms.TextBox tbSatnica;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tbPremija;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblWarningCifre;
+        private System.Windows.Forms.DateTimePicker dtpDatumZaposlenja;
+        private System.Windows.Forms.ComboBox cbTipZaposlenog;
+        protected System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Button btnZaposliSubmit;
+        protected System.Windows.Forms.Panel panel1;
+        protected System.Windows.Forms.Button btnZaposliExit;
     }
 }

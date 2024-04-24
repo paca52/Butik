@@ -7,7 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Linq;
-
+using SQLToolkitNS;
+using System.Data.SqlClient;
+using butik.util;
 
 namespace butik.forms.zaposleni
 {
@@ -17,7 +19,18 @@ namespace butik.forms.zaposleni
         {
             InitializeComponent();
             HandleInputRealTime(tbJmbg);
+            string sql = "SELECT id, naziv FROM table_tip_zaposlenog";
+            string error = "";
+            if (!SQLToolkit.SelectQuery(sql, PopulateComboBox, ref error))
+            {
+                MessageBox.Show("Error: " + error);
+            }
 
+        }
+
+        private void PopulateComboBox(ref SqlDataReader reader)
+        {
+            cbTipZaposlenog.Items.Add(reader["naziv"].ToString());
         }
 
         private void HandleInputRealTime(System.Windows.Forms.TextBox tbJmbg)
@@ -55,6 +68,44 @@ namespace butik.forms.zaposleni
                 // Restore the cursor position
                 tbJmbg.SelectionStart = selectionStart;
             };
+        }
+
+        private void btnZaposliSubmit_Click(object sender, EventArgs e)
+        {
+            ZaposleniModel.jmbg = tbJmbg.Text;
+            ZaposleniModel.ime = tbIme.Text;
+            ZaposleniModel.prezime = tbPrezime.Text;
+            ZaposleniModel.tip_zaposlenog = cbTipZaposlenog.Text;
+            ZaposleniModel.datumZaposlenja = dtpDatumZaposlenja.Text;
+            ZaposleniModel.satnica = Convert.ToInt32(tbSatnica.Text);
+            ZaposleniModel.brojRadnihSati = Convert.ToInt32(tbBrojRadnihSati.Text);
+            ZaposleniModel.premija = tbPremija.Text == "" ? "null" : tbPremija.Text;
+            ZaposleniModel.brojSlobodnihDana = 20;
+            
+
+            if(ZaposleniModel.jmbg.Length < 13)
+            {
+                MessageBox.Show(
+                    "Jmbg polje mora imati 13 karaktera!",
+                    "GREŠKA",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return;
+            }
+            String sql = "INSERT INTO table_zaposleni VALUES (" +
+                ZaposleniModel.jmbg + "," +
+                ZaposleniModel.jmbg + "," +
+                ZaposleniModel.jmbg + "," +
+                ZaposleniModel.jmbg + "," +
+                ZaposleniModel.jmbg + "," +
+                ZaposleniModel.jmbg + "," +
+                ZaposleniModel.jmbg + "," +
+                ZaposleniModel.jmbg + "," +
+                ZaposleniModel.jmbg + "," +
+                ZaposleniModel.jmbg + "," +
+                ZaposleniModel.jmbg + ",";
+
         }
     }
 }

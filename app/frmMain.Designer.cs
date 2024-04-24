@@ -42,8 +42,7 @@
             // 
             // pnlScreen
             // 
-            this.pnlScreen.Location = new System.Drawing.Point(206, 0);
-            this.pnlScreen.Size = new System.Drawing.Size(709, 521);
+            this.pnlScreen.Size = new System.Drawing.Size(747, 521);
             // 
             // pnlSideBar
             // 

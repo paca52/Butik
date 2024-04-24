@@ -22,3 +22,9 @@ D:\code\bazePodataka\tmp\butik\SQLToolkit\obj\Debug\SQLToolkit.csproj.AssemblyRe
 D:\code\bazePodataka\tmp\butik\SQLToolkit\obj\Debug\SQLToolkit.csproj.CoreCompileInputs.cache
 D:\code\bazePodataka\tmp\butik\SQLToolkit\obj\Debug\SQLToolkit.dll
 D:\code\bazePodataka\tmp\butik\SQLToolkit\obj\Debug\SQLToolkit.pdb
+D:\DanleTrovicpe\Baze\Butik\SQLToolkit\bin\Debug\SQLToolkit.dll
+D:\DanleTrovicpe\Baze\Butik\SQLToolkit\bin\Debug\SQLToolkit.pdb
+D:\DanleTrovicpe\Baze\Butik\SQLToolkit\obj\Debug\SQLToolkit.csproj.AssemblyReference.cache
+D:\DanleTrovicpe\Baze\Butik\SQLToolkit\obj\Debug\SQLToolkit.csproj.CoreCompileInputs.cache
+D:\DanleTrovicpe\Baze\Butik\SQLToolkit\obj\Debug\SQLToolkit.dll
+D:\DanleTrovicpe\Baze\Butik\SQLToolkit\obj\Debug\SQLToolkit.pdb
