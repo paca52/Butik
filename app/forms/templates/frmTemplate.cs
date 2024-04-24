@@ -24,7 +24,7 @@ namespace butik.forms
             this.Close();
         }
 
-        protected void showForm(Form frm)
+        public void showForm(Form frm)
         {
             frm.TopLevel = false;
             frm.AutoScroll = true;

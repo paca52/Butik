@@ -23,7 +23,7 @@ namespace butik
 
         private void btnZaposleni_Click(object sender, EventArgs e)
         {
-            showForm(new frmZaposleniIndex());
+            showForm(new frmZaposleniIndex(this));
         }
     }
 }
