@@ -12,12 +12,6 @@ namespace butik.util
         {
             if (formStack.Count == 0) return false;
             Form child = formStack.Peek();
-            /*while (child.IsAccessible == false)
-            {
-                RemoveForm();
-                child = formStack.Peek();
-            }*/
-
 
             child.TopLevel = false;
             child.AutoScroll = true;
