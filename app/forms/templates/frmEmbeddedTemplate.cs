@@ -1,4 +1,5 @@
-﻿using SQLToolkitNS;
+﻿using butik.util;
+using SQLToolkitNS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,5 +42,14 @@ namespace butik.forms
 
         }
 
+        private void frmEmbeddedTemplate_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            PanelHandler.RemoveTopForm();
+        }
+
+        protected void CloseForm(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

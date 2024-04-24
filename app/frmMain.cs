@@ -1,6 +1,7 @@
 ﻿using butik.forms;
 using butik.forms.login;
 using butik.forms.zaposleni;
+using butik.util;
 using SQLToolkitNS;
 using System;
 using System.Data.SqlClient;
@@ -21,7 +22,8 @@ namespace butik
 
         private void btnZaposleni_Click(object sender, EventArgs e)
         {
-            showForm(new frmZaposleniIndex());
+            PanelHandler.AddForm(new frmZaposleniIndex());
+            PanelHandler.ShowTopForm();
         }
     }
 }

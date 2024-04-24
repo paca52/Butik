@@ -39,6 +39,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEmbeddedTemplate";
             this.Text = "frmEmbededTemplate";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEmbeddedTemplate_FormClosed);
             this.ResumeLayout(false);
 
         }

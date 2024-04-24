@@ -1,4 +1,6 @@
-﻿using SQLToolkitNS;
+﻿using butik.forms.zaposleni;
+using butik.util;
+using SQLToolkitNS;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -57,8 +59,12 @@ namespace butik.forms.login
             {
                 this.Hide();
                 frmMain frm = new frmMain(this.name);
+                PanelHandler.SetParentForm(frm);
+
                 frm.ShowDialog();
                 frm.Close();
+
+                PanelHandler.SetParentForm(null);
                 Application.Exit();
             }
             else

@@ -51,7 +51,7 @@
             // 
             // panel3
             // 
-            this.panel3.TabIndex = 0;
+            this.panel3.TabIndex = 1;
             // 
             // btnDashboard
             // 
@@ -59,10 +59,6 @@
             this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnDashboard.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.TabIndex = 3;
             // 
             // btnRacuni
             // 
@@ -72,7 +68,7 @@
             // 
             // panel4
             // 
-            this.panel4.TabIndex = 1;
+            this.panel4.TabIndex = 2;
             // 
             // btnArtikli
             // 
@@ -82,7 +78,7 @@
             // 
             // panel2
             // 
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 3;
             // 
             // btnZaposleni
             // 
@@ -93,7 +89,7 @@
             // 
             // panel7
             // 
-            this.panel7.TabIndex = 4;
+            this.panel7.TabIndex = 5;
             // 
             // btnExit
             // 
