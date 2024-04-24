@@ -22,8 +22,7 @@ namespace butik
 
         private void btnZaposleni_Click(object sender, EventArgs e)
         {
-            PanelHandler.AddForm(new frmZaposleniIndex());
-            PanelHandler.ShowTopForm();
+            showForm(new frmZaposleniIndex(this));
         }
     }
 }

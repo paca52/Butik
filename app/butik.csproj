@@ -76,6 +76,12 @@
     <Compile Include="forms\zaposleni\frmZaposleniIndex.Designer.cs">
       <DependentUpon>frmZaposleniIndex.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\zaposleni\frmZaposleniZaposli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\zaposleni\frmZaposleniZaposli.Designer.cs">
+      <DependentUpon>frmZaposleniZaposli.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\zaposleni\frmZaposleniIndex.resx">
       <DependentUpon>frmZaposleniIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\zaposleni\frmZaposleniZaposli.resx">
+      <DependentUpon>frmZaposleniZaposli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

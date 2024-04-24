@@ -1,3 +1,41 @@
+using SQLToolkitNS;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.Common;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace butik.forms.zaposleni
+{
+    public partial class frmZaposleniIndex : butik.forms.frmEmbeddedTemplate
+    {
+
+        protected frmMain frmMainObject;
+        public frmZaposleniIndex()
+        {
+            InitializeComponent();
+            dgvZaposleni.CellClick += dgvZaposleni_CellClick;
+            this.Click += frmZaposleniIndex_Click;
+        }
+
+        public frmZaposleniIndex(frmMain f)
+        {
+            InitializeComponent();
+            dgvZaposleni.CellClick += dgvZaposleni_CellClick;
+            this.Click += frmZaposleniIndex_Click;
+            this.frmMainObject = f;
+        }
+
+        private void frmZaposleniIndex_Load(object sender, EventArgs e)
+        {
+            dgvZaposleni.Enabled = true;
+            dgvZaposleni.Visible = true;
+            if(!LoadTable(
+                ref dgvZaposleni, 
+=======
 ﻿using butik.forms.login;
 using butik.util;
 using SQLToolkitNS;
@@ -78,6 +116,40 @@ namespace butik.forms.zaposleni
             dgvZaposleni.Columns["jmbg"].Width = preferredWidth;
         }
 
+        private void frmZaposleniIndex_Click(object sender, EventArgs e)
+        {
+            dgvZaposleni.ClearSelection();
+            btnAzuriraj.Enabled = false;
+            btnAzuriraj.BackColor = SystemColors.ControlDark;
+            btnOtpusti.Enabled = false;
+            btnOtpusti.BackColor = SystemColors.ControlDark;
+        }
+
+        private void dgvZaposleni_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Make sure the clicked cell is in a valid row
+            if (e.RowIndex >= 0 && e.RowIndex < dgvZaposleni.Rows.Count)
+            {
+                // Get the data from the clicked row
+                DataGridViewRow selectedRow = dgvZaposleni.Rows[e.RowIndex];
+                // Modify the column names according to your DataGridView
+                string jmbg = selectedRow.Cells["jmbg"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["jmbg"].Value) : "";
+                string ime = selectedRow.Cells["ime"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["ime"].Value) : "";
+                string prezime = selectedRow.Cells["prezime"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["prezime"].Value) : "";
+                string kategorija = selectedRow.Cells["kategorija"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["kategorija"].Value) : "";
+                string datumZaposlenja = selectedRow.Cells["datum_zaposlenja"].Value != DBNull.Value ? Convert.ToString(selectedRow.Cells["datum_zaposlenja"].Value) : "";
+                decimal satnica = selectedRow.Cells["satnica"].Value != DBNull.Value ? Convert.ToDecimal(selectedRow.Cells["satnica"].Value) : 0;
+                int brojRadnihSati = selectedRow.Cells["broj_radnih_sati"].Value != DBNull.Value ? Convert.ToInt32(selectedRow.Cells["broj_radnih_sati"].Value) : 0;
+                decimal premija = selectedRow.Cells["premija"].Value != DBNull.Value ? Convert.ToDecimal(selectedRow.Cells["premija"].Value) : 0;
+                int brojSlobodnihDana = selectedRow.Cells["broj_slobodnih_dana"].Value != DBNull.Value ? Convert.ToInt32(selectedRow.Cells["broj_slobodnih_dana"].Value) : 0;
+
+                btnAzuriraj.Enabled = true;
+                btnAzuriraj.BackColor = Color.FromArgb(40, 46, 54);
+                btnOtpusti.Enabled = true;
+                btnOtpusti.BackColor = Color.FromArgb(40, 46, 54);
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             dgvZaposleni.Enabled = true;
@@ -93,14 +165,8 @@ namespace butik.forms.zaposleni
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dgvZaposleni.Enabled = false;
-            dgvZaposleni.Visible = false;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            // PanelHandler.AddForm(new test());
-            PanelHandler.ShowTopForm();
+            this.Visible = false;
+            frmMainObject.showForm(new frmZaposleniZaposli());
         }
     }
 }
