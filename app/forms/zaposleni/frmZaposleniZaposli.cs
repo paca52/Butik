@@ -56,6 +56,5 @@ namespace butik.forms.zaposleni
                 tbJmbg.SelectionStart = selectionStart;
             };
         }
-
     }
 }

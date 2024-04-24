@@ -1,42 +1,4 @@
-using SQLToolkitNS;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Common;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-
-namespace butik.forms.zaposleni
-{
-    public partial class frmZaposleniIndex : butik.forms.frmEmbeddedTemplate
-    {
-
-        protected frmMain frmMainObject;
-        public frmZaposleniIndex()
-        {
-            InitializeComponent();
-            dgvZaposleni.CellClick += dgvZaposleni_CellClick;
-            this.Click += frmZaposleniIndex_Click;
-        }
-
-        public frmZaposleniIndex(frmMain f)
-        {
-            InitializeComponent();
-            dgvZaposleni.CellClick += dgvZaposleni_CellClick;
-            this.Click += frmZaposleniIndex_Click;
-            this.frmMainObject = f;
-        }
-
-        private void frmZaposleniIndex_Load(object sender, EventArgs e)
-        {
-            dgvZaposleni.Enabled = true;
-            dgvZaposleni.Visible = true;
-            if(!LoadTable(
-                ref dgvZaposleni, 
-=======
-﻿using butik.forms.login;
+using butik.forms.login;
 using butik.util;
 using SQLToolkitNS;
 using System;
@@ -163,10 +125,10 @@ namespace butik.forms.zaposleni
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnZaposli_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            frmMainObject.showForm(new frmZaposleniZaposli());
+            PanelHandler.AddForm(new frmZaposleniZaposli());
+            PanelHandler.ShowTopForm();
         }
     }
 }
