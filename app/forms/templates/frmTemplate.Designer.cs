@@ -261,7 +261,7 @@
         }
 
         #endregion
-        protected System.Windows.Forms.Panel pnlScreen;
+        public System.Windows.Forms.Panel pnlScreen;
         protected System.Windows.Forms.Panel pnlSideBar;
         protected System.Windows.Forms.Panel panel3;
         protected System.Windows.Forms.Button btnDashboard;

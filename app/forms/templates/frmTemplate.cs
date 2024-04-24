@@ -24,12 +24,14 @@ namespace butik.forms
             this.Close();
         }
 
-        public void showForm(Form frm)
+        /*
+        protected void showForm(Form frm)
         {
             frm.TopLevel = false;
             frm.AutoScroll = true;
             pnlScreen.Controls.Add(frm);
             frm.Show();
         }
+        */
     }
 }

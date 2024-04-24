@@ -1,4 +1,4 @@
-﻿using SQLToolkitNS;
+using SQLToolkitNS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +27,34 @@ namespace butik.forms.zaposleni
             dgvZaposleni.CellClick += dgvZaposleni_CellClick;
             this.Click += frmZaposleniIndex_Click;
             this.frmMainObject = f;
+        }
+
+        private void frmZaposleniIndex_Load(object sender, EventArgs e)
+        {
+            dgvZaposleni.Enabled = true;
+            dgvZaposleni.Visible = true;
+            if(!LoadTable(
+                ref dgvZaposleni, 
+=======
+﻿using butik.forms.login;
+using butik.util;
+using SQLToolkitNS;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.Common;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace butik.forms.zaposleni
+{
+    public partial class frmZaposleniIndex : butik.forms.frmEmbeddedTemplate
+    {
+        public frmZaposleniIndex()
+        {
+            InitializeComponent();
         }
 
         private void frmZaposleniIndex_Load(object sender, EventArgs e)
