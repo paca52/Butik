@@ -3,7 +3,6 @@ using butik.util;
 using SQLToolkitNS;
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace butik.forms.artikli
@@ -25,7 +24,6 @@ namespace butik.forms.artikli
         {
             InitializeComponent();
             list.Clear();
-            // dgwItems.DataSource = list;
             dgwItems.DataSource = null;
         }
 
@@ -42,23 +40,15 @@ namespace butik.forms.artikli
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            long id = -1;
             String err = String.Empty;
-            String sql = "INSERT INTO dbo.table_dostava (datum_dostave, dostavljac) " +
-                "VALUES ('2024-1-1', 'pluh!');";
-            MessageBox.Show(sql);
-            // NAPRAVI DOSTAVU
-            if (!SQLToolkit.NonSelectQueryAndReturnId(
-                sql,
-                ref id,
-                ref err
-            ))
-            {
-                MessageBox.Show("Prso\n" + err);
-            } else
-            {
-                MessageBox.Show("Dostava je dodata!");
-            }
+
+            DostavaModel dostava = new DostavaModel();
+            dostava.NovaDostava();
+
+            DostavaArtikliModel akcija = new DostavaArtikliModel(dostava.Id, list);
+            akcija.Sacuvaj();
+
+            
         }
     }
 }

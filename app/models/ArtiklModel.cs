@@ -12,12 +12,15 @@ namespace butik.models
         private Decimal cena { get; set; }
         private int kolicina { get; set; }
 
+        private int dostavljena_kolicina;
+
         public ArtiklModel(long id, String naziv, Decimal cena, int kolicina)
         {
             this.id = id;
             this.naziv = naziv;
             this.cena = cena;
             this.kolicina = kolicina;
+            this.dostavljena_kolicina = 0;
         }
 
         public ArtiklModel(long id)
@@ -83,6 +86,35 @@ namespace butik.models
                 "id: " + id + "\n" + "naziv: " + naziv + "\n" + "cena: " + cena + "\n" + "kolicina: " + kolicina,
                 "ArtiklModel"
             );
+        }
+
+        public Boolean AzurirajKolicinu(Int32 Kolicina)
+        {
+            this.Kolicina += Kolicina;
+            this.dostavljena_kolicina += Kolicina;
+            return true;
+        }
+
+        public Boolean UpdateUBazi()
+        {
+            String sql = "UPDATE dbo.table_artikli SET " +
+                "naziv = '" + this.naziv + "', " +
+                "kolicina = " + this.kolicina + " " +
+                "WHERE id_artikla = " + this.id;
+            // MessageBox.Show(sql);
+
+            String err = String.Empty;
+            if(!SQLToolkit.NonSelectQuery(sql, ref err))
+            {
+                MessageBox.Show("Nije moguce update-ovati Artikl u bazi\n" + err);
+                return false;
+            }
+            return true;
+        }
+
+        public int GetDostavljenaKolicina()
+        {
+            return this.dostavljena_kolicina;
         }
     }
 }

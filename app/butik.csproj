@@ -107,6 +107,8 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="models\ArtiklModel.cs" />
+    <Compile Include="models\DostavaArtikliModel.cs" />
+    <Compile Include="models\DostavaModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\PanelHandler.cs" />

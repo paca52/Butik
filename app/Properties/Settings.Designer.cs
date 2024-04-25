@@ -12,7 +12,7 @@ namespace butik.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,13 +26,8 @@ namespace butik.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-<<<<<<< HEAD
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-FKAKD51;Initial Catalog=db_butik;Integrated Security=True;Tru" +
-            "stServerCertificate=True")]
-=======
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=db_butik;Integrated Security=Tru" +
-            "e;TrustServerCertificate=True")]
->>>>>>> f886b6e (changed db, new forms, working cart)
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PC08-K4;Initial Catalog=db_butik;Integrated Security=True;TrustServer" +
+            "Certificate=True")]
         public string connStr {
             get {
                 return ((string)(this["connStr"]));

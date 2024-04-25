@@ -1,9 +1,7 @@
 ﻿using butik.models;
 using SQLToolkitNS;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
 
 namespace butik.forms.artikli
@@ -50,33 +48,43 @@ namespace butik.forms.artikli
         private void btnAdd_Click(object sender, EventArgs e)
         {
             long id = GetIdFromCombo();
+            ArtiklModel artikl;
             
-            ArtiklModel artikl = new ArtiklModel(
-                id,
-                tBoxNaziv.Text,
-                Convert.ToDecimal(tBoxCena.Text),
-                Convert.ToInt32(tBoxKolicina.Text)
-            );
+            if (id == -1)
+            {
+                artikl = new ArtiklModel(
+                    id, 
+                    tBoxNaziv.Text,
+                    Convert.ToDecimal(tBoxCena.Text),
+                    Convert.ToInt32(tBoxKolicina.Text)
+                );
+            }
+            else
+            {
+                artikl = new ArtiklModel(id);
+            }
+
 
             if (!artikl.IsValid())
             {
                 return;
             }
 
-            if(id == -1)
+            if (artikl.Id == -1)
             {
                 artikl.DodajUBazu();
                 artikl.PrintModel();
             }
 
-            
+            artikl.AzurirajKolicinu(Convert.ToInt16(tBoxDostavljenaKolicina.Text));
+
             parent.UpdateList(ref artikl);
             this.Close();
         }
 
         private void cBoxId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tBoxKolicina.Enabled = false;
+            // tBoxKolicina.Enabled = false;
             tBoxCena.Enabled = false;
             tBoxNaziv.Enabled = false;
 

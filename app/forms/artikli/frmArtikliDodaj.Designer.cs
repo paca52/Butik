@@ -38,6 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tBoxDostavljenaKolicina = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -93,9 +95,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(181, 217);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.Size = new System.Drawing.Size(125, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Kolicina artikla";
+            this.label3.Text = "Dostupna Kolicina Artikla";
             // 
             // label4
             // 
@@ -126,10 +128,28 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(407, 217);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Dostavljena Kolicina Artikla";
+            // 
+            // tBoxDostavljenaKolicina
+            // 
+            this.tBoxDostavljenaKolicina.Location = new System.Drawing.Point(410, 233);
+            this.tBoxDostavljenaKolicina.Name = "tBoxDostavljenaKolicina";
+            this.tBoxDostavljenaKolicina.Size = new System.Drawing.Size(184, 20);
+            this.tBoxDostavljenaKolicina.TabIndex = 10;
+            // 
             // frmArtikliDodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(709, 531);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tBoxDostavljenaKolicina);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label4);
@@ -159,5 +179,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tBoxDostavljenaKolicina;
     }
 }
