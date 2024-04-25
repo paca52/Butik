@@ -47,6 +47,12 @@ namespace butik.util
             return true;
         }
 
+        public static Boolean EmptyFormStack()
+        {
+            formStack.Clear();
+            return true;
+        }
+
         public static Boolean RemoveTopForm()
         {
             Form frm = (Form)formStack.Pop();

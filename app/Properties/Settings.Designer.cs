@@ -26,8 +26,13 @@ namespace butik.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+<<<<<<< HEAD
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-FKAKD51;Initial Catalog=db_butik;Integrated Security=True;Tru" +
             "stServerCertificate=True")]
+=======
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=db_butik;Integrated Security=Tru" +
+            "e;TrustServerCertificate=True")]
+>>>>>>> f886b6e (changed db, new forms, working cart)
         public string connStr {
             get {
                 return ((string)(this["connStr"]));
