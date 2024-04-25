@@ -29,7 +29,7 @@ namespace butik.util
                 err = "JMBG polje mora imati 13 karaktera!";
                 return false;
             }
-            if(ime == "" || prezime == "" || tip_zaposlenog == -1 || datumZaposlenja == "" ||  satnica == -1 || brojRadnihSati == -1)
+            if(ime == "" || prezime == "" || tip_zaposlenog == -1 || datumZaposlenja == "" ||  satnica == -1 || brojRadnihSati == -1) 
             {
                 err = "Sva polja su obavezna, sem PREMIJA. ";
                 return false;

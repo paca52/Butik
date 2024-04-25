@@ -223,6 +223,7 @@
             // 
             // cbTipZaposlenog
             // 
+            this.cbTipZaposlenog.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipZaposlenog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipZaposlenog.FormattingEnabled = true;
             this.cbTipZaposlenog.Location = new System.Drawing.Point(163, 387);

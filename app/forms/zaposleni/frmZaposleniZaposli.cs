@@ -36,15 +36,6 @@ namespace butik.forms.zaposleni
         {
             InitializeComponent();
 
-            tbJmbg.Text = ZaposleniModel.jmbg;
-            tbIme.Text = ZaposleniModel.ime;
-            tbPrezime.Text = ZaposleniModel.prezime;
-            cbTipZaposlenog.Text = tipZaposlenogNaziv;
-            dtpDatumZaposlenja.Text = ZaposleniModel.datumZaposlenja;
-            tbSatnica.Text = ZaposleniModel.satnica == -1 ? "" : ZaposleniModel.satnica.ToString();
-            tbBrojRadnihSati.Text = ZaposleniModel.brojRadnihSati == -1 ? "" : ZaposleniModel.brojRadnihSati.ToString();
-            tbPremija.Text = ZaposleniModel.premija == "null" ? "" : ZaposleniModel.premija;
-
             HandleInputJmbg(tbJmbg);
             HandleInputOnlyDigits(tbBrojRadnihSati);
             HandleInputOnlyDigits(tbSatnica);
@@ -53,7 +44,18 @@ namespace butik.forms.zaposleni
             {
                 cbTipZaposlenog.Items.Add(kvp.Key);
             }
+            tbJmbg.Text = ZaposleniModel.jmbg;
+            tbIme.Text = ZaposleniModel.ime;
+            tbPrezime.Text = ZaposleniModel.prezime;
+            cbTipZaposlenog.Text = tipZaposlenogNaziv;
+            dtpDatumZaposlenja.Text = ZaposleniModel.datumZaposlenja;
+            tbSatnica.Text = ZaposleniModel.satnica == -1 ? "" : ZaposleniModel.satnica.ToString();
+            tbBrojRadnihSati.Text = ZaposleniModel.brojRadnihSati == -1 ? "" : ZaposleniModel.brojRadnihSati.ToString();
+            tbPremija.Text = ZaposleniModel.premija == "null" ? "" : ZaposleniModel.premija;
             dtpDatumZaposlenja.CustomFormat = "yyyy-MM-dd";
+
+            tbJmbg.Enabled = false;
+            btnZaposliSubmit.Text = "Ažuriraj";
         }
 
         private void HandleInputJmbg(System.Windows.Forms.TextBox tbJmbg)
@@ -117,8 +119,11 @@ namespace butik.forms.zaposleni
                 );
                 return;
             }
-            
-            String sql = "INSERT INTO dbo.table_zaposleni (jmbg,ime,prezime,broj_radnih_sati,satnica,datum_zaposlenja,broj_slobodnih_dana,username,password,tip_zaposlenog,premija) " +
+
+            String sql = "";
+            if(btnZaposliSubmit.Text == "Zaposli")
+            {
+                sql = sql + "INSERT INTO dbo.table_zaposleni (jmbg,ime,prezime,broj_radnih_sati,satnica,datum_zaposlenja,broj_slobodnih_dana,username,password,tip_zaposlenog,premija) " +
                 "VALUES (" +
                 "'" + ZaposleniModel.jmbg + "', " +
                 "'" + ZaposleniModel.ime + "', " +
@@ -131,8 +136,27 @@ namespace butik.forms.zaposleni
                 "'" + ZaposleniModel.password + "', " +
                 "" + ZaposleniModel.tip_zaposlenog + ", ";
 
-            if(ZaposleniModel.premija == "null") { sql += "null);"; }
-            else { sql = sql + "'" + ZaposleniModel.premija + "');"; }
+                if (ZaposleniModel.premija == "null") { sql += "null);"; }
+                else { sql = sql + "'" + ZaposleniModel.premija + "');"; }
+            }
+            else
+            {
+                sql = sql + "UPDATE dbo.table_zaposleni SET " +
+                    "ime = '" + ZaposleniModel.ime + "', " +
+                    "prezime = '" + ZaposleniModel.prezime + "', " +
+                    "broj_radnih_sati = " + ZaposleniModel.brojRadnihSati + ", " +
+                    "satnica = " + ZaposleniModel.satnica + ", " +
+                    "datum_zaposlenja = '" + ZaposleniModel.datumZaposlenja + "', " +
+                    "username = '" + ZaposleniModel.username + "', " +
+                    "password = '" + ZaposleniModel.password + "', " +
+                    "tip_zaposlenog = " + ZaposleniModel.tip_zaposlenog + ", " +
+                    "premija = ";
+
+                if (ZaposleniModel.premija == "null") { sql += "null "; }
+                else { sql = sql + "'" + ZaposleniModel.premija + "' "; }
+
+                sql = sql + "WHERE jmbg = '" + ZaposleniModel.jmbg + "';";
+            }
 
             if(!SQLToolkit.NonSelectQuery(sql, ref error))
             {
