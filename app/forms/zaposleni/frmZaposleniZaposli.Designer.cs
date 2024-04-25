@@ -58,6 +58,7 @@
             this.tbJmbg.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbJmbg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbJmbg.Location = new System.Drawing.Point(163, 61);
+            this.tbJmbg.MaxLength = 13;
             this.tbJmbg.Name = "tbJmbg";
             this.tbJmbg.Size = new System.Drawing.Size(382, 26);
             this.tbJmbg.TabIndex = 1;
@@ -78,6 +79,7 @@
             this.tbIme.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIme.Location = new System.Drawing.Point(163, 129);
+            this.tbIme.MaxLength = 20;
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(184, 26);
             this.tbIme.TabIndex = 2;
@@ -120,6 +122,7 @@
             this.tbPrezime.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPrezime.Location = new System.Drawing.Point(361, 129);
+            this.tbPrezime.MaxLength = 20;
             this.tbPrezime.Name = "tbPrezime";
             this.tbPrezime.Size = new System.Drawing.Size(184, 26);
             this.tbPrezime.TabIndex = 3;
@@ -140,6 +143,7 @@
             this.tbBrojRadnihSati.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbBrojRadnihSati.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbBrojRadnihSati.Location = new System.Drawing.Point(163, 193);
+            this.tbBrojRadnihSati.MaxLength = 5;
             this.tbBrojRadnihSati.Name = "tbBrojRadnihSati";
             this.tbBrojRadnihSati.Size = new System.Drawing.Size(184, 26);
             this.tbBrojRadnihSati.TabIndex = 4;
@@ -149,6 +153,7 @@
             this.tbSatnica.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbSatnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSatnica.Location = new System.Drawing.Point(361, 193);
+            this.tbSatnica.MaxLength = 5;
             this.tbSatnica.Name = "tbSatnica";
             this.tbSatnica.Size = new System.Drawing.Size(184, 26);
             this.tbSatnica.TabIndex = 5;
@@ -180,6 +185,7 @@
             this.tbPremija.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbPremija.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPremija.Location = new System.Drawing.Point(163, 257);
+            this.tbPremija.MaxLength = 5;
             this.tbPremija.Name = "tbPremija";
             this.tbPremija.Size = new System.Drawing.Size(382, 26);
             this.tbPremija.TabIndex = 6;
@@ -209,20 +215,21 @@
             // dtpDatumZaposlenja
             // 
             this.dtpDatumZaposlenja.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDatumZaposlenja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDatumZaposlenja.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDatumZaposlenja.Location = new System.Drawing.Point(163, 321);
             this.dtpDatumZaposlenja.Name = "dtpDatumZaposlenja";
             this.dtpDatumZaposlenja.Size = new System.Drawing.Size(382, 20);
-            this.dtpDatumZaposlenja.TabIndex = 9;
+            this.dtpDatumZaposlenja.TabIndex = 7;
             // 
             // cbTipZaposlenog
             // 
+            this.cbTipZaposlenog.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipZaposlenog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipZaposlenog.FormattingEnabled = true;
             this.cbTipZaposlenog.Location = new System.Drawing.Point(163, 387);
             this.cbTipZaposlenog.Name = "cbTipZaposlenog";
             this.cbTipZaposlenog.Size = new System.Drawing.Size(382, 28);
-            this.cbTipZaposlenog.TabIndex = 10;
+            this.cbTipZaposlenog.TabIndex = 8;
             // 
             // panel2
             // 
@@ -246,7 +253,7 @@
             this.btnZaposliSubmit.Name = "btnZaposliSubmit";
             this.btnZaposliSubmit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnZaposliSubmit.Size = new System.Drawing.Size(153, 62);
-            this.btnZaposliSubmit.TabIndex = 3;
+            this.btnZaposliSubmit.TabIndex = 9;
             this.btnZaposliSubmit.Text = "Zaposli";
             this.btnZaposliSubmit.UseVisualStyleBackColor = false;
             this.btnZaposliSubmit.Click += new System.EventHandler(this.btnZaposliSubmit_Click);
@@ -273,9 +280,10 @@
             this.btnZaposliExit.Name = "btnZaposliExit";
             this.btnZaposliExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnZaposliExit.Size = new System.Drawing.Size(153, 62);
-            this.btnZaposliExit.TabIndex = 3;
+            this.btnZaposliExit.TabIndex = 10;
             this.btnZaposliExit.Text = "Nazad";
             this.btnZaposliExit.UseVisualStyleBackColor = false;
+            this.btnZaposliExit.Click += new System.EventHandler(this.btnZaposliExit_Click);
             // 
             // frmZaposleniZaposli
             // 
