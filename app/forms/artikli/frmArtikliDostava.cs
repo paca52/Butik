@@ -3,6 +3,10 @@ using butik.util;
 using SQLToolkitNS;
 using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
+=======
+using System.Runtime.InteropServices;
+>>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
 using System.Windows.Forms;
 
 namespace butik.forms.artikli
@@ -24,6 +28,10 @@ namespace butik.forms.artikli
         {
             InitializeComponent();
             list.Clear();
+<<<<<<< HEAD
+=======
+            // dgwItems.DataSource = list;
+>>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
             dgwItems.DataSource = null;
         }
 
@@ -40,6 +48,7 @@ namespace butik.forms.artikli
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             String err = String.Empty;
 
             DostavaModel dostava = new DostavaModel();
@@ -49,6 +58,25 @@ namespace butik.forms.artikli
             akcija.Sacuvaj();
 
             
+=======
+            long id = -1;
+            String err = String.Empty;
+            String sql = "INSERT INTO dbo.table_dostava (datum_dostave, dostavljac) " +
+                "VALUES ('2024-1-1', 'pluh!');";
+            MessageBox.Show(sql);
+            // NAPRAVI DOSTAVU
+            if (!SQLToolkit.NonSelectQueryAndReturnId(
+                sql,
+                ref id,
+                ref err
+            ))
+            {
+                MessageBox.Show("Prso\n" + err);
+            } else
+            {
+                MessageBox.Show("Dostava je dodata!");
+            }
+>>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
         }
     }
 }

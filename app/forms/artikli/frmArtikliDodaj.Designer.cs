@@ -38,8 +38,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.label5 = new System.Windows.Forms.Label();
             this.tBoxDostavljenaKolicina = new System.Windows.Forms.TextBox();
+=======
+>>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
             this.SuspendLayout();
             // 
             // label1
@@ -95,9 +98,15 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(181, 217);
             this.label3.Name = "label3";
+<<<<<<< HEAD
             this.label3.Size = new System.Drawing.Size(125, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Dostupna Kolicina Artikla";
+=======
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Kolicina artikla";
+>>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
             // 
             // label4
             // 
@@ -128,6 +137,7 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+<<<<<<< HEAD
             // label5
             // 
             this.label5.AutoSize = true;
@@ -144,12 +154,17 @@
             this.tBoxDostavljenaKolicina.Size = new System.Drawing.Size(184, 20);
             this.tBoxDostavljenaKolicina.TabIndex = 10;
             // 
+=======
+>>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
             // frmArtikliDodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(709, 531);
+<<<<<<< HEAD
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tBoxDostavljenaKolicina);
+=======
+>>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label4);
@@ -179,7 +194,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnExit;
+<<<<<<< HEAD
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tBoxDostavljenaKolicina;
+=======
+>>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
     }
 }

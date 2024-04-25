@@ -12,15 +12,21 @@ namespace butik.models
         private Decimal cena { get; set; }
         private int kolicina { get; set; }
 
+<<<<<<< HEAD
         private int dostavljena_kolicina;
 
+=======
+>>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
         public ArtiklModel(long id, String naziv, Decimal cena, int kolicina)
         {
             this.id = id;
             this.naziv = naziv;
             this.cena = cena;
             this.kolicina = kolicina;
+<<<<<<< HEAD
             this.dostavljena_kolicina = 0;
+=======
+>>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
         }
 
         public ArtiklModel(long id)
@@ -87,6 +93,7 @@ namespace butik.models
                 "ArtiklModel"
             );
         }
+<<<<<<< HEAD
 
         public Boolean AzurirajKolicinu(Int32 Kolicina)
         {
@@ -116,5 +123,7 @@ namespace butik.models
         {
             return this.dostavljena_kolicina;
         }
+=======
+>>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
     }
 }
