@@ -53,7 +53,7 @@
             this.panel3.Controls.Add(this.btnOtpusti);
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(384, 467);
+            this.panel3.Location = new System.Drawing.Point(384, 453);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 44);
             this.panel3.TabIndex = 5;
@@ -72,6 +72,7 @@
             this.btnOtpusti.TabIndex = 3;
             this.btnOtpusti.Text = "Otpusti";
             this.btnOtpusti.UseVisualStyleBackColor = false;
+            this.btnOtpusti.Click += new System.EventHandler(this.btnOtpusti_Click);
             // 
             // panel2
             // 
@@ -79,7 +80,7 @@
             this.panel2.Controls.Add(this.btnZaposli);
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(27, 467);
+            this.panel2.Location = new System.Drawing.Point(27, 453);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(149, 44);
             this.panel2.TabIndex = 5;
@@ -106,7 +107,7 @@
             this.panel4.Controls.Add(this.btnAzuriraj);
             this.panel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Location = new System.Drawing.Point(206, 467);
+            this.panel4.Location = new System.Drawing.Point(206, 453);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(149, 44);
             this.panel4.TabIndex = 5;
@@ -125,6 +126,7 @@
             this.btnAzuriraj.TabIndex = 3;
             this.btnAzuriraj.Text = "Ažuriraj";
             this.btnAzuriraj.UseVisualStyleBackColor = false;
+            this.btnAzuriraj.Click += new System.EventHandler(this.btnAzuriraj_Click);
             // 
             // panel5
             // 
@@ -132,7 +134,7 @@
             this.panel5.Controls.Add(this.button5);
             this.panel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.Location = new System.Drawing.Point(558, 467);
+            this.panel5.Location = new System.Drawing.Point(558, 453);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(149, 44);
             this.panel5.TabIndex = 5;

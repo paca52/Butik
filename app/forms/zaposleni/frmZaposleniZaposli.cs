@@ -10,6 +10,9 @@ using System.Linq;
 using SQLToolkitNS;
 using System.Data.SqlClient;
 using butik.util;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Collections;
 
 namespace butik.forms.zaposleni
 {
@@ -18,55 +21,73 @@ namespace butik.forms.zaposleni
         public frmZaposleniZaposli()
         {
             InitializeComponent();
-            HandleInputRealTime(tbJmbg);
-            string sql = "SELECT id, naziv FROM table_tip_zaposlenog";
-            string error = "";
-            if (!SQLToolkit.SelectQuery(sql, PopulateComboBox, ref error))
+            HandleInputJmbg(tbJmbg);
+            HandleInputOnlyDigits(tbBrojRadnihSati);
+            HandleInputOnlyDigits(tbSatnica);
+            HandleInputOnlyDigits(tbPremija);
+            foreach (KeyValuePair<string, int> kvp in ZaposleniModel.tipZaposlenogMap)
             {
-                MessageBox.Show("Error: " + error);
+                cbTipZaposlenog.Items.Add(kvp.Key);
             }
-
+            dtpDatumZaposlenja.CustomFormat = "yyyy-MM-dd";
         }
 
-        private void PopulateComboBox(ref SqlDataReader reader)
+        public frmZaposleniZaposli(String tipZaposlenogNaziv)
         {
-            cbTipZaposlenog.Items.Add(reader["naziv"].ToString());
+            InitializeComponent();
+
+            tbJmbg.Text = ZaposleniModel.jmbg;
+            tbIme.Text = ZaposleniModel.ime;
+            tbPrezime.Text = ZaposleniModel.prezime;
+            cbTipZaposlenog.Text = tipZaposlenogNaziv;
+            dtpDatumZaposlenja.Text = ZaposleniModel.datumZaposlenja;
+            tbSatnica.Text = ZaposleniModel.satnica == -1 ? "" : ZaposleniModel.satnica.ToString();
+            tbBrojRadnihSati.Text = ZaposleniModel.brojRadnihSati == -1 ? "" : ZaposleniModel.brojRadnihSati.ToString();
+            tbPremija.Text = ZaposleniModel.premija == "null" ? "" : ZaposleniModel.premija;
+
+            HandleInputJmbg(tbJmbg);
+            HandleInputOnlyDigits(tbBrojRadnihSati);
+            HandleInputOnlyDigits(tbSatnica);
+            HandleInputOnlyDigits(tbPremija);
+            foreach (KeyValuePair<string, int> kvp in ZaposleniModel.tipZaposlenogMap)
+            {
+                cbTipZaposlenog.Items.Add(kvp.Key);
+            }
+            dtpDatumZaposlenja.CustomFormat = "yyyy-MM-dd";
         }
 
-        private void HandleInputRealTime(System.Windows.Forms.TextBox tbJmbg)
+        private void HandleInputJmbg(System.Windows.Forms.TextBox tbJmbg)
         {
             tbJmbg.TextChanged += (sender, e) =>
             {
-                int selectionStart = tbJmbg.SelectionStart; // Save the cursor position
+                int selectionStart = tbJmbg.SelectionStart;
 
-                // if user entered the digit
                 if (tbJmbg.Text.Any(c => char.IsDigit(c)))
                 {
-                    // Non-digit character detected, remove the last entered character
-                    // Optionally, provide feedback to the user
                     lblWarningCifre.Visible = false;
                 }
 
-                // Check if the entered text contains any non-digit characters
                 if (tbJmbg.Text.Any(c => !char.IsDigit(c)))
                 {
-                    // Non-digit character detected, remove the last entered character
                     tbJmbg.Text = tbJmbg.Text.Substring(0, tbJmbg.Text.Length - 1);
-                    // Optionally, provide feedback to the user
                     lblWarningCifre.Text = "Dozvoljeni karakteri su samo cifre.";
                     lblWarningCifre.Visible = true;
                 }
 
-                // Limit the length of the text to 13 characters
-                if (tbJmbg.Text.Length >= 13)
-                {
-                    // If the length exceeds 13 characters, truncate the text to 13 characters
-                    tbJmbg.Text = tbJmbg.Text.Substring(0, 13);
-                    lblWarningCifre.Visible = false;
-                }
-
-                // Restore the cursor position
                 tbJmbg.SelectionStart = selectionStart;
+            };
+        }
+
+        private void HandleInputOnlyDigits(System.Windows.Forms.TextBox tb)
+        {
+            tb.TextChanged += (sender, e) =>
+            {
+                int selectionStart = tb.SelectionStart;
+                if (tb.Text.Any(c => !char.IsDigit(c)))
+                {
+                    tb.Text = tb.Text.Substring(0, tb.Text.Length - 1);
+                }
+                tb.SelectionStart = selectionStart;
             };
         }
 
@@ -75,37 +96,58 @@ namespace butik.forms.zaposleni
             ZaposleniModel.jmbg = tbJmbg.Text;
             ZaposleniModel.ime = tbIme.Text;
             ZaposleniModel.prezime = tbPrezime.Text;
-            ZaposleniModel.tip_zaposlenog = cbTipZaposlenog.Text;
+            ZaposleniModel.tip_zaposlenog = cbTipZaposlenog.Text == "" ? -1 : ZaposleniModel.tipZaposlenogMap[cbTipZaposlenog.Text];
             ZaposleniModel.datumZaposlenja = dtpDatumZaposlenja.Text;
-            ZaposleniModel.satnica = Convert.ToInt32(tbSatnica.Text);
-            ZaposleniModel.brojRadnihSati = Convert.ToInt32(tbBrojRadnihSati.Text);
+            ZaposleniModel.satnica = tbSatnica.Text == "" ? -1 : Convert.ToInt32(tbSatnica.Text);
+            ZaposleniModel.brojRadnihSati = tbBrojRadnihSati.Text == "" ? -1 : Convert.ToInt32(tbBrojRadnihSati.Text);
             ZaposleniModel.premija = tbPremija.Text == "" ? "null" : tbPremija.Text;
             ZaposleniModel.brojSlobodnihDana = 20;
-            
+            ZaposleniModel.username = ZaposleniModel.ime + ZaposleniModel.prezime + cbTipZaposlenog.Text;
+            ZaposleniModel.password = cbTipZaposlenog.Text;
 
-            if(ZaposleniModel.jmbg.Length < 13)
+            String error = "";
+
+            if (!ZaposleniModel.validateInput(ref error))
             {
                 MessageBox.Show(
-                    "Jmbg polje mora imati 13 karaktera!",
-                    "GREŠKA",
+                    error,
+                    "Greška",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
                 return;
             }
-            String sql = "INSERT INTO table_zaposleni VALUES (" +
-                ZaposleniModel.jmbg + "," +
-                ZaposleniModel.jmbg + "," +
-                ZaposleniModel.jmbg + "," +
-                ZaposleniModel.jmbg + "," +
-                ZaposleniModel.jmbg + "," +
-                ZaposleniModel.jmbg + "," +
-                ZaposleniModel.jmbg + "," +
-                ZaposleniModel.jmbg + "," +
-                ZaposleniModel.jmbg + "," +
-                ZaposleniModel.jmbg + "," +
-                ZaposleniModel.jmbg + ",";
+            
+            String sql = "INSERT INTO dbo.table_zaposleni (jmbg,ime,prezime,broj_radnih_sati,satnica,datum_zaposlenja,broj_slobodnih_dana,username,password,tip_zaposlenog,premija) " +
+                "VALUES (" +
+                "'" + ZaposleniModel.jmbg + "', " +
+                "'" + ZaposleniModel.ime + "', " +
+                "'" + ZaposleniModel.prezime + "', " +
+                "" + ZaposleniModel.brojRadnihSati + ", " +
+                "" + ZaposleniModel.satnica + ", " +
+                "'" + ZaposleniModel.datumZaposlenja + "', " +
+                "" + ZaposleniModel.brojSlobodnihDana + ", " +
+                "'" + ZaposleniModel.username + "', " +
+                "'" + ZaposleniModel.password + "', " +
+                "" + ZaposleniModel.tip_zaposlenog + ", ";
 
+            if(ZaposleniModel.premija == "null") { sql += "null);"; }
+            else { sql = sql + "'" + ZaposleniModel.premija + "');"; }
+
+            if(!SQLToolkit.NonSelectQuery(sql, ref error))
+            {
+                MessageBox.Show("Error: " + error);
+                return;
+            }
+            PanelHandler.RemoveTopForm();
+            PanelHandler.RemoveTopForm();
+            PanelHandler.AddForm(new frmZaposleniIndex());
+            PanelHandler.ShowTopForm();
+        }
+
+        private void btnZaposliExit_Click(object sender, EventArgs e)
+        {
+            PanelHandler.RemoveTopForm();
         }
     }
 }
