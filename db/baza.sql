@@ -181,7 +181,10 @@ FOREIGN KEY (id_artikla) REFERENCES table_artikli(id_artikla);
 -- Insert 20 rows into table_dostava
 INSERT INTO dbo.table_tip_zaposlenog (id, naziv, dashboard, zaposleni, racuni, artikli)
 VALUES
-  (1, 'admin', 1, 1, 1, 1);
+  (1, 'admin', 1, 1, 1, 1),
+  (2, 'menadzer', 1, 0, 1, 1),
+  (3, 'kasir', 0, 0, 1, 0),
+  (4, 'magacioner', 0, 0, 0, 1);
 
 -- Insert 20 rows into table_zaposleni
 INSERT INTO dbo.table_zaposleni (

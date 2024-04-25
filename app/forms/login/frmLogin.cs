@@ -10,6 +10,7 @@ namespace butik.forms.login
     public partial class frmLogin : Form
     {
         String name = String.Empty;
+        long tip_zaposlenog = -1;
 
         public frmLogin()
         {
@@ -25,7 +26,7 @@ namespace butik.forms.login
         {
             String err = String.Empty;
             String sql =
-                "SELECT ime, username, password " +
+                "SELECT ime, username, password, tip_zaposlenog " +
                 "FROM table_zaposleni " +
                 "WHERE username='" + username + "' AND password='" + password + "'";
 
@@ -36,6 +37,7 @@ namespace butik.forms.login
                 (ref SqlDataReader dr) =>
                 {
                     this.name = dr.GetString(0);
+                    this.tip_zaposlenog = dr.GetInt64(3);
                     loggedIn = true;
                 },
                 ref err
@@ -58,7 +60,7 @@ namespace butik.forms.login
             if (LogIn(username, password))
             {
                 this.Hide();
-                frmMain frm = new frmMain(this.name);
+                frmMain frm = new frmMain(this.name, this.tip_zaposlenog);
                 PanelHandler.SetParentForm(frm);
 
                 frm.ShowDialog();
