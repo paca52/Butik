@@ -189,10 +189,10 @@
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(-3, -9);
+            this.btnExit.Location = new System.Drawing.Point(-22, -9);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(153, 62);
+            this.btnExit.Size = new System.Drawing.Size(189, 62);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Izlaz";
             this.btnExit.UseVisualStyleBackColor = false;

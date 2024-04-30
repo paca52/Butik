@@ -45,8 +45,23 @@ namespace butik.forms.artikli
             DostavaModel dostava = new DostavaModel();
             dostava.NovaDostava();
 
+            foreach(var model in list)
+            {
+                model.AzurirajKolicinu();
+            }
+
             DostavaArtikliModel akcija = new DostavaArtikliModel(dostava.Id, list);
-            akcija.Sacuvaj();
+            if (!akcija.Sacuvaj())
+            {
+                MessageBox.Show("Greska pri cuvanju dostave!!!");
+                return;
+            }
+            
+            
+            this.Close();
+            PanelHandler.RemoveTopForm();
+            PanelHandler.AddForm(new frmArtikliIndex());
+            PanelHandler.ShowTopForm();
         }
     }
 }

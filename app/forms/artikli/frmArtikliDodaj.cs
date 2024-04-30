@@ -49,19 +49,21 @@ namespace butik.forms.artikli
         {
             long id = GetIdFromCombo();
             ArtiklModel artikl;
-            
+
             if (id == -1)
             {
                 artikl = new ArtiklModel(
-                    id, 
+                    id,
                     tBoxNaziv.Text,
                     Convert.ToDecimal(tBoxCena.Text),
-                    Convert.ToInt32(tBoxKolicina.Text)
+                    Convert.ToInt32(tBoxKolicina.Text),
+                    Convert.ToInt32(tBoxDostavljenaKolicina.Text)
                 );
             }
             else
             {
                 artikl = new ArtiklModel(id);
+                artikl.Dostavljena_kolicina = Convert.ToInt32(tBoxDostavljenaKolicina.Text);
             }
 
             if (!artikl.IsValid())
@@ -72,24 +74,24 @@ namespace butik.forms.artikli
             if (artikl.Id == -1)
             {
                 artikl.DodajUBazu();
-                artikl.PrintModel();
+                // artikl.PrintModel();
             }
 
-            artikl.AzurirajKolicinu(Convert.ToInt16(tBoxDostavljenaKolicina.Text));
+            // artikl.AzurirajKolicinu(Convert.ToInt16(tBoxDostavljenaKolicina.Text));
             parent.UpdateList(ref artikl);
             this.Close();
         }
 
         private void cBoxId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // tBoxKolicina.Enabled = false;
+            tBoxKolicina.Enabled = false;
             tBoxCena.Enabled = false;
             tBoxNaziv.Enabled = false;
 
             long id = GetIdFromCombo();
             ArtiklModel model = new ArtiklModel(id);
 
-            model.PrintModel();
+            // model.PrintModel();
 
             tBoxKolicina.Text = model.Kolicina.ToString();
             tBoxCena.Text = model.Cena.ToString();

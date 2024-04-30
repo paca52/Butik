@@ -22,6 +22,14 @@ namespace butik.models
             this.kolicina = kolicina;
             this.dostavljena_kolicina = 0;
         }
+        public ArtiklModel(long id, String naziv, Decimal cena, int kolicina, int dostavljena_kolicina)
+        {
+            this.id = id;
+            this.naziv = naziv;
+            this.cena = cena;
+            this.kolicina = kolicina;
+            this.dostavljena_kolicina = dostavljena_kolicina;
+        }
 
         public ArtiklModel(long id)
         {
@@ -58,6 +66,8 @@ namespace butik.models
 
         public int Kolicina { get { return kolicina; } set { kolicina = value; } }
 
+        public int Dostavljena_kolicina { get { return dostavljena_kolicina; } set { dostavljena_kolicina = value; } }
+
         public Boolean DodajUBazu()
         {
             String sql = "INSERT INTO dbo.table_artikli" +
@@ -88,10 +98,9 @@ namespace butik.models
             );
         }
 
-        public Boolean AzurirajKolicinu(Int32 Kolicina)
+        public Boolean AzurirajKolicinu()
         {
-            this.Kolicina += Kolicina;
-            this.dostavljena_kolicina += Kolicina;
+            kolicina += dostavljena_kolicina;
             return true;
         }
 
