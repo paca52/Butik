@@ -26,13 +26,8 @@ namespace butik.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-<<<<<<< HEAD
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PC08-K4;Initial Catalog=db_butik;Integrated Security=True;TrustServer" +
             "Certificate=True")]
-=======
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=db_butik;Integrated Security=Tru" +
-            "e;TrustServerCertificate=True")]
->>>>>>> f886b6e2a1286236cdf80b7906b4dd5797f8e407
         public string connStr {
             get {
                 return ((string)(this["connStr"]));
