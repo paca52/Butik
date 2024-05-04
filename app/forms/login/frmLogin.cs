@@ -43,7 +43,7 @@ namespace butik.forms.login
                 ref err
             ))
             {
-                MessageBox.Show(err);
+                MessageUtil.ShowError(err);
                 return false;
             }
 
@@ -71,12 +71,7 @@ namespace butik.forms.login
             }
             else
             {
-                MessageBox.Show(
-                    "Pogresan login. Pokušajte ponovo!",
-                    "GREŠKA",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageUtil.ShowError("Pogresan login. Pokušajte ponovo!");
             }
         }
     }

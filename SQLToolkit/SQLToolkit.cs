@@ -33,6 +33,27 @@ namespace SQLToolkitNS
             }
         }
 
+        public static Boolean NonSelectQueryAndReturnId(String sql, ref long id, ref String err)
+        {
+            sql += "; SELECT SCOPE_IDENTITY();";
+            try
+            {
+                SqlConnection conn = new SqlConnection(connStr);
+                conn.Open();
+
+                SqlCommand komanda = new SqlCommand(sql, conn);
+                id = Convert.ToInt32(komanda.ExecuteScalar());
+
+                conn.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                err = e.ToString();
+                return false;
+            }
+        }
+
         public delegate void ReaderFunction(ref SqlDataReader reader);
 
         public static Boolean SelectQuery(String sql, ReaderFunction callback, ref String err)

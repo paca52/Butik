@@ -111,12 +111,7 @@ namespace butik.forms.zaposleni
 
             if (!ZaposleniModel.validateInput(ref error))
             {
-                MessageBox.Show(
-                    error,
-                    "Greška",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageUtil.ShowError(error);
                 return;
             }
 
@@ -160,7 +155,7 @@ namespace butik.forms.zaposleni
 
             if(!SQLToolkit.NonSelectQuery(sql, ref error))
             {
-                MessageBox.Show("Error: " + error);
+                MessageUtil.ShowError("Error: " + error);
                 return;
             }
             PanelHandler.RemoveTopForm();
