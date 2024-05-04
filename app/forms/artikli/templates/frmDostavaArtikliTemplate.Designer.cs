@@ -1,6 +1,6 @@
 ﻿namespace butik.forms.artikli
 {
-    partial class frmArtikliDodaj
+    partial class frmDostavaArtikliTemplate
     {
         /// <summary>
         /// Required designer variable.
@@ -81,6 +81,7 @@
             this.tBoxKolicina.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.tBoxKolicina.Location = new System.Drawing.Point(91, 266);
             this.tBoxKolicina.Name = "tBoxKolicina";
+            this.tBoxKolicina.ReadOnly = true;
             this.tBoxKolicina.Size = new System.Drawing.Size(258, 29);
             this.tBoxKolicina.TabIndex = 3;
             this.tBoxKolicina.Text = "0";
@@ -170,7 +171,6 @@
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel1
             // 
@@ -190,7 +190,7 @@
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(-22, -9);
+            this.btnExit.Location = new System.Drawing.Point(-24, -9);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(189, 62);
@@ -210,7 +210,7 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "ARTIKL";
             // 
-            // frmArtikliDodaj
+            // frmDostavaArtikliTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(709, 531);
@@ -227,7 +227,7 @@
             this.Controls.Add(this.tBoxNaziv);
             this.Controls.Add(this.cBoxId);
             this.Controls.Add(this.label1);
-            this.Name = "frmArtikliDodaj";
+            this.Name = "frmDostavaArtikliTemplate";
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -237,20 +237,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cBoxId;
-        private System.Windows.Forms.TextBox tBoxNaziv;
-        private System.Windows.Forms.TextBox tBoxKolicina;
-        private System.Windows.Forms.TextBox tBoxCena;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tBoxDostavljenaKolicina;
+        protected System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.ComboBox cBoxId;
+        protected System.Windows.Forms.TextBox tBoxNaziv;
+        protected System.Windows.Forms.TextBox tBoxKolicina;
+        protected System.Windows.Forms.TextBox tBoxCena;
+        protected System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Label label4;
+        protected System.Windows.Forms.Label label5;
+        protected System.Windows.Forms.TextBox tBoxDostavljenaKolicina;
         protected System.Windows.Forms.Panel panel3;
         protected System.Windows.Forms.Button btnAdd;
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label label6;
+        protected System.Windows.Forms.Label label6;
     }
 }

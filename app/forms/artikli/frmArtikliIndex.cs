@@ -1,11 +1,6 @@
-﻿using butik.util;
+﻿using butik.models;
+using butik.util;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace butik.forms.artikli
 {
@@ -24,13 +19,33 @@ namespace butik.forms.artikli
 
         private void btnDostava_Click(object sender, EventArgs e)
         {
-            PanelHandler.AddForm(new frmArtikliDostava());
+            PanelHandler.AddForm(new frmDostavaArtikli());
             PanelHandler.ShowTopForm();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            long id = Convert.ToInt64(dgwArtikli.SelectedRows[0].Cells[0].Value);
+            PanelHandler.AddForm(new frmArtikliUpdate(id));
+            PanelHandler.ShowTopForm();
+        }
+
+        private void dgwArtikli_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (dgwArtikli.SelectedRows.Count == 1)
+            {
+                btnUpdate.Enabled = true;
+            }
+            else
+            {
+                btnUpdate.Enabled = false;
+            }
         }
     }
 }
