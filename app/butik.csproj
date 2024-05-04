@@ -117,8 +117,9 @@
     <Compile Include="models\DostavaModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util\MessageUtil.cs" />
     <Compile Include="util\PanelHandler.cs" />
-    <Compile Include="util\ZaposleniModel.cs" />
+    <Compile Include="models\ZaposleniModel.cs" />
     <EmbeddedResource Include="forms\artikli\frmArtikliAzuriraj.resx">
       <DependentUpon>frmArtikliAzuriraj.cs</DependentUpon>
     </EmbeddedResource>

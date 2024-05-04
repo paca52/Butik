@@ -18,7 +18,8 @@ namespace butik.forms.artikli
 
         private void frmArtikliIndex_Load(object sender, EventArgs e)
         {
-            LoadTable(ref dgwArtikli, "SELECT * FROM table_artikli");
+            if (!LoadTable(ref dgwArtikli, "SELECT * FROM table_artikli"))
+                MessageUtil.ShowError("Greška pri učitavanju tabele!");
         }
 
         private void btnDostava_Click(object sender, EventArgs e)

@@ -42,9 +42,12 @@
             // 
             // dgwArtikli
             // 
+            this.dgwArtikli.AllowUserToAddRows = false;
+            this.dgwArtikli.AllowUserToDeleteRows = false;
             this.dgwArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwArtikli.Location = new System.Drawing.Point(48, 117);
             this.dgwArtikli.Name = "dgwArtikli";
+            this.dgwArtikli.ReadOnly = true;
             this.dgwArtikli.Size = new System.Drawing.Size(605, 278);
             this.dgwArtikli.TabIndex = 0;
             // 

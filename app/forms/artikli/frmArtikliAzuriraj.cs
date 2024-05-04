@@ -1,5 +1,7 @@
 ﻿using butik.models;
+using butik.util;
 using System;
+using System.Windows.Forms;
 
 namespace butik.forms.artikli
 {
@@ -15,6 +17,7 @@ namespace butik.forms.artikli
             this.model = model;
 
             LockInputAndPutModel(model);
+            tBoxDostavljenaKolicina.Focus();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -24,9 +27,15 @@ namespace butik.forms.artikli
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!model.IsValid()) return;
+            if (!model.IsValid())
+            {
+                MessageUtil.ShowError("Parametri za ovaj artikl su pogrešni!");
+                return;
+            }
 
-            parent.UpdateList(model.Id, Convert.ToInt32(tBoxDostavljenaKolicina.Text));
+            if (!parent.UpdateList(model.Id, Convert.ToInt32(tBoxDostavljenaKolicina.Text)))
+                MessageUtil.ShowError("Greška pri ažuriranju liste!");
+
             this.Close();
         }
 

@@ -144,7 +144,6 @@
             this.tBoxDostavljenaKolicina.Name = "tBoxDostavljenaKolicina";
             this.tBoxDostavljenaKolicina.Size = new System.Drawing.Size(258, 29);
             this.tBoxDostavljenaKolicina.TabIndex = 10;
-            this.tBoxDostavljenaKolicina.Text = "0";
             // 
             // panel3
             // 

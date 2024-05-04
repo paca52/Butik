@@ -1,4 +1,5 @@
-﻿using SQLToolkitNS;
+﻿using butik.util;
+using SQLToolkitNS;
 using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
@@ -21,12 +22,7 @@ namespace butik.models
 
             if (!SQLToolkit.NonSelectQueryAndReturnId(sql, ref id, ref err))
             {
-                MessageBox.Show(
-                    "GREŠKA PRI KREIRANJU DOSTAVE U BAZI\n" + err,
-                    "GREŠKA",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageUtil.ShowError("GREŠKA PRI KREIRANJU DOSTAVE U BAZI\n" + err);
                 return false;
             }
             return true;

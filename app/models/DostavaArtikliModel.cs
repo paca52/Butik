@@ -1,4 +1,5 @@
-﻿using SQLToolkitNS;
+﻿using butik.util;
+using SQLToolkitNS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace butik.models
             {
                 tmp += item.Id + "(" + item.Naziv + ")";
             }
-            MessageBox.Show($"id_dostava: {id_dostava}, artikli: {tmp}");
+            MessageUtil.ShowError($"id_dostava: {id_dostava}, artikli: {tmp}");
         }
 
         public Boolean Sacuvaj()
@@ -49,7 +50,7 @@ namespace butik.models
 
                 if(!SQLToolkit.NonSelectQuery(sql, ref err))
                 {
-                    MessageBox.Show($"Nije moguce povezati {item.Naziv} sa dostavom.\n" + err);
+                    MessageUtil.ShowError($"Nije moguce povezati {item.Naziv} sa dostavom.\n" + err);
                     return false;
                 }
             }

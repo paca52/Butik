@@ -26,7 +26,7 @@ namespace butik.forms.zaposleni
             string error = "";
             if (!SQLToolkit.SelectQuery(sql, PopulateDictionary, ref error))
             {
-                MessageBox.Show("Error: " + error);
+                MessageUtil.ShowError("Error: " + error);
             }
         }
         private void PopulateDictionary(ref SqlDataReader reader)
@@ -161,16 +161,16 @@ namespace butik.forms.zaposleni
 
             if (!SQLToolkit.NonSelectQuery(sql, ref error))
             {
-                MessageBox.Show("Error: " + error);
+                MessageUtil.ShowError("Error: " + error);
                 return;
             }
-            DialogResult result = MessageBox.Show("Da li želite da zaista otpustite ovog radnika?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageUtil.DeleteBox("Da li želite da zaista otpustite ovog radnika?");
 
             if (result == DialogResult.Yes)
             {
                 if (!SQLToolkit.NonSelectQuery(sql, ref error))
                 {
-                    MessageBox.Show("Error: " + error);
+                    MessageUtil.ShowError("Error: " + error);
                     return;
                 }
                 PanelHandler.RemoveTopForm();

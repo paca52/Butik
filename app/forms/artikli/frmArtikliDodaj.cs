@@ -1,4 +1,5 @@
 ﻿using butik.models;
+using butik.util;
 using SQLToolkitNS;
 using System;
 using System.Data.SqlClient;
@@ -25,7 +26,7 @@ namespace butik.forms.artikli
                 ref err
             ))
             {
-                MessageBox.Show("GREŠKA!\n" + err);
+                MessageUtil.ShowError("GREŠKA!\n" + err);
             }
         }
 
@@ -55,6 +56,7 @@ namespace butik.forms.artikli
                     Convert.ToInt32(tBoxKolicina.Text),
                     Convert.ToInt32(tBoxDostavljenaKolicina.Text)
                 );
+                artikl.DodajUBazu();
             }
             else
             {
@@ -64,16 +66,10 @@ namespace butik.forms.artikli
 
             if (!artikl.IsValid())
             {
+                MessageUtil.ShowError("Parametri za ovaj artikl su pogrešni!");
                 return;
             }
 
-            if (artikl.Id == -1)
-            {
-                artikl.DodajUBazu();
-                // artikl.PrintModel();
-            }
-
-            // artikl.AzurirajKolicinu(Convert.ToInt16(tBoxDostavljenaKolicina.Text));
             parent.AddToList(ref artikl);
             this.Close();
         }
@@ -82,6 +78,7 @@ namespace butik.forms.artikli
         {
             long id = GetIdFromCombo();
             LockInputAndPutModel(id);
+            tBoxDostavljenaKolicina.Focus();
         }
 
         private void LockInputAndPutModel(long id)

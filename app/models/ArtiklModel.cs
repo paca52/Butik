@@ -1,4 +1,5 @@
-﻿using SQLToolkitNS;
+﻿using butik.util;
+using SQLToolkitNS;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -46,7 +47,7 @@ namespace butik.models
                 ref err)
             )
             {
-                MessageBox.Show(err);
+                MessageUtil.ShowError($"Greška!\n{err}");
             }
         }
 
@@ -79,7 +80,7 @@ namespace butik.models
             long id = -1;
             if (!SQLToolkit.NonSelectQueryAndReturnId(sql, ref id, ref err))
             {
-                MessageBox.Show(err);
+                MessageUtil.ShowError(err);
             }
             this.id = id;
             return true;
@@ -87,7 +88,11 @@ namespace butik.models
 
         public Boolean IsValid()
         {
-            return this.naziv.Length != 0 && this.kolicina >= 0 && this.cena >= 0;
+            return 
+                naziv.Length != 0 &&
+                kolicina >= 0 && 
+                cena >= 0 && 
+                dostavljena_kolicina >= 0;
         }
 
         public void PrintModel()
@@ -110,12 +115,11 @@ namespace butik.models
                 "naziv = '" + this.naziv + "', " +
                 "kolicina = " + this.kolicina + " " +
                 "WHERE id_artikla = " + this.id;
-            // MessageBox.Show(sql);
 
             String err = String.Empty;
             if(!SQLToolkit.NonSelectQuery(sql, ref err))
             {
-                MessageBox.Show("Nije moguce update-ovati Artikl u bazi\n" + err);
+                MessageUtil.ShowError("Nije moguce update-ovati Artikl u bazi\n" + err);
                 return false;
             }
             return true;

@@ -143,7 +143,6 @@
             this.tBoxDostavljenaKolicina.Name = "tBoxDostavljenaKolicina";
             this.tBoxDostavljenaKolicina.Size = new System.Drawing.Size(258, 29);
             this.tBoxDostavljenaKolicina.TabIndex = 10;
-            this.tBoxDostavljenaKolicina.Text = "0";
             // 
             // panel3
             // 
@@ -210,7 +209,7 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "ARTIKL";
             // 
-            // frmArtikliDodaj
+            // frmArtikliAzuriraj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(709, 531);
@@ -227,7 +226,7 @@
             this.Controls.Add(this.tBoxNaziv);
             this.Controls.Add(this.cBoxId);
             this.Controls.Add(this.label1);
-            this.Name = "frmArtikliDodaj";
+            this.Name = "frmArtikliAzuriraj";
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

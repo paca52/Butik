@@ -14,9 +14,9 @@ namespace butik.forms.artikli
 
             int i = list.FindIndex(item => item.Id == id);
 
-            if(i == -1)
+            if (i == -1)
             {
-                MessageBox.Show("Greška pri Ažuriranju!");
+                MessageUtil.ShowError("Greška pri Ažuriranju!");
                 return false;
             }
 
@@ -83,18 +83,16 @@ namespace butik.forms.artikli
             DostavaModel dostava = new DostavaModel();
             if (!dostava.NovaDostava())
             {
-                MessageBox.Show("Greska pri pravljenju dostave!");
+                MessageUtil.ShowError("Greška pri pravljenju dostave!");
+                return;
             }
 
-            foreach (var model in list)
-            {
-                model.AzurirajKolicinu();
-            }
+            list.ForEach(model => model.AzurirajKolicinu());
 
             DostavaArtikliModel akcija = new DostavaArtikliModel(dostava.Id, list);
             if (!akcija.Sacuvaj())
             {
-                MessageBox.Show("Greska pri cuvanju dostave!!!");
+                MessageUtil.ShowError("Greška pri čuvanju dostave!!!");
                 return;
             }
 
@@ -108,12 +106,14 @@ namespace butik.forms.artikli
         private void dgwItems_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
             long id = Convert.ToInt64(e.Row.Cells[0].Value);
-            DeleteFromList(id);
+            if (!DeleteFromList(id))
+            {
+                MessageUtil.ShowError("Greška pri brisanju artikla!");
+            }
         }
 
         private void dgwItems_SelectionChanged(object sender, EventArgs e)
         {
-            // MessageBox.Show($"PLUH!!!! {dgwItems.SelectedRows.Count}");
             if (dgwItems.SelectedRows.Count == 0)
             {
                 btnRemove.Enabled = false;
@@ -133,18 +133,17 @@ namespace butik.forms.artikli
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show(
-                "Da li ste sigurni da želite da obrišete odabrane artikle iz liste?",
-                "",
-                MessageBoxButtons.YesNo
-            );
+            DialogResult res = MessageUtil.DeleteBox("Da li ste sigurni da želite da obrišete odabrane artikle iz liste?");
 
             if (res == DialogResult.No) return;
 
             foreach (DataGridViewRow row in dgwItems.SelectedRows)
             {
                 long id = Convert.ToInt64(row.Cells[0].Value);
-                DeleteFromList(id);
+                if (!DeleteFromList(id))
+                {
+                    MessageUtil.ShowError("Greška pri brisanju artikla iz liste!");
+                }
             }
             RefreshList();
         }
