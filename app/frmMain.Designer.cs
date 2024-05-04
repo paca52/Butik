@@ -70,6 +70,7 @@
             this.btnArtikli.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnArtikli.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnArtikli.TabIndex = 0;
+            this.btnArtikli.Click += new System.EventHandler(this.btnArtikli_Click);
             // 
             // panel2
             // 

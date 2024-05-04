@@ -32,12 +32,7 @@ namespace butik.forms
             }
             else
             {
-                MessageBox.Show(
-                    "GREŠKA\n" + err, 
-                    "GREŠKA", 
-                    MessageBoxButtons.OK, 
-                    MessageBoxIcon.Error
-                );
+                MessageUtil.ShowError(err);
                 return false;
             }
 

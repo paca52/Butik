@@ -1,4 +1,5 @@
 ﻿using butik.forms;
+using butik.forms.artikli;
 using butik.forms.login;
 using butik.forms.zaposleni;
 using butik.util;
@@ -23,7 +24,15 @@ namespace butik
         private void btnZaposleni_Click(object sender, EventArgs e)
         {
             // showForm(new frmZaposleniIndex(this));
+            PanelHandler.EmptyFormStack();
             PanelHandler.AddForm(new frmZaposleniIndex());
+            PanelHandler.ShowTopForm();
+        }
+
+        private void btnArtikli_Click(object sender, EventArgs e)
+        {
+            PanelHandler.EmptyFormStack();
+            PanelHandler.AddForm(new frmArtikliIndex());
             PanelHandler.ShowTopForm();
         }
     }
