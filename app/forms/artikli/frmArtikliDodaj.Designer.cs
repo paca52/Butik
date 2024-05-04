@@ -83,6 +83,7 @@
             this.tBoxKolicina.Name = "tBoxKolicina";
             this.tBoxKolicina.Size = new System.Drawing.Size(258, 29);
             this.tBoxKolicina.TabIndex = 3;
+            this.tBoxKolicina.Text = "0";
             // 
             // tBoxCena
             // 

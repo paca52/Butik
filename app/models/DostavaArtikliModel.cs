@@ -49,7 +49,7 @@ namespace butik.models
 
                 if(!SQLToolkit.NonSelectQuery(sql, ref err))
                 {
-                    MessageBox.Show("Kill yourself at this point nigga\n" + err);
+                    MessageBox.Show($"Nije moguce povezati {item.Naziv} sa dostavom.\n" + err);
                     return false;
                 }
             }

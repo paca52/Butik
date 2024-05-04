@@ -37,10 +37,16 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwItems)).BeginInit();
             this.panelExit.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTable
@@ -48,7 +54,7 @@
             this.lblTable.AutoSize = true;
             this.lblTable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTable.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblTable.Location = new System.Drawing.Point(52, 124);
+            this.lblTable.Location = new System.Drawing.Point(41, 124);
             this.lblTable.Name = "lblTable";
             this.lblTable.Size = new System.Drawing.Size(148, 21);
             this.lblTable.TabIndex = 4;
@@ -59,7 +65,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(49, 35);
+            this.label1.Location = new System.Drawing.Point(38, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 37);
             this.label1.TabIndex = 5;
@@ -68,10 +74,12 @@
             // dgwItems
             // 
             this.dgwItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwItems.Location = new System.Drawing.Point(51, 149);
+            this.dgwItems.Location = new System.Drawing.Point(41, 149);
             this.dgwItems.Name = "dgwItems";
-            this.dgwItems.Size = new System.Drawing.Size(605, 258);
+            this.dgwItems.Size = new System.Drawing.Size(615, 258);
             this.dgwItems.TabIndex = 6;
+            this.dgwItems.SelectionChanged += new System.EventHandler(this.dgwItems_SelectionChanged);
+            this.dgwItems.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgwItems_UserDeletedRow);
             // 
             // panelExit
             // 
@@ -79,7 +87,7 @@
             this.panelExit.Controls.Add(this.btnExit);
             this.panelExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelExit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panelExit.Location = new System.Drawing.Point(51, 447);
+            this.panelExit.Location = new System.Drawing.Point(40, 447);
             this.panelExit.Name = "panelExit";
             this.panelExit.Size = new System.Drawing.Size(149, 44);
             this.panelExit.TabIndex = 13;
@@ -118,10 +126,10 @@
             this.btnConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirm.Location = new System.Drawing.Point(-3, -9);
+            this.btnConfirm.Location = new System.Drawing.Point(-12, -9);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnConfirm.Size = new System.Drawing.Size(153, 62);
+            this.btnConfirm.Size = new System.Drawing.Size(169, 62);
             this.btnConfirm.TabIndex = 3;
             this.btnConfirm.Text = "Dostavi";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -154,10 +162,65 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Location = new System.Drawing.Point(352, 447);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(149, 44);
+            this.panel2.TabIndex = 15;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(-11, -9);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnUpdate.Size = new System.Drawing.Size(166, 62);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Ažuriraj";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btnRemove);
+            this.panel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel4.Location = new System.Drawing.Point(197, 447);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(149, 44);
+            this.panel4.TabIndex = 16;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemove.Location = new System.Drawing.Point(-17, -9);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnRemove.Size = new System.Drawing.Size(170, 62);
+            this.btnRemove.TabIndex = 3;
+            this.btnRemove.Text = "Obriši iz dostave";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            // 
             // frmArtikliDostava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(709, 531);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelExit);
             this.Controls.Add(this.panel3);
@@ -169,6 +232,8 @@
             this.panelExit.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +249,9 @@
         protected System.Windows.Forms.Button btnConfirm;
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Button btnAdd;
+        protected System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Button btnUpdate;
+        protected System.Windows.Forms.Panel panel4;
+        protected System.Windows.Forms.Button btnRemove;
     }
 }

@@ -1,6 +1,5 @@
 ﻿using butik.models;
 using butik.util;
-using SQLToolkitNS;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,7 +12,21 @@ namespace butik.forms.artikli
 
         public Boolean UpdateList(ref ArtiklModel model)
         {
-            list.Add(model);
+            Boolean is_in_list = false;
+            foreach (var item in list)
+            {
+                if (item.Id == model.Id)
+                {
+                    item.Dostavljena_kolicina += model.Dostavljena_kolicina;
+                    is_in_list = true;
+                }
+            }
+
+            if (is_in_list == false)
+            {
+                list.Add(model);
+            }
+
             dgwItems.DataSource = null;
             dgwItems.DataSource = list;
             dgwItems.Refresh();
@@ -43,9 +56,12 @@ namespace butik.forms.artikli
             String err = String.Empty;
 
             DostavaModel dostava = new DostavaModel();
-            dostava.NovaDostava();
+            if (!dostava.NovaDostava())
+            {
+                MessageBox.Show("Greska pri pravljenju dostave!");
+            }
 
-            foreach(var model in list)
+            foreach (var model in list)
             {
                 model.AzurirajKolicinu();
             }
@@ -56,12 +72,44 @@ namespace butik.forms.artikli
                 MessageBox.Show("Greska pri cuvanju dostave!!!");
                 return;
             }
-            
-            
+
+
             this.Close();
             PanelHandler.RemoveTopForm();
             PanelHandler.AddForm(new frmArtikliIndex());
             PanelHandler.ShowTopForm();
+        }
+
+        private void dgwItems_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            long id = Convert.ToInt64(e.Row.Cells[0].Value);
+            foreach (var item in list)
+            {
+                if (item.Id == id)
+                {
+                    list.Remove(item);
+                }
+            }
+        }
+
+        private void dgwItems_SelectionChanged(object sender, EventArgs e)
+        {
+            // MessageBox.Show($"PLUH!!!! {dgwItems.SelectedRows.Count}");
+            if (dgwItems.SelectedRows.Count == 0)
+            {
+                btnRemove.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
+            else if (dgwItems.SelectedRows.Count == 1)
+            {
+                btnRemove.Enabled = true;
+                btnUpdate.Enabled = true;
+            }
+            else if (dgwItems.SelectedRows.Count > 1)
+            {
+                btnRemove.Enabled = true;
+                btnUpdate.Enabled = false;
+            }
         }
     }
 }
