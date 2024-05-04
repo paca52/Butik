@@ -187,6 +187,7 @@
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Ažuriraj";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel4
             // 
@@ -214,6 +215,7 @@
             this.btnRemove.TabIndex = 3;
             this.btnRemove.Text = "Obriši iz dostave";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // frmArtikliDostava
             // 

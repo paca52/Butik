@@ -14,10 +14,6 @@ namespace butik.forms.artikli
         {
             InitializeComponent();
             this.parent = parent;
-        }
-
-        private void frmArtikliDodaj_Load(object sender, EventArgs e)
-        {
             String err = String.Empty;
 
             if (!SQLToolkit.SelectQuery(
@@ -78,24 +74,28 @@ namespace butik.forms.artikli
             }
 
             // artikl.AzurirajKolicinu(Convert.ToInt16(tBoxDostavljenaKolicina.Text));
-            parent.UpdateList(ref artikl);
+            parent.AddToList(ref artikl);
             this.Close();
         }
 
         private void cBoxId_SelectedIndexChanged(object sender, EventArgs e)
         {
+            long id = GetIdFromCombo();
+            LockInputAndPutModel(id);
+        }
+
+        private void LockInputAndPutModel(long id)
+        {
             tBoxKolicina.Enabled = false;
             tBoxCena.Enabled = false;
             tBoxNaziv.Enabled = false;
 
-            long id = GetIdFromCombo();
             ArtiklModel model = new ArtiklModel(id);
-
-            // model.PrintModel();
 
             tBoxKolicina.Text = model.Kolicina.ToString();
             tBoxCena.Text = model.Cena.ToString();
             tBoxNaziv.Text = model.Naziv;
         }
+
     }
 }

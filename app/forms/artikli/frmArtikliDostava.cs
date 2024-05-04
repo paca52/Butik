@@ -9,27 +9,52 @@ namespace butik.forms.artikli
     public partial class frmArtikliDostava : butik.forms.frmEmbeddedTemplate
     {
         private List<ArtiklModel> list = new List<ArtiklModel>();
-
-        public Boolean UpdateList(ref ArtiklModel model)
+        public Boolean UpdateList(long id, int Dostavljena_kolicina)
         {
-            Boolean is_in_list = false;
-            foreach (var item in list)
+
+            int i = list.FindIndex(item => item.Id == id);
+
+            if(i == -1)
             {
-                if (item.Id == model.Id)
-                {
-                    item.Dostavljena_kolicina += model.Dostavljena_kolicina;
-                    is_in_list = true;
-                }
+                MessageBox.Show("Greška pri Ažuriranju!");
+                return false;
             }
 
-            if (is_in_list == false)
-            {
+            list[i].Dostavljena_kolicina = Dostavljena_kolicina;
+
+            RefreshList();
+            return true;
+        }
+
+        public Boolean AddToList(ref ArtiklModel model)
+        {
+            long id = model.Id;
+
+            int i = list.FindIndex(item => item.Id == id);
+
+            if (i != -1)
+                list[i].Dostavljena_kolicina += model.Dostavljena_kolicina;
+            else
                 list.Add(model);
-            }
 
+            RefreshList();
+            return true;
+        }
+
+        protected void RefreshList()
+        {
             dgwItems.DataSource = null;
             dgwItems.DataSource = list;
             dgwItems.Refresh();
+        }
+
+        protected Boolean DeleteFromList(long id)
+        {
+            int i = list.FindIndex(model => model.Id == id);
+
+            if (i == -1) return false;
+
+            list.RemoveAt(i);
             return true;
         }
 
@@ -83,13 +108,7 @@ namespace butik.forms.artikli
         private void dgwItems_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
             long id = Convert.ToInt64(e.Row.Cells[0].Value);
-            foreach (var item in list)
-            {
-                if (item.Id == id)
-                {
-                    list.Remove(item);
-                }
-            }
+            DeleteFromList(id);
         }
 
         private void dgwItems_SelectionChanged(object sender, EventArgs e)
@@ -110,6 +129,37 @@ namespace butik.forms.artikli
                 btnRemove.Enabled = true;
                 btnUpdate.Enabled = false;
             }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show(
+                "Da li ste sigurni da želite da obrišete odabrane artikle iz liste?",
+                "",
+                MessageBoxButtons.YesNo
+            );
+
+            if (res == DialogResult.No) return;
+
+            foreach (DataGridViewRow row in dgwItems.SelectedRows)
+            {
+                long id = Convert.ToInt64(row.Cells[0].Value);
+                DeleteFromList(id);
+            }
+            RefreshList();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            ArtiklModel model = new ArtiklModel(
+                Convert.ToInt64(dgwItems.SelectedRows[0].Cells[0].Value),
+                Convert.ToString(dgwItems.SelectedRows[0].Cells[1].Value),
+                Convert.ToDecimal(dgwItems.SelectedRows[0].Cells[2].Value),
+                Convert.ToInt32(dgwItems.SelectedRows[0].Cells[3].Value),
+                Convert.ToInt32(dgwItems.SelectedRows[0].Cells[4].Value)
+            );
+            PanelHandler.AddForm(new frmArtikliAzuriraj(this, model));
+            PanelHandler.ShowTopForm();
         }
     }
 }

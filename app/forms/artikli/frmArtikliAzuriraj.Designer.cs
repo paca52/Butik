@@ -1,6 +1,6 @@
 ﻿namespace butik.forms.artikli
 {
-    partial class frmArtikliDodaj
+    partial class frmArtikliAzuriraj
     {
         /// <summary>
         /// Required designer variable.
@@ -66,7 +66,6 @@
             this.cBoxId.Name = "cBoxId";
             this.cBoxId.Size = new System.Drawing.Size(532, 29);
             this.cBoxId.TabIndex = 1;
-            this.cBoxId.SelectedIndexChanged += new System.EventHandler(this.cBoxId_SelectedIndexChanged);
             // 
             // tBoxNaziv
             // 
