@@ -45,7 +45,7 @@ namespace butik.forms.artikli
         {
             dgwItems.DataSource = null;
             dgwItems.DataSource = list;
-            DesignTableUtil.design(ref dgwItems);
+            TableUtil.Design(ref dgwItems);
             dgwItems.Refresh();
         }
 

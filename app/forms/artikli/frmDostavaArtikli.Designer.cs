@@ -73,6 +73,7 @@
             // 
             // dgwItems
             // 
+            this.dgwItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwItems.Location = new System.Drawing.Point(41, 149);
             this.dgwItems.Name = "dgwItems";
@@ -219,10 +220,10 @@
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // frmArtikliDostava
+            // frmDostavaArtikli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(709, 531);
+            this.ClientSize = new System.Drawing.Size(747, 521);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -231,7 +232,7 @@
             this.Controls.Add(this.dgwItems);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTable);
-            this.Name = "frmArtikliDostava";
+            this.Name = "frmDostavaArtikli";
             ((System.ComponentModel.ISupportInitialize)(this.dgwItems)).EndInit();
             this.panelExit.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

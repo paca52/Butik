@@ -85,5 +85,67 @@ namespace butik.forms.artikli
         {
             this.Close();
         }
+
+        private void tBoxCena_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            Char key = e.KeyChar;
+            if (Char.IsDigit(key) || Char.IsControl(key)) return;
+            if (key == '.' && tBoxCena.Text.Contains(".") == false) return;
+            e.Handled = true;
+        }
+
+        private void tBoxDostavljenaKolicina_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            Char key = e.KeyChar;
+            if (Char.IsDigit(key) || Char.IsControl(key)) return;
+            e.Handled = true;
+        }
+        
+        protected Boolean ValidateInputFields()
+        {
+            if (tBoxNaziv.Text.Length == 0)
+            {
+                lblNazivGreska.Text = "Polje za naziv ne sme biti prazno!";
+                tBoxNaziv.Focus();
+                return false;
+            }
+            else
+            {
+                lblNazivGreska.Text = "";
+            }
+
+            try
+            {
+                Convert.ToDecimal(tBoxCena.Text);
+                lblCenaGreska.Text = "";
+            }
+            catch
+            {
+                lblCenaGreska.Text = "Nedozvoljena cena!";
+                tBoxCena.Focus();
+                return false;
+            }
+
+            try
+            {
+                Convert.ToInt32(tBoxDostavljenaKolicina.Text);
+                lblDostavljenaKolicinaGreska.Text = "";
+            }
+            catch
+            {
+                lblDostavljenaKolicinaGreska.Text = "Nedozvoljena dostavljena količina!";
+                tBoxDostavljenaKolicina.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private void frmDostavaArtikliTemplate_Load(object sender, EventArgs e)
+        {
+            lblCenaGreska.Text = "";
+            lblDostavljenaKolicinaGreska.Text = "";
+            lblNazivGreska.Text = "";
+        }
     }
 }

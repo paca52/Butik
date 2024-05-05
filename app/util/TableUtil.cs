@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace butik.util
 {
-    internal static class DesignTableUtil
+    internal static class TableUtil
     {
-        public static void design(ref DataGridView dgv)
+        public static void Design(ref DataGridView dgv)
         {
             dgv.BackgroundColor = Color.White;
             dgv.BorderStyle = BorderStyle.None;
@@ -38,7 +38,7 @@ namespace butik.util
 
             foreach(DataGridViewColumn column in dgv.Columns)
             {
-                column.HeaderText = DesignTableUtil.rename(column.Name);
+                column.HeaderText = TableUtil.Rename(column.Name);
             }
 
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
@@ -49,7 +49,7 @@ namespace butik.util
             
         }
 
-        private static string rename(string name)
+        private static string Rename(string name)
         {
             if(name == "kolicina") { return "Količina"; }
             string s = "";

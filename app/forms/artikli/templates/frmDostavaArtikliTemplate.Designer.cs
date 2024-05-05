@@ -43,6 +43,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblCenaGreska = new System.Windows.Forms.Label();
+            this.lblDostavljenaKolicinaGreska = new System.Windows.Forms.Label();
+            this.lblNazivGreska = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +55,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label1.Location = new System.Drawing.Point(87, 102);
+            this.label1.Location = new System.Drawing.Point(98, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 17);
             this.label1.TabIndex = 0;
@@ -60,26 +63,27 @@
             // 
             // cBoxId
             // 
+            this.cBoxId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.cBoxId.FormattingEnabled = true;
-            this.cBoxId.Location = new System.Drawing.Point(90, 123);
+            this.cBoxId.Location = new System.Drawing.Point(101, 123);
             this.cBoxId.Name = "cBoxId";
             this.cBoxId.Size = new System.Drawing.Size(532, 29);
-            this.cBoxId.TabIndex = 1;
+            this.cBoxId.TabIndex = 0;
             this.cBoxId.SelectedIndexChanged += new System.EventHandler(this.cBoxId_SelectedIndexChanged);
             // 
             // tBoxNaziv
             // 
             this.tBoxNaziv.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tBoxNaziv.Location = new System.Drawing.Point(90, 192);
+            this.tBoxNaziv.Location = new System.Drawing.Point(101, 192);
             this.tBoxNaziv.Name = "tBoxNaziv";
             this.tBoxNaziv.Size = new System.Drawing.Size(532, 29);
-            this.tBoxNaziv.TabIndex = 2;
+            this.tBoxNaziv.TabIndex = 1;
             // 
             // tBoxKolicina
             // 
             this.tBoxKolicina.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tBoxKolicina.Location = new System.Drawing.Point(91, 266);
+            this.tBoxKolicina.Location = new System.Drawing.Point(102, 266);
             this.tBoxKolicina.Name = "tBoxKolicina";
             this.tBoxKolicina.ReadOnly = true;
             this.tBoxKolicina.Size = new System.Drawing.Size(258, 29);
@@ -89,17 +93,18 @@
             // tBoxCena
             // 
             this.tBoxCena.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tBoxCena.Location = new System.Drawing.Point(90, 332);
+            this.tBoxCena.Location = new System.Drawing.Point(101, 332);
             this.tBoxCena.Name = "tBoxCena";
             this.tBoxCena.Size = new System.Drawing.Size(532, 29);
-            this.tBoxCena.TabIndex = 4;
+            this.tBoxCena.TabIndex = 3;
+            this.tBoxCena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxCena_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(87, 171);
+            this.label2.Location = new System.Drawing.Point(98, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 5;
@@ -110,7 +115,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Location = new System.Drawing.Point(87, 245);
+            this.label3.Location = new System.Drawing.Point(98, 245);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(166, 17);
             this.label3.TabIndex = 6;
@@ -121,7 +126,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label4.Location = new System.Drawing.Point(87, 311);
+            this.label4.Location = new System.Drawing.Point(98, 311);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 7;
@@ -132,7 +137,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label5.Location = new System.Drawing.Point(360, 245);
+            this.label5.Location = new System.Drawing.Point(371, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(179, 17);
             this.label5.TabIndex = 11;
@@ -141,10 +146,11 @@
             // tBoxDostavljenaKolicina
             // 
             this.tBoxDostavljenaKolicina.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tBoxDostavljenaKolicina.Location = new System.Drawing.Point(364, 266);
+            this.tBoxDostavljenaKolicina.Location = new System.Drawing.Point(375, 266);
             this.tBoxDostavljenaKolicina.Name = "tBoxDostavljenaKolicina";
             this.tBoxDostavljenaKolicina.Size = new System.Drawing.Size(258, 29);
-            this.tBoxDostavljenaKolicina.TabIndex = 10;
+            this.tBoxDostavljenaKolicina.TabIndex = 2;
+            this.tBoxDostavljenaKolicina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxDostavljenaKolicina_KeyPress);
             // 
             // panel3
             // 
@@ -152,10 +158,10 @@
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(474, 445);
+            this.panel3.Location = new System.Drawing.Point(485, 445);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 44);
-            this.panel3.TabIndex = 12;
+            this.panel3.TabIndex = 4;
             // 
             // btnAdd
             // 
@@ -168,7 +174,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdd.Size = new System.Drawing.Size(153, 62);
-            this.btnAdd.TabIndex = 3;
+            this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
@@ -178,10 +184,10 @@
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(92, 445);
+            this.panel1.Location = new System.Drawing.Point(103, 445);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(149, 44);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 5;
             // 
             // btnExit
             // 
@@ -194,7 +200,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(189, 62);
-            this.btnExit.TabIndex = 3;
+            this.btnExit.TabIndex = 0;
             this.btnExit.Text = "Izlaz";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -204,16 +210,55 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(83, 34);
+            this.label6.Location = new System.Drawing.Point(94, 34);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 37);
             this.label6.TabIndex = 13;
             this.label6.Text = "ARTIKL";
             // 
+            // lblCenaGreska
+            // 
+            this.lblCenaGreska.AutoSize = true;
+            this.lblCenaGreska.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCenaGreska.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblCenaGreska.Location = new System.Drawing.Point(100, 364);
+            this.lblCenaGreska.MaximumSize = new System.Drawing.Size(258, 0);
+            this.lblCenaGreska.Name = "lblCenaGreska";
+            this.lblCenaGreska.Size = new System.Drawing.Size(30, 13);
+            this.lblCenaGreska.TabIndex = 14;
+            this.lblCenaGreska.Text = "here";
+            // 
+            // lblDostavljenaKolicinaGreska
+            // 
+            this.lblDostavljenaKolicinaGreska.AutoSize = true;
+            this.lblDostavljenaKolicinaGreska.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDostavljenaKolicinaGreska.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblDostavljenaKolicinaGreska.Location = new System.Drawing.Point(372, 298);
+            this.lblDostavljenaKolicinaGreska.MaximumSize = new System.Drawing.Size(258, 0);
+            this.lblDostavljenaKolicinaGreska.Name = "lblDostavljenaKolicinaGreska";
+            this.lblDostavljenaKolicinaGreska.Size = new System.Drawing.Size(30, 13);
+            this.lblDostavljenaKolicinaGreska.TabIndex = 15;
+            this.lblDostavljenaKolicinaGreska.Text = "here";
+            // 
+            // lblNazivGreska
+            // 
+            this.lblNazivGreska.AutoSize = true;
+            this.lblNazivGreska.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNazivGreska.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblNazivGreska.Location = new System.Drawing.Point(100, 224);
+            this.lblNazivGreska.MaximumSize = new System.Drawing.Size(258, 0);
+            this.lblNazivGreska.Name = "lblNazivGreska";
+            this.lblNazivGreska.Size = new System.Drawing.Size(30, 13);
+            this.lblNazivGreska.TabIndex = 16;
+            this.lblNazivGreska.Text = "here";
+            // 
             // frmDostavaArtikliTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(709, 531);
+            this.ClientSize = new System.Drawing.Size(747, 521);
+            this.Controls.Add(this.lblNazivGreska);
+            this.Controls.Add(this.lblDostavljenaKolicinaGreska);
+            this.Controls.Add(this.lblCenaGreska);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -228,6 +273,7 @@
             this.Controls.Add(this.cBoxId);
             this.Controls.Add(this.label1);
             this.Name = "frmDostavaArtikliTemplate";
+            this.Load += new System.EventHandler(this.frmDostavaArtikliTemplate_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -252,5 +298,8 @@
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Button btnExit;
         protected System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblCenaGreska;
+        private System.Windows.Forms.Label lblDostavljenaKolicinaGreska;
+        private System.Windows.Forms.Label lblNazivGreska;
     }
 }
