@@ -49,6 +49,10 @@ namespace butik.util
 
         public static Boolean EmptyFormStack()
         {
+            foreach(Form f in formStack)
+            {
+                f.Dispose();
+            }
             formStack.Clear();
             return true;
         }
