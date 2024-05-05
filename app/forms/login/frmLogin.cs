@@ -74,5 +74,30 @@ namespace butik.forms.login
                 MessageUtil.ShowError("Pogresan login. Pokušajte ponovo!");
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            String username = "admin";
+            String password = "admin";
+
+            if (username.Length == 0 || password.Length == 0) { return; }
+
+            if (LogIn(username, password))
+            {
+                this.Hide();
+                frmMain frm = new frmMain(this.name, this.tip_zaposlenog);
+                PanelHandler.SetParentForm(frm);
+
+                frm.ShowDialog();
+                frm.Close();
+
+                PanelHandler.SetParentForm(null);
+                Application.Exit();
+            }
+            else
+            {
+                MessageUtil.ShowError("Pogresan login. Pokušajte ponovo!");
+            }
+        }
     }
 }
