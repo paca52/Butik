@@ -54,7 +54,7 @@ namespace butik.forms.zaposleni
             {
                 return;
             }
-            DesignTableUtil.Design(ref dgvZaposleni);
+            TableUtil.Design(ref dgvZaposleni);
         }
 
         private void frmZaposleniIndex_Click(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace butik.forms.zaposleni
             dgvZaposleni.Enabled = true;
             dgvZaposleni.Visible = true;
             LoadTable(ref dgvZaposleni, "SELECT jmbg,ime,prezime,kategorija,datum_zaposlenja,satnica,broj_radnih_sati,premija,broj_slobodnih_dana FROM table_zaposleni");
-            DesignTableUtil.Design(ref dgvZaposleni);
+            TableUtil.Design(ref dgvZaposleni);
         }
 
         private void button5_Click(object sender, EventArgs e)

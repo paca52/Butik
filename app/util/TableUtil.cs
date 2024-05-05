@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace butik.util
 {
-    internal static class DesignTableUtil
+    internal static class TableUtil
     {
         public static void Design(ref DataGridView dgv)
         {
@@ -38,7 +38,7 @@ namespace butik.util
 
             foreach(DataGridViewColumn column in dgv.Columns)
             {
-                column.HeaderText = DesignTableUtil.Rename(column.Name);
+                column.HeaderText = TableUtil.Rename(column.Name);
             }
 
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
