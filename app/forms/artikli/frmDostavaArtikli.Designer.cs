@@ -54,7 +54,7 @@
             this.lblTable.AutoSize = true;
             this.lblTable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTable.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblTable.Location = new System.Drawing.Point(41, 124);
+            this.lblTable.Location = new System.Drawing.Point(61, 124);
             this.lblTable.Name = "lblTable";
             this.lblTable.Size = new System.Drawing.Size(148, 21);
             this.lblTable.TabIndex = 4;
@@ -65,7 +65,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(38, 35);
+            this.label1.Location = new System.Drawing.Point(58, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 37);
             this.label1.TabIndex = 5;
@@ -73,10 +73,13 @@
             // 
             // dgwItems
             // 
+            this.dgwItems.AllowUserToAddRows = false;
+            this.dgwItems.AllowUserToDeleteRows = false;
             this.dgwItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwItems.Location = new System.Drawing.Point(41, 149);
+            this.dgwItems.Location = new System.Drawing.Point(61, 149);
             this.dgwItems.Name = "dgwItems";
+            this.dgwItems.ReadOnly = true;
             this.dgwItems.Size = new System.Drawing.Size(615, 258);
             this.dgwItems.TabIndex = 6;
             this.dgwItems.SelectionChanged += new System.EventHandler(this.dgwItems_SelectionChanged);
@@ -88,7 +91,7 @@
             this.panelExit.Controls.Add(this.btnExit);
             this.panelExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelExit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panelExit.Location = new System.Drawing.Point(40, 447);
+            this.panelExit.Location = new System.Drawing.Point(60, 447);
             this.panelExit.Name = "panelExit";
             this.panelExit.Size = new System.Drawing.Size(149, 44);
             this.panelExit.TabIndex = 13;
@@ -115,7 +118,7 @@
             this.panel3.Controls.Add(this.btnConfirm);
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(507, 447);
+            this.panel3.Location = new System.Drawing.Point(527, 447);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 44);
             this.panel3.TabIndex = 14;
@@ -142,7 +145,7 @@
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(507, 91);
+            this.panel1.Location = new System.Drawing.Point(527, 91);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(149, 44);
             this.panel1.TabIndex = 15;
@@ -169,7 +172,7 @@
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(352, 447);
+            this.panel2.Location = new System.Drawing.Point(372, 447);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(149, 44);
             this.panel2.TabIndex = 15;
@@ -197,7 +200,7 @@
             this.panel4.Controls.Add(this.btnRemove);
             this.panel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Location = new System.Drawing.Point(197, 447);
+            this.panel4.Location = new System.Drawing.Point(217, 447);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(149, 44);
             this.panel4.TabIndex = 16;
