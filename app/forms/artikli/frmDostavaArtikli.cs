@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace butik.forms.artikli
 {
-    public partial class frmArtikliDostava : butik.forms.frmEmbeddedTemplate
+    public partial class frmDostavaArtikli : butik.forms.frmEmbeddedTemplate
     {
         private List<ArtiklModel> list = new List<ArtiklModel>();
         public Boolean UpdateList(long id, int Dostavljena_kolicina)
@@ -58,7 +58,7 @@ namespace butik.forms.artikli
             return true;
         }
 
-        public frmArtikliDostava()
+        public frmDostavaArtikli()
         {
             InitializeComponent();
             list.Clear();
@@ -72,7 +72,7 @@ namespace butik.forms.artikli
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            PanelHandler.AddForm(new frmArtikliDodaj(this));
+            PanelHandler.AddForm(new frmDostavaArtikliDodaj(this));
             PanelHandler.ShowTopForm();
         }
 
@@ -157,7 +157,7 @@ namespace butik.forms.artikli
                 Convert.ToInt32(dgwItems.SelectedRows[0].Cells[3].Value),
                 Convert.ToInt32(dgwItems.SelectedRows[0].Cells[4].Value)
             );
-            PanelHandler.AddForm(new frmArtikliAzuriraj(this, model));
+            PanelHandler.AddForm(new frmDostavaArtikliAzuriraj(this, model));
             PanelHandler.ShowTopForm();
         }
     }

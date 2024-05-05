@@ -35,9 +35,12 @@
             this.btnDostava = new System.Windows.Forms.Button();
             this.lblTile = new System.Windows.Forms.Label();
             this.lblTable = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwArtikli)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgwArtikli
@@ -45,11 +48,12 @@
             this.dgwArtikli.AllowUserToAddRows = false;
             this.dgwArtikli.AllowUserToDeleteRows = false;
             this.dgwArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwArtikli.Location = new System.Drawing.Point(48, 117);
+            this.dgwArtikli.Location = new System.Drawing.Point(43, 117);
             this.dgwArtikli.Name = "dgwArtikli";
             this.dgwArtikli.ReadOnly = true;
-            this.dgwArtikli.Size = new System.Drawing.Size(605, 278);
+            this.dgwArtikli.Size = new System.Drawing.Size(615, 278);
             this.dgwArtikli.TabIndex = 0;
+            this.dgwArtikli.SelectionChanged += new System.EventHandler(this.dgwArtikli_SelectionChanged);
             // 
             // panel1
             // 
@@ -57,7 +61,7 @@
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(48, 441);
+            this.panel1.Location = new System.Drawing.Point(43, 441);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(149, 44);
             this.panel1.TabIndex = 15;
@@ -84,7 +88,7 @@
             this.panel3.Controls.Add(this.btnDostava);
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(504, 441);
+            this.panel3.Location = new System.Drawing.Point(509, 441);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 44);
             this.panel3.TabIndex = 16;
@@ -127,10 +131,39 @@
             this.lblTable.TabIndex = 18;
             this.lblTable.Text = "Artikli";
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Location = new System.Drawing.Point(353, 441);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(149, 44);
+            this.panel2.TabIndex = 19;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(46)))), ((int)(((byte)(54)))));
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(-11, -9);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnUpdate.Size = new System.Drawing.Size(166, 62);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Ažuriraj";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // frmArtikliIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(709, 531);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblTable);
             this.Controls.Add(this.lblTile);
             this.Controls.Add(this.panel1);
@@ -141,6 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgwArtikli)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +189,7 @@
         protected System.Windows.Forms.Button btnDostava;
         private System.Windows.Forms.Label lblTile;
         private System.Windows.Forms.Label lblTable;
+        protected System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Button btnUpdate;
     }
 }

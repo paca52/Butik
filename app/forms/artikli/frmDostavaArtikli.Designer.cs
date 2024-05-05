@@ -1,6 +1,6 @@
 ﻿namespace butik.forms.artikli
 {
-    partial class frmArtikliDostava
+    partial class frmDostavaArtikli
     {
         /// <summary>
         /// Required designer variable.
