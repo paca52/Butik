@@ -49,7 +49,7 @@
             this.dgwArtikli.AllowUserToDeleteRows = false;
             this.dgwArtikli.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwArtikli.Location = new System.Drawing.Point(43, 131);
+            this.dgwArtikli.Location = new System.Drawing.Point(63, 131);
             this.dgwArtikli.Name = "dgwArtikli";
             this.dgwArtikli.ReadOnly = true;
             this.dgwArtikli.Size = new System.Drawing.Size(615, 278);
@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(43, 441);
+            this.panel1.Location = new System.Drawing.Point(63, 441);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(149, 44);
             this.panel1.TabIndex = 15;
@@ -89,7 +89,7 @@
             this.panel3.Controls.Add(this.btnDostava);
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(509, 441);
+            this.panel3.Location = new System.Drawing.Point(529, 441);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 44);
             this.panel3.TabIndex = 16;
@@ -115,7 +115,7 @@
             this.lblTile.AutoSize = true;
             this.lblTile.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTile.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTile.Location = new System.Drawing.Point(36, 39);
+            this.lblTile.Location = new System.Drawing.Point(56, 39);
             this.lblTile.Name = "lblTile";
             this.lblTile.Size = new System.Drawing.Size(119, 37);
             this.lblTile.TabIndex = 17;
@@ -126,7 +126,7 @@
             this.lblTable.AutoSize = true;
             this.lblTable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTable.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblTable.Location = new System.Drawing.Point(39, 107);
+            this.lblTable.Location = new System.Drawing.Point(59, 107);
             this.lblTable.Name = "lblTable";
             this.lblTable.Size = new System.Drawing.Size(57, 21);
             this.lblTable.TabIndex = 18;
@@ -138,7 +138,7 @@
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(353, 441);
+            this.panel2.Location = new System.Drawing.Point(373, 441);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(149, 44);
             this.panel2.TabIndex = 19;
