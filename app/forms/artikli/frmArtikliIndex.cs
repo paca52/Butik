@@ -16,6 +16,7 @@ namespace butik.forms.artikli
             if (!LoadTable(ref dgwArtikli, "SELECT * FROM table_artikli"))
                 MessageUtil.ShowError("Greška pri učitavanju tabele!");
             TableUtil.Design(ref dgwArtikli);
+            // dgwArtikli.C
         }
 
         private void btnDostava_Click(object sender, EventArgs e)

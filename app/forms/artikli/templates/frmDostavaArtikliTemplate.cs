@@ -85,5 +85,10 @@ namespace butik.forms.artikli
         {
             this.Close();
         }
+
+        private void tBoxCena_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar)) e.Handled = true;
+        }
     }
 }

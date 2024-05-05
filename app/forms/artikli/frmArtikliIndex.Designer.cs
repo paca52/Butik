@@ -47,11 +47,12 @@
             // 
             this.dgwArtikli.AllowUserToAddRows = false;
             this.dgwArtikli.AllowUserToDeleteRows = false;
+            this.dgwArtikli.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwArtikli.Location = new System.Drawing.Point(157, 131);
+            this.dgwArtikli.Location = new System.Drawing.Point(43, 131);
             this.dgwArtikli.Name = "dgwArtikli";
             this.dgwArtikli.ReadOnly = true;
-            this.dgwArtikli.Size = new System.Drawing.Size(421, 278);
+            this.dgwArtikli.Size = new System.Drawing.Size(615, 278);
             this.dgwArtikli.TabIndex = 0;
             this.dgwArtikli.SelectionChanged += new System.EventHandler(this.dgwArtikli_SelectionChanged);
             // 
@@ -114,7 +115,7 @@
             this.lblTile.AutoSize = true;
             this.lblTile.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTile.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTile.Location = new System.Drawing.Point(311, 39);
+            this.lblTile.Location = new System.Drawing.Point(36, 39);
             this.lblTile.Name = "lblTile";
             this.lblTile.Size = new System.Drawing.Size(119, 37);
             this.lblTile.TabIndex = 17;
@@ -125,7 +126,7 @@
             this.lblTable.AutoSize = true;
             this.lblTable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTable.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblTable.Location = new System.Drawing.Point(339, 89);
+            this.lblTable.Location = new System.Drawing.Point(39, 107);
             this.lblTable.Name = "lblTable";
             this.lblTable.Size = new System.Drawing.Size(57, 21);
             this.lblTable.TabIndex = 18;

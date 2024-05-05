@@ -35,11 +35,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(105)))), ((int)(((byte)(117)))));
-            this.ClientSize = new System.Drawing.Size(709, 531);
+            this.ClientSize = new System.Drawing.Size(747, 531);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEmbeddedTemplate";
             this.Text = "frmEmbededTemplate";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEmbeddedTemplate_FormClosed);
+            this.Load += new System.EventHandler(this.frmEmbeddedTemplate_Load);
             this.ResumeLayout(false);
 
         }

@@ -47,5 +47,10 @@ namespace butik.forms
         {
             this.Close();
         }
+
+        private void frmEmbeddedTemplate_Load(object sender, EventArgs e)
+        {
+            this.Size = new Size(747, 531);
+        }
     }
 }
