@@ -1,14 +1,6 @@
 ﻿using butik.models;
 using butik.util;
-using SQLToolkitNS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace butik.forms.artikli
 {
@@ -23,6 +15,8 @@ namespace butik.forms.artikli
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (ValidateInputFields() == false) return;
+
             long id = GetIdFromCombo();
             ArtiklModel artikl;
 

@@ -41,5 +41,10 @@ namespace butik.forms.artikli
             PanelHandler.AddForm(new frmArtikliIndex());
             PanelHandler.ShowTopForm();
         }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

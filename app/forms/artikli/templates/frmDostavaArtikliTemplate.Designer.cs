@@ -43,6 +43,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblCenaGreska = new System.Windows.Forms.Label();
+            this.lblDostavljenaKolicinaGreska = new System.Windows.Forms.Label();
+            this.lblNazivGreska = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +69,7 @@
             this.cBoxId.Location = new System.Drawing.Point(101, 123);
             this.cBoxId.Name = "cBoxId";
             this.cBoxId.Size = new System.Drawing.Size(532, 29);
-            this.cBoxId.TabIndex = 1;
+            this.cBoxId.TabIndex = 0;
             this.cBoxId.SelectedIndexChanged += new System.EventHandler(this.cBoxId_SelectedIndexChanged);
             // 
             // tBoxNaziv
@@ -75,7 +78,7 @@
             this.tBoxNaziv.Location = new System.Drawing.Point(101, 192);
             this.tBoxNaziv.Name = "tBoxNaziv";
             this.tBoxNaziv.Size = new System.Drawing.Size(532, 29);
-            this.tBoxNaziv.TabIndex = 2;
+            this.tBoxNaziv.TabIndex = 1;
             // 
             // tBoxKolicina
             // 
@@ -93,7 +96,7 @@
             this.tBoxCena.Location = new System.Drawing.Point(101, 332);
             this.tBoxCena.Name = "tBoxCena";
             this.tBoxCena.Size = new System.Drawing.Size(532, 29);
-            this.tBoxCena.TabIndex = 4;
+            this.tBoxCena.TabIndex = 3;
             this.tBoxCena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxCena_KeyPress);
             // 
             // label2
@@ -146,7 +149,8 @@
             this.tBoxDostavljenaKolicina.Location = new System.Drawing.Point(375, 266);
             this.tBoxDostavljenaKolicina.Name = "tBoxDostavljenaKolicina";
             this.tBoxDostavljenaKolicina.Size = new System.Drawing.Size(258, 29);
-            this.tBoxDostavljenaKolicina.TabIndex = 10;
+            this.tBoxDostavljenaKolicina.TabIndex = 2;
+            this.tBoxDostavljenaKolicina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxDostavljenaKolicina_KeyPress);
             // 
             // panel3
             // 
@@ -157,7 +161,7 @@
             this.panel3.Location = new System.Drawing.Point(485, 445);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 44);
-            this.panel3.TabIndex = 12;
+            this.panel3.TabIndex = 4;
             // 
             // btnAdd
             // 
@@ -170,7 +174,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAdd.Size = new System.Drawing.Size(153, 62);
-            this.btnAdd.TabIndex = 3;
+            this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
@@ -183,7 +187,7 @@
             this.panel1.Location = new System.Drawing.Point(103, 445);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(149, 44);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 5;
             // 
             // btnExit
             // 
@@ -196,7 +200,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(189, 62);
-            this.btnExit.TabIndex = 3;
+            this.btnExit.TabIndex = 0;
             this.btnExit.Text = "Izlaz";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -212,10 +216,49 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "ARTIKL";
             // 
+            // lblCenaGreska
+            // 
+            this.lblCenaGreska.AutoSize = true;
+            this.lblCenaGreska.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCenaGreska.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblCenaGreska.Location = new System.Drawing.Point(100, 364);
+            this.lblCenaGreska.MaximumSize = new System.Drawing.Size(258, 0);
+            this.lblCenaGreska.Name = "lblCenaGreska";
+            this.lblCenaGreska.Size = new System.Drawing.Size(30, 13);
+            this.lblCenaGreska.TabIndex = 14;
+            this.lblCenaGreska.Text = "here";
+            // 
+            // lblDostavljenaKolicinaGreska
+            // 
+            this.lblDostavljenaKolicinaGreska.AutoSize = true;
+            this.lblDostavljenaKolicinaGreska.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDostavljenaKolicinaGreska.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblDostavljenaKolicinaGreska.Location = new System.Drawing.Point(372, 298);
+            this.lblDostavljenaKolicinaGreska.MaximumSize = new System.Drawing.Size(258, 0);
+            this.lblDostavljenaKolicinaGreska.Name = "lblDostavljenaKolicinaGreska";
+            this.lblDostavljenaKolicinaGreska.Size = new System.Drawing.Size(30, 13);
+            this.lblDostavljenaKolicinaGreska.TabIndex = 15;
+            this.lblDostavljenaKolicinaGreska.Text = "here";
+            // 
+            // lblNazivGreska
+            // 
+            this.lblNazivGreska.AutoSize = true;
+            this.lblNazivGreska.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNazivGreska.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblNazivGreska.Location = new System.Drawing.Point(100, 224);
+            this.lblNazivGreska.MaximumSize = new System.Drawing.Size(258, 0);
+            this.lblNazivGreska.Name = "lblNazivGreska";
+            this.lblNazivGreska.Size = new System.Drawing.Size(30, 13);
+            this.lblNazivGreska.TabIndex = 16;
+            this.lblNazivGreska.Text = "here";
+            // 
             // frmDostavaArtikliTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(747, 521);
+            this.Controls.Add(this.lblNazivGreska);
+            this.Controls.Add(this.lblDostavljenaKolicinaGreska);
+            this.Controls.Add(this.lblCenaGreska);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -230,6 +273,7 @@
             this.Controls.Add(this.cBoxId);
             this.Controls.Add(this.label1);
             this.Name = "frmDostavaArtikliTemplate";
+            this.Load += new System.EventHandler(this.frmDostavaArtikliTemplate_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -254,5 +298,8 @@
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Button btnExit;
         protected System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblCenaGreska;
+        private System.Windows.Forms.Label lblDostavljenaKolicinaGreska;
+        private System.Windows.Forms.Label lblNazivGreska;
     }
 }

@@ -223,7 +223,7 @@
             // frmDostavaArtikli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(709, 531);
+            this.ClientSize = new System.Drawing.Size(747, 521);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
