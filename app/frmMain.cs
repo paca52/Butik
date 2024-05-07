@@ -1,4 +1,5 @@
 ﻿using butik.forms;
+using butik.forms.dashboard;
 using butik.forms.artikli;
 using butik.forms.login;
 using butik.forms.zaposleni;
@@ -56,6 +57,16 @@ namespace butik
             PanelHandler.EmptyFormStack();
             PanelHandler.AddForm(new frmArtikliIndex());
             PanelHandler.ShowTopForm();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            showForm(new frmDashboard());
         }
     }
 }
