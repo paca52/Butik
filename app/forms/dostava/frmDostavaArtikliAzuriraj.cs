@@ -8,7 +8,7 @@ namespace butik.forms.artikli
     {
         ArtiklModel model;
 
-        public frmDostavaArtikliAzuriraj(frmDostavaArtikli parent, ArtiklModel model) : base(parent)
+        public frmDostavaArtikliAzuriraj(frmDostavaIndex parent, ArtiklModel model) : base(parent)
         {
             InitializeComponent();
             this.model = model;

@@ -6,17 +6,17 @@ using System.Data.SqlClient;
 
 namespace butik.forms.artikli
 {
-    public partial class frmDostavaArtikliTemplate : butik.forms.frmEmbeddedTemplate
+    public partial class frmProdajaArtikliTemplate : butik.forms.frmEmbeddedTemplate
     {
         protected frmDostavaArtikli parent;
 
         [Obsolete("Designer only", true)]
-        public frmDostavaArtikliTemplate()
+        public frmProdajaArtikliTemplate()
         {
             InitializeComponent();
         }
 
-        public frmDostavaArtikliTemplate(frmDostavaArtikli parent)
+        public frmProdajaArtikliTemplate(frmDostavaArtikli parent)
         {
             InitializeComponent();
             this.parent = parent;

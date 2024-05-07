@@ -4,9 +4,9 @@ using System;
 
 namespace butik.forms.artikli
 {
-    public partial class frmDostavaArtikliDodaj : butik.forms.artikli.frmDostavaArtikliTemplate
+    public partial class frmProdajaArtikliDodaj : butik.forms.artikli.frmDostavaArtikliTemplate
     {
-        public frmDostavaArtikliDodaj(frmDostavaArtikli parent) : base(parent)
+        public frmProdajaArtikliDodaj(frmProdajaIndex parent) : base(parent)
         {
             InitializeComponent();
             this.parent = parent;

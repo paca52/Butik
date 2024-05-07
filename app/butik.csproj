@@ -52,22 +52,22 @@
     <Compile Include="forms\artikli\frmArtikliUpdate.Designer.cs">
       <DependentUpon>frmArtikliUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\artikli\frmDostavaArtikliAzuriraj.cs">
+    <Compile Include="forms\dostava\frmDostavaArtikliAzuriraj.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\artikli\frmDostavaArtikliAzuriraj.Designer.cs">
+    <Compile Include="forms\dostava\frmDostavaArtikliAzuriraj.Designer.cs">
       <DependentUpon>frmDostavaArtikliAzuriraj.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\artikli\frmDostavaArtikli.cs">
+    <Compile Include="forms\dostava\frmDostavaIndex.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\artikli\frmDostavaArtikli.Designer.cs">
-      <DependentUpon>frmDostavaArtikli.cs</DependentUpon>
+    <Compile Include="forms\dostava\frmDostavaIndex.Designer.cs">
+      <DependentUpon>frmDostavaIndex.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\artikli\frmDostavaArtikliDodaj.cs">
+    <Compile Include="forms\dostava\frmDostavaArtikliDodaj.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\artikli\frmDostavaArtikliDodaj.Designer.cs">
+    <Compile Include="forms\dostava\frmDostavaArtikliDodaj.Designer.cs">
       <DependentUpon>frmDostavaArtikliDodaj.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\artikli\frmArtikliIndex.cs">
@@ -82,10 +82,10 @@
     <Compile Include="forms\artikli\templates\frmArtikliTemplate.Designer.cs">
       <DependentUpon>frmArtikliTemplate.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\artikli\templates\frmDostavaArtikliTemplate.cs">
+    <Compile Include="forms\dostava\templates\frmDostavaArtikliTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\artikli\templates\frmDostavaArtikliTemplate.Designer.cs">
+    <Compile Include="forms\dostava\templates\frmDostavaArtikliTemplate.Designer.cs">
       <DependentUpon>frmDostavaArtikliTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\login\frmLoginEmbedded.cs">
@@ -142,13 +142,13 @@
     <EmbeddedResource Include="forms\artikli\frmArtikliUpdate.resx">
       <DependentUpon>frmArtikliUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\artikli\frmDostavaArtikliAzuriraj.resx">
+    <EmbeddedResource Include="forms\dostava\frmDostavaArtikliAzuriraj.resx">
       <DependentUpon>frmDostavaArtikliAzuriraj.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\artikli\frmDostavaArtikli.resx">
-      <DependentUpon>frmDostavaArtikli.cs</DependentUpon>
+    <EmbeddedResource Include="forms\dostava\frmDostavaIndex.resx">
+      <DependentUpon>frmDostavaIndex.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\artikli\frmDostavaArtikliDodaj.resx">
+    <EmbeddedResource Include="forms\dostava\frmDostavaArtikliDodaj.resx">
       <DependentUpon>frmDostavaArtikliDodaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\artikli\frmArtikliIndex.resx">
@@ -157,7 +157,7 @@
     <EmbeddedResource Include="forms\artikli\templates\frmArtikliTemplate.resx">
       <DependentUpon>frmArtikliTemplate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\artikli\templates\frmDostavaArtikliTemplate.resx">
+    <EmbeddedResource Include="forms\dostava\templates\frmDostavaArtikliTemplate.resx">
       <DependentUpon>frmDostavaArtikliTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\login\frmLogin.resx">

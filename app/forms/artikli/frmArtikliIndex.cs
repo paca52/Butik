@@ -21,7 +21,7 @@ namespace butik.forms.artikli
 
         private void btnDostava_Click(object sender, EventArgs e)
         {
-            PanelHandler.AddForm(new frmDostavaArtikli());
+            PanelHandler.AddForm(new frmDostavaIndex());
             PanelHandler.ShowTopForm();
         }
 
