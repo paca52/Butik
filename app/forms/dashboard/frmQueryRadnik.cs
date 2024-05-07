@@ -27,10 +27,12 @@ namespace butik.forms.dashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            datumOd = dateTimePicker1.Value.ToString();
-            datumDo = dateTimePicker2.Value.ToString();
+            datumOd = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            datumDo = dateTimePicker2.Value.ToString("yyyy-MM-dd");
             jmbg = textBox1.Text;
             this.Close();
         }
+
+        
     }
 }

@@ -51,6 +51,35 @@ namespace butik.forms.dashboard
             chart.ChartAreas[0].AxisX.Interval = 1;
         }
 
+        public void LoadPieChart(string sql, Chart chart, String title, String xValue, String yValue)
+        {
+            DataSet ds = new DataSet();
+            string err = String.Empty;
+            SQLToolkit.SelectQuery(sql, ref ds, ref err);
+
+            if (!string.IsNullOrEmpty(err))
+            {
+                MessageBox.Show("Error loading data: " + err, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DataTable firstTable = ds.Tables[0];
+
+            // Create series
+            Series series = new Series();
+            series.ChartType = SeriesChartType.Pie;
+
+            chart.Series.Clear(); // Clear existing series to avoid duplication
+            chart.Series.Add(series);
+
+            // Set the data source
+            chart.DataSource = firstTable;
+
+            // Customize chart appearance
+            chart.Titles.Clear(); // Clear existing titles to avoid duplication
+            chart.Titles.Add(title);
+        }
+
         private void frmDashboard_Load(object sender, EventArgs e)
         {
 
@@ -81,19 +110,28 @@ namespace butik.forms.dashboard
             String dateFrom = frmQueryRadnik.datumOd;
             String dateTo = frmQueryRadnik.datumDo;
             
-            String sql = "SELECT z.ime, z.prezime, z.broj_radnih_sati AS HoursWorked, SUM(rh.ukupna_cena) AS TotalSales " +
+
+            String sql = "SELECT z.ime, z.prezime, rh.datum AS SalesDate, COUNT(*) AS ItemsSold " +
             "FROM table_zaposleni z " +
             "JOIN table_racun_header rh ON z.jmbg = rh.id_zaposleni " +
-            "WHERE z.ime = @ime AND z.prezime = @prezime AND rh.datum BETWEEN @dateFrom AND @dateTo " +
-            "GROUP BY z.ime, z.prezime " +
-            "ORDER BY TotalSales DESC;";
-            LoadChartData(sql, chart1, "Performanse radnika", "HoursWorked", "TotalSales");
+            "WHERE z.jmbg = '" + jmbg + "' AND rh.datum BETWEEN '" + dateFrom + "' AND '" + dateTo +
+            "' GROUP BY z.ime, z.prezime, rh.datum" +
+            " ORDER BY rh.datum DESC;";
+            MessageBox.Show(sql);
+            LoadChartData(sql, chart1, "Performanse radnika", "Datumi", "Prodaje");
 
 
         }
         private void button3_Click(object sender, EventArgs e)
         {
-
+            String sql = "SELECT d.dostavljac AS Supplier," +
+                "    SUM(d.kolicina_artikla) AS TotalGoods, " +
+                "SUM(d.kolicina_artikla) * 100.0 / (SELECT SUM(kolicina_artikla) " +
+                "FROM table_dostava) AS Percentage " +
+                "FROM table_dostava d " +
+                "GROUP BY d.dostavljac;";
+            MessageBox.Show(sql);
+            LoadChartData(sql, chart1, "Performanse radnika", "Datumi", "Prodaje");
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -110,5 +148,7 @@ namespace butik.forms.dashboard
         {
             
         }
+
+        
     }
 }
