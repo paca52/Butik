@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\dashboard\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\dashboard\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\dashboard\frmQueryDatumProdaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\dashboard\frmQueryDatumProdaje.Designer.cs">
+      <DependentUpon>frmQueryDatumProdaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\dashboard\frmQueryRadnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\dashboard\frmQueryRadnik.Designer.cs">
+      <DependentUpon>frmQueryRadnik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\dashboard\queryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\dashboard\queryForm.Designer.cs">
+      <DependentUpon>queryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\templates\frmTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +97,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\dashboard\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\dashboard\frmQueryDatumProdaje.resx">
+      <DependentUpon>frmQueryDatumProdaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\dashboard\frmQueryRadnik.resx">
+      <DependentUpon>frmQueryRadnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\dashboard\queryForm.resx">
+      <DependentUpon>queryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\templates\frmTemplate.resx">
       <DependentUpon>frmTemplate.cs</DependentUpon>
     </EmbeddedResource>

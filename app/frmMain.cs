@@ -1,4 +1,5 @@
 ﻿using butik.forms;
+using butik.forms.dashboard;
 using butik.forms.zaposleni;
 using SQLToolkitNS;
 using System;
@@ -17,13 +18,23 @@ namespace butik
     {
         public frmMain()
         {
-            SQLToolkit.setConnStr(global::butik.Properties.Settings.Default.connStr);
+            SQLToolkit.setConnStr("Data Source=DESKTOP-0V4TF3H;Initial Catalog=db_butik;Integrated Security=True");
             InitializeComponent();
         }
 
         private void btnZaposleni_Click(object sender, EventArgs e)
         {
             showForm(new frmZaposleniIndex());
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            showForm(new frmDashboard());
         }
     }
 }
