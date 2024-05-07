@@ -135,7 +135,7 @@
             this.btnConfirm.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnConfirm.Size = new System.Drawing.Size(169, 62);
             this.btnConfirm.TabIndex = 3;
-            this.btnConfirm.Text = "Dostavi";
+            this.btnConfirm.Text = "Prodaj";
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 

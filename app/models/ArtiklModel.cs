@@ -13,7 +13,7 @@ namespace butik.models
         private Decimal cena { get; set; }
         private int kolicina { get; set; }
 
-        private int dostavljena_kolicina;
+        private int delta_kolicina;
 
         public ArtiklModel(long id, String naziv, Decimal cena, int kolicina)
         {
@@ -23,13 +23,13 @@ namespace butik.models
             this.kolicina = kolicina;
             this.dostavljena_kolicina = 0;
         }
-        public ArtiklModel(long id, String naziv, Decimal cena, int kolicina, int dostavljena_kolicina)
+        public ArtiklModel(long id, String naziv, Decimal cena, int kolicina, int delta_kolicina)
         {
             this.id = id;
             this.naziv = naziv;
             this.cena = cena;
             this.kolicina = kolicina;
-            this.dostavljena_kolicina = dostavljena_kolicina;
+            this.delta_kolicina = delta_kolicina;
         }
 
         public ArtiklModel(long id)
@@ -67,7 +67,7 @@ namespace butik.models
 
         public int Kolicina { get { return kolicina; } set { kolicina = value; } }
 
-        public int Dostavljena_kolicina { get { return dostavljena_kolicina; } set { dostavljena_kolicina = value; } }
+        public int Delta_kolicina { get { return delta_kolicina; } set { delta_kolicina = value; } }
 
         public Boolean DodajUBazu()
         {
@@ -91,8 +91,8 @@ namespace butik.models
             return 
                 naziv.Length != 0 &&
                 kolicina >= 0 && 
-                cena >= 0 && 
-                dostavljena_kolicina >= 0;
+                cena >= 0 &&
+                delta_kolicina >= 0;
         }
 
         public void PrintModel()
@@ -105,7 +105,7 @@ namespace butik.models
 
         public Boolean AzurirajKolicinu()
         {
-            kolicina += dostavljena_kolicina;
+            kolicina += delta_kolicina;
             return true;
         }
 
@@ -127,7 +127,12 @@ namespace butik.models
 
         public int GetDostavljenaKolicina()
         {
-            return this.dostavljena_kolicina;
+            return delta_kolicina > 0 ? delta_kolicina : 0;
+        }
+
+        public int GetProdataKolicina()
+        {
+            return delta_kolicina < 0 ? delta_kolicina : 0;
         }
     }
 }

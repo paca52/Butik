@@ -78,7 +78,7 @@ namespace butik.forms.artikli
             tBoxKolicina.Text = model.Kolicina.ToString();
             tBoxCena.Text = model.Cena.ToString();
             tBoxNaziv.Text = model.Naziv;
-            tBoxDostavljenaKolicina.Text = model.Dostavljena_kolicina.ToString();
+            tBoxDostavljenaKolicina.Text = model.Delta_kolicina.ToString();
         }
 
         protected void btnExit_Click(object sender, EventArgs e)

@@ -38,7 +38,7 @@ namespace butik.forms.artikli
             else
             {
                 artikl = new ArtiklModel(id);
-                artikl.Dostavljena_kolicina = Convert.ToInt32(tBoxDostavljenaKolicina.Text);
+                artikl.Delta_kolicina = Convert.ToInt32(tBoxDostavljenaKolicina.Text);
             }
 
             if (!artikl.IsValid())

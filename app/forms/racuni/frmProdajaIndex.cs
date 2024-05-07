@@ -20,7 +20,7 @@ namespace butik.forms.artikli
                 return false;
             }
 
-            list[i].Dostavljena_kolicina = Dostavljena_kolicina;
+            list[i].Delta_kolicina = Dostavljena_kolicina;
 
             RefreshList();
             return true;
@@ -33,7 +33,7 @@ namespace butik.forms.artikli
             int i = list.FindIndex(item => item.Id == id);
 
             if (i != -1)
-                list[i].Dostavljena_kolicina += model.Dostavljena_kolicina;
+                list[i].Delta_kolicina += model.Delta_kolicina;
             else
                 list.Add(model);
 
@@ -73,7 +73,7 @@ namespace butik.forms.artikli
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            PanelHandler.AddForm(new frmProdajaArtikliDodaj(this));
+            PanelHandler.AddForm(new frmDostavaArtikliDodaj(this));
             PanelHandler.ShowTopForm();
         }
 

@@ -100,6 +100,12 @@
     <Compile Include="forms\login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\racuni\frmProdajaIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\racuni\frmProdajaIndex.Designer.cs">
+      <DependentUpon>frmProdajaIndex.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\templates\frmTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\racuni\frmProdajaIndex.resx">
+      <DependentUpon>frmProdajaIndex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\templates\frmTemplate.resx">
       <DependentUpon>frmTemplate.cs</DependentUpon>
@@ -276,9 +285,7 @@
   <ItemGroup>
     <None Include="Resources\exit_icon_white.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="forms\racuni\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\password_icon.png" />
   </ItemGroup>
