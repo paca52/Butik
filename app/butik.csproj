@@ -70,6 +70,59 @@
     </Compile>
     <Compile Include="forms\dashboard\queryForm.Designer.cs">
       <DependentUpon>queryForm.cs</DependentUpon>
+    <Compile Include="forms\artikli\frmArtikliUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\artikli\frmArtikliUpdate.Designer.cs">
+      <DependentUpon>frmArtikliUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\artikli\frmDostavaArtikliAzuriraj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\artikli\frmDostavaArtikliAzuriraj.Designer.cs">
+      <DependentUpon>frmDostavaArtikliAzuriraj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\artikli\frmDostavaArtikli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\artikli\frmDostavaArtikli.Designer.cs">
+      <DependentUpon>frmDostavaArtikli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\artikli\frmDostavaArtikliDodaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\artikli\frmDostavaArtikliDodaj.Designer.cs">
+      <DependentUpon>frmDostavaArtikliDodaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\artikli\frmArtikliIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\artikli\frmArtikliIndex.Designer.cs">
+      <DependentUpon>frmArtikliIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\artikli\templates\frmArtikliTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\artikli\templates\frmArtikliTemplate.Designer.cs">
+      <DependentUpon>frmArtikliTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\artikli\templates\frmDostavaArtikliTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\artikli\templates\frmDostavaArtikliTemplate.Designer.cs">
+      <DependentUpon>frmDostavaArtikliTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\login\frmLoginEmbedded.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\login\frmLoginEmbedded.Designer.cs">
+      <DependentUpon>frmLoginEmbedded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\templates\frmTemplate.cs">
       <SubType>Form</SubType>
@@ -89,12 +142,21 @@
     <Compile Include="forms\zaposleni\frmZaposleniIndex.Designer.cs">
       <DependentUpon>frmZaposleniIndex.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\zaposleni\frmZaposleniZaposli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\zaposleni\frmZaposleniZaposli.Designer.cs">
+      <DependentUpon>frmZaposleniZaposli.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\ArtiklModel.cs" />
+    <Compile Include="models\DostavaArtikliModel.cs" />
+    <Compile Include="models\DostavaModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="forms\dashboard\frmDashboard.resx">
@@ -108,6 +170,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\dashboard\queryForm.resx">
       <DependentUpon>queryForm.cs</DependentUpon>
+    <Compile Include="util\TableUtil.cs" />
+    <Compile Include="util\MessageUtil.cs" />
+    <Compile Include="util\PanelHandler.cs" />
+    <Compile Include="models\ZaposleniModel.cs" />
+    <EmbeddedResource Include="forms\artikli\frmArtikliUpdate.resx">
+      <DependentUpon>frmArtikliUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\artikli\frmDostavaArtikliAzuriraj.resx">
+      <DependentUpon>frmDostavaArtikliAzuriraj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\artikli\frmDostavaArtikli.resx">
+      <DependentUpon>frmDostavaArtikli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\artikli\frmDostavaArtikliDodaj.resx">
+      <DependentUpon>frmDostavaArtikliDodaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\artikli\frmArtikliIndex.resx">
+      <DependentUpon>frmArtikliIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\artikli\templates\frmArtikliTemplate.resx">
+      <DependentUpon>frmArtikliTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\artikli\templates\frmDostavaArtikliTemplate.resx">
+      <DependentUpon>frmDostavaArtikliTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\templates\frmTemplate.resx">
       <DependentUpon>frmTemplate.cs</DependentUpon>
@@ -117,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\zaposleni\frmZaposleniIndex.resx">
       <DependentUpon>frmZaposleniIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\zaposleni\frmZaposleniZaposli.resx">
+      <DependentUpon>frmZaposleniZaposli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -220,8 +312,10 @@
     <None Include="Resources\exit_icon_white.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="forms\artikli\" />
     <Folder Include="forms\racuni\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

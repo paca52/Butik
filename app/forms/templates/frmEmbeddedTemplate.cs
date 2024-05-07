@@ -1,4 +1,5 @@
-﻿using SQLToolkitNS;
+﻿using butik.util;
+using SQLToolkitNS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace butik.forms
 {
     public partial class frmEmbeddedTemplate : Form
     {
+
         public frmEmbeddedTemplate()
         {
             InitializeComponent();
@@ -30,16 +32,25 @@ namespace butik.forms
             }
             else
             {
-                MessageBox.Show(
-                    "GREŠKA\n" + err, 
-                    "GREŠKA", 
-                    MessageBoxButtons.OK, 
-                    MessageBoxIcon.Error
-                );
+                MessageUtil.ShowError(err);
                 return false;
             }
 
         }
 
+        private void frmEmbeddedTemplate_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            PanelHandler.RemoveTopForm();
+        }
+
+        protected void CloseForm(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmEmbeddedTemplate_Load(object sender, EventArgs e)
+        {
+            this.Size = new Size(747, 531);
+        }
     }
 }
