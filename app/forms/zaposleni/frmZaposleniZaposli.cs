@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Linq;
+﻿using butik.util;
 using SQLToolkitNS;
-using System.Data.SqlClient;
-using butik.util;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
-using System.Collections;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace butik.forms.zaposleni
 {
@@ -116,7 +106,7 @@ namespace butik.forms.zaposleni
             }
 
             String sql = "";
-            if(btnZaposliSubmit.Text == "Zaposli")
+            if (btnZaposliSubmit.Text == "Zaposli")
             {
                 sql = sql + "INSERT INTO dbo.table_zaposleni (jmbg,ime,prezime,broj_radnih_sati,satnica,datum_zaposlenja,broj_slobodnih_dana,username,password,tip_zaposlenog,premija) " +
                 "VALUES (" +
@@ -153,7 +143,7 @@ namespace butik.forms.zaposleni
                 sql = sql + "WHERE jmbg = '" + ZaposleniModel.jmbg + "';";
             }
 
-            if(!SQLToolkit.NonSelectQuery(sql, ref error))
+            if (!SQLToolkit.NonSelectQuery(sql, ref error))
             {
                 MessageUtil.ShowError("Error: " + error);
                 return;

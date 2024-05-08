@@ -1,5 +1,4 @@
-﻿using butik.models;
-using butik.util;
+﻿using butik.util;
 using System;
 
 namespace butik.forms.artikli

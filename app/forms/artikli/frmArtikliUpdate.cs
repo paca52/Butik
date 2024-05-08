@@ -1,12 +1,6 @@
-﻿using butik.models;
-using butik.util;
+﻿using butik.util;
 using SQLToolkitNS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace butik.forms.artikli
@@ -27,7 +21,7 @@ namespace butik.forms.artikli
                 "UPDATE dbo.table_artikli " +
                 "SET naziv = '" + tBoxNaziv.Text + "', cena = " + tBoxCena.Text + " " +
                 "WHERE id_artikla = " + this.id;
-            if(!SQLToolkit.NonSelectQuery(sql, ref err))
+            if (!SQLToolkit.NonSelectQuery(sql, ref err))
             {
                 MessageUtil.ShowError("Greška pri ažuriranju artikla!\n" + err);
             }

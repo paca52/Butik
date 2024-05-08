@@ -49,7 +49,7 @@ namespace butik.util
 
         public static Boolean EmptyFormStack()
         {
-            foreach(Form f in formStack)
+            foreach (Form f in formStack)
             {
                 f.Dispose();
             }

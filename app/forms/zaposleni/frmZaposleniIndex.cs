@@ -1,14 +1,8 @@
-using butik.forms.login;
 using butik.util;
 using SQLToolkitNS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace butik.forms.zaposleni
@@ -46,7 +40,7 @@ namespace butik.forms.zaposleni
             btnOtpusti.Enabled = false;
             btnOtpusti.BackColor = SystemColors.ControlDark;
             if (!LoadTable(
-                ref dgvZaposleni, 
+                ref dgvZaposleni,
                 "SELECT jmbg, ime, prezime, naziv AS tip_zaposlenog, datum_zaposlenja, satnica, broj_radnih_sati, premija, broj_slobodnih_dana " +
                 "FROM table_zaposleni " +
                 "INNER JOIN table_tip_zaposlenog ON table_zaposleni.tip_zaposlenog = table_tip_zaposlenog.id"
@@ -133,7 +127,7 @@ namespace butik.forms.zaposleni
                 PanelHandler.AddForm(new frmZaposleniIndex());
                 PanelHandler.ShowTopForm();
             }
-            
+
 
         }
 

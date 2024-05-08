@@ -100,7 +100,7 @@ namespace butik.forms.artikli
             if (Char.IsDigit(key) || Char.IsControl(key)) return;
             e.Handled = true;
         }
-        
+
         protected Boolean ValidateInputFields()
         {
             if (tBoxNaziv.Text.Length == 0)

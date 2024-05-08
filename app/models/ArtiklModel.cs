@@ -88,9 +88,9 @@ namespace butik.models
 
         public Boolean IsValid()
         {
-            return 
+            return
                 naziv.Length != 0 &&
-                kolicina >= 0 && 
+                kolicina >= 0 &&
                 cena >= 0 &&
                 delta_kolicina >= 0;
         }
@@ -123,7 +123,7 @@ namespace butik.models
                 "WHERE id_artikla = " + this.id;
 
             String err = String.Empty;
-            if(!SQLToolkit.NonSelectQuery(sql, ref err))
+            if (!SQLToolkit.NonSelectQuery(sql, ref err))
             {
                 MessageUtil.ShowError("Nije moguce update-ovati Artikl u bazi\n" + err);
                 return false;

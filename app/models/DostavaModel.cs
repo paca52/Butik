@@ -1,8 +1,6 @@
 ﻿using butik.util;
 using SQLToolkitNS;
 using System;
-using System.Security.Cryptography.X509Certificates;
-using System.Windows.Forms;
 
 namespace butik.models
 {

@@ -2,11 +2,6 @@
 using SQLToolkitNS;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace butik.models
 {
@@ -33,9 +28,9 @@ namespace butik.models
 
         public Boolean Sacuvaj()
         {
-            foreach(var item in artikli)
+            foreach (var item in artikli)
             {
-                if(!item.UpdateUBazi())
+                if (!item.UpdateUBazi())
                 {
                     return false;
                 }
@@ -46,9 +41,9 @@ namespace butik.models
                 String sql = "INSERT INTO dbo.table_dostava_artikl " +
                     "(id_dostava, id_artikla, dostavljena_kolicina)" +
                     "VALUES (" + this.id_dostava + ", " + item.Id + ", " + item.GetDeltaKolicina() + ");";
-                
 
-                if(!SQLToolkit.NonSelectQuery(sql, ref err))
+
+                if (!SQLToolkit.NonSelectQuery(sql, ref err))
                 {
                     MessageUtil.ShowError($"Nije moguce povezati {item.Naziv} sa dostavom.\n" + err);
                     return false;

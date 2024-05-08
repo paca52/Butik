@@ -1,13 +1,11 @@
 ﻿using butik.forms;
 using butik.forms.artikli;
-using butik.forms.login;
 using butik.forms.zaposleni;
 using butik.util;
 using SQLToolkitNS;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace butik
 {
