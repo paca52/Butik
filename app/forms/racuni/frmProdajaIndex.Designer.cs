@@ -41,6 +41,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.lblUkupnaCena = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwItems)).BeginInit();
             this.panelExit.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -54,7 +55,7 @@
             this.lblTable.AutoSize = true;
             this.lblTable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTable.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblTable.Location = new System.Drawing.Point(61, 124);
+            this.lblTable.Location = new System.Drawing.Point(61, 111);
             this.lblTable.Name = "lblTable";
             this.lblTable.Size = new System.Drawing.Size(55, 21);
             this.lblTable.TabIndex = 4;
@@ -77,7 +78,7 @@
             this.dgwItems.AllowUserToDeleteRows = false;
             this.dgwItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwItems.Location = new System.Drawing.Point(61, 149);
+            this.dgwItems.Location = new System.Drawing.Point(61, 136);
             this.dgwItems.Name = "dgwItems";
             this.dgwItems.ReadOnly = true;
             this.dgwItems.Size = new System.Drawing.Size(615, 258);
@@ -145,7 +146,7 @@
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(527, 91);
+            this.panel1.Location = new System.Drawing.Point(527, 78);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(149, 44);
             this.panel1.TabIndex = 15;
@@ -223,10 +224,22 @@
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // lblUkupnaCena
+            // 
+            this.lblUkupnaCena.AutoSize = true;
+            this.lblUkupnaCena.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblUkupnaCena.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblUkupnaCena.Location = new System.Drawing.Point(524, 397);
+            this.lblUkupnaCena.Name = "lblUkupnaCena";
+            this.lblUkupnaCena.Size = new System.Drawing.Size(75, 21);
+            this.lblUkupnaCena.TabIndex = 17;
+            this.lblUkupnaCena.Text = "Ukupno:";
+            // 
             // frmProdajaIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(747, 521);
+            this.Controls.Add(this.lblUkupnaCena);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -261,5 +274,6 @@
         protected System.Windows.Forms.Button btnUpdate;
         protected System.Windows.Forms.Panel panel4;
         protected System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Label lblUkupnaCena;
     }
 }

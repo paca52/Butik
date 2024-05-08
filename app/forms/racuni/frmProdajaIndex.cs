@@ -54,6 +54,7 @@ namespace butik.forms.artikli
             dgwItems.DataSource = list;
             TableUtil.Design(ref dgwItems);
             dgwItems.Refresh();
+            IzracunajUkupno();
         }
 
         protected Boolean DeleteFromList(long id)
@@ -64,6 +65,13 @@ namespace butik.forms.artikli
 
             list.RemoveAt(i);
             return true;
+        }
+
+        private void IzracunajUkupno()
+        {
+            Decimal sum = 0;
+            list.ForEach(item => sum += item.GetDeltaKolicina() * item.Cena);
+            lblUkupnaCena.Text = sum.ToString();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
