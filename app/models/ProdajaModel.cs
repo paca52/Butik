@@ -37,8 +37,8 @@ namespace butik.models
             datum = DateTime.Today.ToString("yyyy-MM-dd");
             String sql =
                 "INSERT INTO dbo.table_racun_header (id_zaposleni, ukupna_cena, datum) " +
-                "VALUES ('" + jmbg_zaposlenog + "', " + ukupna_cena.ToString() + ", '" + datum + "');";
-            MessageBox.Show(sql);
+                "VALUES ('" + jmbg_zaposlenog + "', " + ukupna_cena.ToString().Replace(',', '.') + ", '" + datum + "');";
+            
             if (!SQLToolkit.NonSelectQueryAndReturnId(sql, ref id, ref err))
             {
                 MessageUtil.ShowError("GREŠKA PRI KREIRANJU GLAVE RAČUNA U BAZI\n" + err);

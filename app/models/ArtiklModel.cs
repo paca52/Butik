@@ -131,14 +131,9 @@ namespace butik.models
             return true;
         }
 
-        public int GetDostavljenaKolicina()
+        public int GetDeltaKolicina()
         {
-            return delta_kolicina > 0 ? delta_kolicina : 0;
-        }
-
-        public int GetProdataKolicina()
-        {
-            return delta_kolicina < 0 ? delta_kolicina : 0;
+            return delta_kolicina;
         }
     }
 }

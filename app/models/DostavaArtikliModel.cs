@@ -45,7 +45,7 @@ namespace butik.models
                 String err = String.Empty;
                 String sql = "INSERT INTO dbo.table_dostava_artikl " +
                     "(id_dostava, id_artikla, dostavljena_kolicina)" +
-                    "VALUES (" + this.id_dostava + ", " + item.Id + ", " + item.GetDostavljenaKolicina() + ");";
+                    "VALUES (" + this.id_dostava + ", " + item.Id + ", " + item.GetDeltaKolicina() + ");";
                 
 
                 if(!SQLToolkit.NonSelectQuery(sql, ref err))

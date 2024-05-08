@@ -2,6 +2,7 @@
 using SQLToolkitNS;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace butik.models
 {
@@ -37,10 +38,11 @@ namespace butik.models
 
                 // povezi racun i item(artikl)
                 String err = String.Empty;
+                String cena = item.Cena.ToString().Replace(',', '.');
+
                 String sql = "INSERT INTO dbo.table_racun_body " +
                     "(id_artikla, id_racun_header, kolicina, prodajna_cena)" +
-                    "VALUES (" + item.Id + ", " + id_prodaje + ", " + item.GetProdataKolicina() + ", " + item.Cena + ");";
-
+                    "VALUES (" + item.Id + ", " + id_prodaje + ", " + item.GetDeltaKolicina() + ", " + cena + ");";
 
                 if (!SQLToolkit.NonSelectQuery(sql, ref err))
                 {
