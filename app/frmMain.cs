@@ -57,5 +57,12 @@ namespace butik
             PanelHandler.AddForm(new frmArtikliIndex());
             PanelHandler.ShowTopForm();
         }
+
+        private void btnRacuni_Click(object sender, EventArgs e)
+        {
+            PanelHandler.EmptyFormStack();
+            PanelHandler.AddForm(new frmProdajaIndex());
+            PanelHandler.ShowTopForm();
+        }
     }
 }

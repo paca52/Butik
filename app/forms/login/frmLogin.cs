@@ -1,5 +1,4 @@
-﻿using butik.forms.zaposleni;
-using butik.util;
+﻿using butik.util;
 using SQLToolkitNS;
 using System;
 using System.Data.SqlClient;
@@ -10,6 +9,7 @@ namespace butik.forms.login
     public partial class frmLogin : Form
     {
         String name = String.Empty;
+        public static String jmbg = String.Empty;
         long tip_zaposlenog = -1;
 
         public frmLogin()
@@ -26,7 +26,7 @@ namespace butik.forms.login
         {
             String err = String.Empty;
             String sql =
-                "SELECT ime, username, password, tip_zaposlenog " +
+                "SELECT ime, username, password, tip_zaposlenog, jmbg " +
                 "FROM table_zaposleni " +
                 "WHERE username='" + username + "' AND password='" + password + "'";
 
@@ -38,6 +38,7 @@ namespace butik.forms.login
                 {
                     this.name = dr.GetString(0);
                     this.tip_zaposlenog = dr.GetInt64(3);
+                    jmbg = dr.GetString(4);
                     loggedIn = true;
                 },
                 ref err

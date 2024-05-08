@@ -21,7 +21,7 @@ namespace butik.models
             this.naziv = naziv;
             this.cena = cena;
             this.kolicina = kolicina;
-            this.dostavljena_kolicina = 0;
+            this.delta_kolicina = 0;
         }
         public ArtiklModel(long id, String naziv, Decimal cena, int kolicina, int delta_kolicina)
         {
@@ -103,9 +103,15 @@ namespace butik.models
             );
         }
 
-        public Boolean AzurirajKolicinu()
+        public Boolean DostaviKolicinu()
         {
             kolicina += delta_kolicina;
+            return true;
+        }
+
+        public Boolean ProdajKolicinu()
+        {
+            kolicina -= delta_kolicina;
             return true;
         }
 

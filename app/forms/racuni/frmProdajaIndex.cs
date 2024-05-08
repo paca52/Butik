@@ -9,7 +9,14 @@ namespace butik.forms.artikli
     public partial class frmProdajaIndex : butik.forms.frmEmbeddedTemplate
     {
         private List<ArtiklModel> list = new List<ArtiklModel>();
-        public Boolean UpdateList(long id, int Dostavljena_kolicina)
+        public frmProdajaIndex()
+        {
+            InitializeComponent();
+            list.Clear();
+            dgwItems.DataSource = null;
+        }
+
+        public Boolean UpdateList(long id, int Prodata_kolicina)
         {
 
             int i = list.FindIndex(item => item.Id == id);
@@ -20,7 +27,7 @@ namespace butik.forms.artikli
                 return false;
             }
 
-            list[i].Delta_kolicina = Dostavljena_kolicina;
+            list[i].Delta_kolicina = Prodata_kolicina;
 
             RefreshList();
             return true;
@@ -59,13 +66,6 @@ namespace butik.forms.artikli
             return true;
         }
 
-        public frmProdajaIndex()
-        {
-            InitializeComponent();
-            list.Clear();
-            dgwItems.DataSource = null;
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -73,7 +73,7 @@ namespace butik.forms.artikli
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            PanelHandler.AddForm(new frmDostavaArtikliDodaj(this));
+            PanelHandler.AddForm(new frmProdajaDodaj(this));
             PanelHandler.ShowTopForm();
         }
 
@@ -81,26 +81,28 @@ namespace butik.forms.artikli
         {
             String err = String.Empty;
 
-            DostavaModel dostava = new DostavaModel();
-            if (!dostava.NovaDostava())
+            Decimal sum = 0;
+            list.ForEach(item =>
             {
-                MessageUtil.ShowError("Greška pri pravljenju dostave!");
+                item.ProdajKolicinu();
+                sum += item.Kolicina * item.Cena;
+            });
+
+            ProdajaModel prodaja = new ProdajaModel(sum);
+            if (!prodaja.NovaProdaja())
+            {
+                MessageUtil.ShowError("Greška pri pravljenju računa!");
                 return;
             }
 
-            list.ForEach(model => model.AzurirajKolicinu());
-
-            DostavaArtikliModel akcija = new DostavaArtikliModel(dostava.Id, list);
+            ProdajaArtikliModel akcija = new ProdajaArtikliModel(prodaja.Id, list);
             if (!akcija.Sacuvaj())
             {
                 MessageUtil.ShowError("Greška pri čuvanju dostave!!!");
                 return;
             }
-
-
             this.Close();
-            PanelHandler.RemoveTopForm();
-            PanelHandler.AddForm(new frmArtikliIndex());
+            PanelHandler.AddForm(new frmProdajaIndex());
             PanelHandler.ShowTopForm();
         }
 
@@ -158,7 +160,7 @@ namespace butik.forms.artikli
                 Convert.ToInt32(dgwItems.SelectedRows[0].Cells[3].Value),
                 Convert.ToInt32(dgwItems.SelectedRows[0].Cells[4].Value)
             );
-            PanelHandler.AddForm(new frmDostavaArtikliAzuriraj(this, model));
+            PanelHandler.AddForm(new frmProdajaAzuriraj(this, model));
             PanelHandler.ShowTopForm();
         }
     }

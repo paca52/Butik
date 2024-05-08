@@ -100,11 +100,29 @@
     <Compile Include="forms\login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\racuni\frmProdajaAzuriraj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\racuni\frmProdajaAzuriraj.Designer.cs">
+      <DependentUpon>frmProdajaAzuriraj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\racuni\frmProdajaDodaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\racuni\frmProdajaDodaj.Designer.cs">
+      <DependentUpon>frmProdajaDodaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\racuni\frmProdajaIndex.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\racuni\frmProdajaIndex.Designer.cs">
       <DependentUpon>frmProdajaIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\racuni\templates\frmProdajaTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\racuni\templates\frmProdajaTemplate.Designer.cs">
+      <DependentUpon>frmProdajaTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\templates\frmTemplate.cs">
       <SubType>Form</SubType>
@@ -139,6 +157,8 @@
     <Compile Include="models\ArtiklModel.cs" />
     <Compile Include="models\DostavaArtikliModel.cs" />
     <Compile Include="models\DostavaModel.cs" />
+    <Compile Include="models\ProdajaArtikliModel.cs" />
+    <Compile Include="models\ProdajaModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\TableUtil.cs" />
@@ -169,8 +189,17 @@
     <EmbeddedResource Include="forms\login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\racuni\frmProdajaAzuriraj.resx">
+      <DependentUpon>frmProdajaAzuriraj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\racuni\frmProdajaDodaj.resx">
+      <DependentUpon>frmProdajaDodaj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\racuni\frmProdajaIndex.resx">
       <DependentUpon>frmProdajaIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\racuni\templates\frmProdajaTemplate.resx">
+      <DependentUpon>frmProdajaTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\templates\frmTemplate.resx">
       <DependentUpon>frmTemplate.cs</DependentUpon>

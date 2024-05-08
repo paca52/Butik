@@ -64,6 +64,7 @@
             this.btnRacuni.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnRacuni.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnRacuni.Text = "        Računi";
+            this.btnRacuni.Click += new System.EventHandler(this.btnRacuni_Click);
             // 
             // btnArtikli
             // 

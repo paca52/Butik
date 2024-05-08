@@ -88,7 +88,7 @@ namespace butik.forms.artikli
                 return;
             }
 
-            list.ForEach(model => model.AzurirajKolicinu());
+            list.ForEach(model => model.DostaviKolicinu());
 
             DostavaArtikliModel akcija = new DostavaArtikliModel(dostava.Id, list);
             if (!akcija.Sacuvaj())
