@@ -102,7 +102,7 @@ namespace butik.forms.artikli
             int dostupna_kolicina = Convert.ToInt32(tBoxKolicina.Text);
             if (prodata_kolicina > dostupna_kolicina)
             {
-                MessageBox.Show("Nije moguće prodati više od dostupne količine!");
+                MessageUtil.Notification("Nije moguće prodati više od dostupne količine!");
                 e.Handled = true;
                 return;
             }

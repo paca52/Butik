@@ -48,11 +48,41 @@ namespace butik.forms.artikli
             return true;
         }
 
+        private void NapraviUkupnoCenu()
+        {
+            foreach (DataGridViewColumn column in dgwItems.Columns)
+            {
+                if (column.Name == "UkupnaCena")
+                {
+                    dgwItems.Columns.Remove(column);
+                    break;
+                }
+            }
+
+            DataGridViewTextBoxColumn totalColumn = new DataGridViewTextBoxColumn();
+            totalColumn.HeaderText = "Ukupna Cena";
+            totalColumn.Name = "UkupnaCena";
+            dgwItems.Columns.Add(totalColumn);
+        }
+
         protected void RefreshList()
         {
             dgwItems.DataSource = null;
             dgwItems.DataSource = list;
             TableUtil.Design(ref dgwItems);
+
+            dgwItems.Columns["Kolicina"].Visible = false;
+            
+            NapraviUkupnoCenu();
+
+            foreach (DataGridViewRow row in dgwItems.Rows)
+            {
+                Decimal cena = Convert.ToDecimal(row.Cells["Cena"].Value);
+                int kolicina = Convert.ToInt32(row.Cells["Delta_kolicina"].Value);
+
+                row.Cells["UkupnaCena"].Value = cena * kolicina;
+            }
+
             dgwItems.Refresh();
             IzracunajUkupno();
         }
@@ -109,6 +139,9 @@ namespace butik.forms.artikli
                 MessageUtil.ShowError("Greška pri čuvanju dostave!!!");
                 return;
             }
+
+            MessageUtil.Notification("Uspešno odradjena transakcija!");
+
             this.Close();
             PanelHandler.AddForm(new frmProdajaIndex());
             PanelHandler.ShowTopForm();

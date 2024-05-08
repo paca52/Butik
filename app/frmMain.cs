@@ -5,7 +5,6 @@ using butik.util;
 using SQLToolkitNS;
 using System;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace butik
 {
@@ -37,7 +36,7 @@ namespace butik
                 ref err
             ))
             {
-                MessageBox.Show(err);
+                MessageUtil.ShowError(err);
             }
         }
 

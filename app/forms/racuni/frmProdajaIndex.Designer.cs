@@ -42,6 +42,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnRemove = new System.Windows.Forms.Button();
             this.lblUkupnaCena = new System.Windows.Forms.Label();
+            this.lblUkupno = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwItems)).BeginInit();
             this.panelExit.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -229,16 +230,28 @@
             this.lblUkupnaCena.AutoSize = true;
             this.lblUkupnaCena.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblUkupnaCena.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblUkupnaCena.Location = new System.Drawing.Point(524, 397);
+            this.lblUkupnaCena.Location = new System.Drawing.Point(601, 397);
             this.lblUkupnaCena.Name = "lblUkupnaCena";
-            this.lblUkupnaCena.Size = new System.Drawing.Size(75, 21);
+            this.lblUkupnaCena.Size = new System.Drawing.Size(19, 21);
             this.lblUkupnaCena.TabIndex = 17;
-            this.lblUkupnaCena.Text = "Ukupno:";
+            this.lblUkupnaCena.Text = "0";
+            // 
+            // lblUkupno
+            // 
+            this.lblUkupno.AutoSize = true;
+            this.lblUkupno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblUkupno.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblUkupno.Location = new System.Drawing.Point(523, 397);
+            this.lblUkupno.Name = "lblUkupno";
+            this.lblUkupno.Size = new System.Drawing.Size(75, 21);
+            this.lblUkupno.TabIndex = 18;
+            this.lblUkupno.Text = "Ukupno:";
             // 
             // frmProdajaIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(747, 521);
+            this.Controls.Add(this.lblUkupno);
             this.Controls.Add(this.lblUkupnaCena);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
@@ -275,5 +288,6 @@
         protected System.Windows.Forms.Panel panel4;
         protected System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label lblUkupnaCena;
+        private System.Windows.Forms.Label lblUkupno;
     }
 }

@@ -97,9 +97,8 @@ namespace butik.models
 
         public void PrintModel()
         {
-            MessageBox.Show(
-                "id: " + id + "\n" + "naziv: " + naziv + "\n" + "cena: " + cena + "\n" + "kolicina: " + kolicina,
-                "ArtiklModel"
+            MessageUtil.Notification(
+                "ArtiklModel { id: " + id + "\n" + "naziv: " + naziv + "\n" + "cena: " + cena + "\n" + "kolicina: " + kolicina + " }"
             );
         }
 

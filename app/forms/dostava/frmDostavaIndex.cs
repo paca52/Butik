@@ -97,6 +97,7 @@ namespace butik.forms.artikli
                 return;
             }
 
+            MessageUtil.Notification("Dostava je uspešno sačuvana u bazu podataka!");
 
             this.Close();
             PanelHandler.RemoveTopForm();
