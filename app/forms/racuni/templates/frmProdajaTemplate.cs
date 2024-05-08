@@ -3,6 +3,8 @@ using butik.util;
 using SQLToolkitNS;
 using System;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace butik.forms.artikli
 {
@@ -67,6 +69,7 @@ namespace butik.forms.artikli
             tBoxCena.Text = model.Cena.ToString();
             tBoxNaziv.Text = model.Naziv;
         }
+
         protected void LockInputAndPutModel(ArtiklModel model)
         {
             cBoxId.Enabled = false;
@@ -74,7 +77,8 @@ namespace butik.forms.artikli
             tBoxCena.Enabled = false;
             tBoxNaziv.Enabled = false;
 
-            cBoxId.Text = model.Id.ToString();
+            cBoxId.Items.Add(model.Id.ToString());
+            cBoxId.SelectedIndex = 0;
             tBoxKolicina.Text = model.Kolicina.ToString();
             tBoxCena.Text = model.Cena.ToString();
             tBoxNaziv.Text = model.Naziv;
@@ -86,23 +90,38 @@ namespace butik.forms.artikli
             this.Close();
         }
 
-        private void tBoxCena_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
-        {
-            Char key = e.KeyChar;
-            if (Char.IsDigit(key) || Char.IsControl(key)) return;
-            if (key == '.' && tBoxCena.Text.Contains(".") == false) return;
-            e.Handled = true;
-        }
-
         private void tBoxProdataKolicina_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
             Char key = e.KeyChar;
-            if (Char.IsDigit(key) || Char.IsControl(key)) return;
-            e.Handled = true;
+            if (Char.IsControl(key)) return;
+            if (!Char.IsDigit(key))
+            {
+                e.Handled = true;
+                return;
+            }
+            int prodata_kolicina = Convert.ToInt32(tBoxProdataKolicina.Text + key);
+            int dostupna_kolicina = Convert.ToInt32(tBoxKolicina.Text);
+            if (prodata_kolicina > dostupna_kolicina)
+            {
+                MessageBox.Show("Nije moguće prodati više od dostupne količine!");
+                e.Handled = true;
+                return;
+            }
         }
-        
+
         protected Boolean ValidateInputFields()
         {
+            if (cBoxId.Text.Length == 0)
+            {
+                lblIdGreska.Text = "Odaberite ID artikla!";
+                cBoxId.Focus();
+                return false;
+            }
+            else
+            {
+                lblIdGreska.Text = "";
+            }
+
             if (tBoxNaziv.Text.Length == 0)
             {
                 lblNazivGreska.Text = "Polje za naziv ne sme biti prazno!";
@@ -146,6 +165,7 @@ namespace butik.forms.artikli
             lblCenaGreska.Text = "";
             lblDostavljenaKolicinaGreska.Text = "";
             lblNazivGreska.Text = "";
+            lblIdGreska.Text = "";
         }
     }
 }

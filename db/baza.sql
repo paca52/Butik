@@ -150,7 +150,7 @@ DROP TABLE IF EXISTS table_racun_header;
 CREATE TABLE table_racun_header (
 	id_racuna BIGINT NOT NULL PRIMARY KEY IDENTITY(1, 1),
 	id_zaposleni varchar(13) NOT NULL,
-	ukupna_cena BIGINT NOT NULL,
+	ukupna_cena DECIMAL(10,2) NOT NULL,
 	datum DATE NOT NULL
 );
 
@@ -180,7 +180,6 @@ DROP TABLE IF EXISTS table_dostava;
 CREATE TABLE table_dostava (
 	id_dostava BIGINT IDENTITY(1, 1) PRIMARY KEY,
 	datum_dostave DATE NOT NULL,
-	dostavljac VARCHAR(255) NOT NULL,
 );
 
 DROP TABLE IF EXISTS table_dostava_artikl;
@@ -334,28 +333,28 @@ VALUES
   (20, 20, 20, 7.99);
 
 -- Insert 20 rows into table_dostava
-INSERT INTO dbo.table_dostava (datum_dostave, dostavljac)
+INSERT INTO dbo.table_dostava (datum_dostave)
 VALUES
-  ('2024-01-01', 'Delivery1'),
-  ('2024-01-02', 'Delivery2'),
-  ('2024-01-03', 'Delivery3'),
-  ('2024-01-04', 'Delivery4'),
-  ('2024-01-05', 'Delivery5'),
-  ('2024-01-06', 'Delivery6'),
-  ('2024-01-07', 'Delivery7'),
-  ('2024-01-08', 'Delivery8'),
-  ('2024-01-09', 'Delivery9'),
-  ('2024-01-10', 'Delivery10'),
-  ('2024-01-11', 'Delivery11'),
-  ('2024-01-12', 'Delivery12'),
-  ('2024-01-13', 'Delivery13'),
-  ('2024-01-14', 'Delivery14'),
-  ('2024-01-15', 'Delivery15'),
-  ('2024-01-16', 'Delivery16'),
-  ('2024-01-17', 'Delivery17'),
-  ('2024-01-18', 'Delivery18'),
-  ('2024-01-19', 'Delivery19'),
-  ('2024-01-20', 'Delivery20');
+  ('2024-01-01'),
+  ('2024-01-02'),
+  ('2024-01-03'),
+  ('2024-01-04'),
+  ('2024-01-05'),
+  ('2024-01-06'),
+  ('2024-01-07'),
+  ('2024-01-08'),
+  ('2024-01-09'),
+  ('2024-01-10'),
+  ('2024-01-11'),
+  ('2024-01-12'),
+  ('2024-01-13'),
+  ('2024-01-14'),
+  ('2024-01-15'),
+  ('2024-01-16'),
+  ('2024-01-17'),
+  ('2024-01-18'),
+  ('2024-01-19'),
+  ('2024-01-20');
 
 
 INSERT INTO dbo.table_dostava_artikl (id_dostava, id_artikla, dostavljena_kolicina)

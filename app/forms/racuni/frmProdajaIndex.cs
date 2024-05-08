@@ -85,7 +85,7 @@ namespace butik.forms.artikli
             list.ForEach(item =>
             {
                 item.ProdajKolicinu();
-                sum += item.Kolicina * item.Cena;
+                sum += item.Delta_kolicina * item.Cena;
             });
 
             ProdajaModel prodaja = new ProdajaModel(sum);

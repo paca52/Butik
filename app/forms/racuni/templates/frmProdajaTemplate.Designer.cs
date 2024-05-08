@@ -46,6 +46,7 @@
             this.lblCenaGreska = new System.Windows.Forms.Label();
             this.lblDostavljenaKolicinaGreska = new System.Windows.Forms.Label();
             this.lblNazivGreska = new System.Windows.Forms.Label();
+            this.lblIdGreska = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +78,7 @@
             this.tBoxNaziv.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.tBoxNaziv.Location = new System.Drawing.Point(101, 192);
             this.tBoxNaziv.Name = "tBoxNaziv";
+            this.tBoxNaziv.ReadOnly = true;
             this.tBoxNaziv.Size = new System.Drawing.Size(532, 29);
             this.tBoxNaziv.TabIndex = 1;
             // 
@@ -95,9 +97,9 @@
             this.tBoxCena.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.tBoxCena.Location = new System.Drawing.Point(101, 332);
             this.tBoxCena.Name = "tBoxCena";
+            this.tBoxCena.ReadOnly = true;
             this.tBoxCena.Size = new System.Drawing.Size(532, 29);
             this.tBoxCena.TabIndex = 3;
-            this.tBoxCena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxCena_KeyPress);
             // 
             // label2
             // 
@@ -252,10 +254,23 @@
             this.lblNazivGreska.TabIndex = 16;
             this.lblNazivGreska.Text = "here";
             // 
+            // lblIdGreska
+            // 
+            this.lblIdGreska.AutoSize = true;
+            this.lblIdGreska.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdGreska.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblIdGreska.Location = new System.Drawing.Point(99, 155);
+            this.lblIdGreska.MaximumSize = new System.Drawing.Size(258, 0);
+            this.lblIdGreska.Name = "lblIdGreska";
+            this.lblIdGreska.Size = new System.Drawing.Size(30, 13);
+            this.lblIdGreska.TabIndex = 17;
+            this.lblIdGreska.Text = "here";
+            // 
             // frmProdajaTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(747, 521);
+            this.Controls.Add(this.lblIdGreska);
             this.Controls.Add(this.lblNazivGreska);
             this.Controls.Add(this.lblDostavljenaKolicinaGreska);
             this.Controls.Add(this.lblCenaGreska);
@@ -301,5 +316,6 @@
         private System.Windows.Forms.Label lblCenaGreska;
         private System.Windows.Forms.Label lblDostavljenaKolicinaGreska;
         private System.Windows.Forms.Label lblNazivGreska;
+        private System.Windows.Forms.Label lblIdGreska;
     }
 }

@@ -20,26 +20,8 @@ namespace butik.forms.artikli
             long id = GetIdFromCombo();
             ArtiklModel artikl;
 
-            if (id == -1)
-            {
-                artikl = new ArtiklModel(
-                    id,
-                    tBoxNaziv.Text,
-                    Convert.ToDecimal(tBoxCena.Text),
-                    Convert.ToInt32(tBoxKolicina.Text),
-                    Convert.ToInt32(tBoxProdataKolicina.Text)
-                );
-                if (!artikl.DodajUBazu())
-                {
-                    MessageUtil.ShowError("Greška pri čuvanju artikla u bazi!");
-                    return;
-                }
-            }
-            else
-            {
-                artikl = new ArtiklModel(id);
-                artikl.Delta_kolicina = Convert.ToInt32(tBoxProdataKolicina.Text);
-            }
+            artikl = new ArtiklModel(id);
+            artikl.Delta_kolicina = Convert.ToInt32(tBoxProdataKolicina.Text);
 
             if (!artikl.IsValid())
             {
