@@ -48,6 +48,18 @@ namespace butik.forms.zaposleni
             {
                 return;
             }
+
+            foreach (DataGridViewRow row in dgvZaposleni.Rows)
+            {
+                String id = row.Cells[0].Value.ToString();
+                if (id == "0000000000000")
+                {
+                    dgvZaposleni.Rows.Remove(row);
+                    break;
+                }
+
+            }
+
             TableUtil.Design(ref dgvZaposleni);
         }
 
