@@ -1,6 +1,6 @@
 ﻿namespace butik.forms.artikli
 {
-    partial class frmDostavaArtikli
+    partial class frmProdajaIndex
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.lblUkupnaCena = new System.Windows.Forms.Label();
+            this.lblUkupno = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwItems)).BeginInit();
             this.panelExit.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -54,11 +56,11 @@
             this.lblTable.AutoSize = true;
             this.lblTable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTable.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblTable.Location = new System.Drawing.Point(61, 124);
+            this.lblTable.Location = new System.Drawing.Point(61, 111);
             this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(148, 21);
+            this.lblTable.Size = new System.Drawing.Size(55, 21);
             this.lblTable.TabIndex = 4;
-            this.lblTable.Text = "Dostavljeni Artikli";
+            this.lblTable.Text = "Korpa";
             // 
             // label1
             // 
@@ -67,9 +69,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(58, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 37);
+            this.label1.Size = new System.Drawing.Size(142, 37);
             this.label1.TabIndex = 5;
-            this.label1.Text = "DOSTAVA";
+            this.label1.Text = "PRODAJA";
             // 
             // dgwItems
             // 
@@ -77,7 +79,7 @@
             this.dgwItems.AllowUserToDeleteRows = false;
             this.dgwItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwItems.Location = new System.Drawing.Point(61, 149);
+            this.dgwItems.Location = new System.Drawing.Point(61, 136);
             this.dgwItems.Name = "dgwItems";
             this.dgwItems.ReadOnly = true;
             this.dgwItems.Size = new System.Drawing.Size(615, 258);
@@ -135,7 +137,7 @@
             this.btnConfirm.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnConfirm.Size = new System.Drawing.Size(169, 62);
             this.btnConfirm.TabIndex = 3;
-            this.btnConfirm.Text = "Dostavi";
+            this.btnConfirm.Text = "Prodaj";
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -145,7 +147,7 @@
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(527, 91);
+            this.panel1.Location = new System.Drawing.Point(527, 78);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(149, 44);
             this.panel1.TabIndex = 15;
@@ -219,14 +221,38 @@
             this.btnRemove.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnRemove.Size = new System.Drawing.Size(170, 62);
             this.btnRemove.TabIndex = 3;
-            this.btnRemove.Text = "Obriši iz dostave";
+            this.btnRemove.Text = "Obriši iz korpe";
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // frmDostavaArtikli
+            // lblUkupnaCena
+            // 
+            this.lblUkupnaCena.AutoSize = true;
+            this.lblUkupnaCena.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblUkupnaCena.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblUkupnaCena.Location = new System.Drawing.Point(601, 397);
+            this.lblUkupnaCena.Name = "lblUkupnaCena";
+            this.lblUkupnaCena.Size = new System.Drawing.Size(19, 21);
+            this.lblUkupnaCena.TabIndex = 17;
+            this.lblUkupnaCena.Text = "0";
+            // 
+            // lblUkupno
+            // 
+            this.lblUkupno.AutoSize = true;
+            this.lblUkupno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblUkupno.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblUkupno.Location = new System.Drawing.Point(523, 397);
+            this.lblUkupno.Name = "lblUkupno";
+            this.lblUkupno.Size = new System.Drawing.Size(75, 21);
+            this.lblUkupno.TabIndex = 18;
+            this.lblUkupno.Text = "Ukupno:";
+            // 
+            // frmProdajaIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(747, 521);
+            this.Controls.Add(this.lblUkupno);
+            this.Controls.Add(this.lblUkupnaCena);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -235,7 +261,7 @@
             this.Controls.Add(this.dgwItems);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTable);
-            this.Name = "frmDostavaArtikli";
+            this.Name = "frmProdajaIndex";
             ((System.ComponentModel.ISupportInitialize)(this.dgwItems)).EndInit();
             this.panelExit.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -261,5 +287,7 @@
         protected System.Windows.Forms.Button btnUpdate;
         protected System.Windows.Forms.Panel panel4;
         protected System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Label lblUkupnaCena;
+        private System.Windows.Forms.Label lblUkupno;
     }
 }

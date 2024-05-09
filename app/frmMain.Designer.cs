@@ -50,6 +50,7 @@
             // 
             // panel3
             // 
+            this.panel3.Location = new System.Drawing.Point(8, 184);
             this.panel3.TabIndex = 1;
             // 
             // btnDashboard
@@ -59,11 +60,20 @@
             this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnDashboard.TabIndex = 0;
             // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(8, 334);
+            // 
             // btnRacuni
             // 
             this.btnRacuni.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnRacuni.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.btnRacuni.Text = "        Računi";
+            this.btnRacuni.Click += new System.EventHandler(this.btnRacuni_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(8, 234);
             // 
             // btnArtikli
             // 
@@ -74,6 +84,7 @@
             // 
             // panel2
             // 
+            this.panel2.Location = new System.Drawing.Point(8, 284);
             this.panel2.TabIndex = 3;
             // 
             // btnZaposleni
@@ -85,6 +96,7 @@
             // 
             // panel7
             // 
+            this.panel7.Location = new System.Drawing.Point(8, 451);
             this.panel7.TabIndex = 5;
             // 
             // btnExit

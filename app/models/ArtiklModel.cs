@@ -13,7 +13,7 @@ namespace butik.models
         private Decimal cena { get; set; }
         private int kolicina { get; set; }
 
-        private int dostavljena_kolicina;
+        private int delta_kolicina;
 
         public ArtiklModel(long id, String naziv, Decimal cena, int kolicina)
         {
@@ -21,15 +21,15 @@ namespace butik.models
             this.naziv = naziv;
             this.cena = cena;
             this.kolicina = kolicina;
-            this.dostavljena_kolicina = 0;
+            this.delta_kolicina = 0;
         }
-        public ArtiklModel(long id, String naziv, Decimal cena, int kolicina, int dostavljena_kolicina)
+        public ArtiklModel(long id, String naziv, Decimal cena, int kolicina, int delta_kolicina)
         {
             this.id = id;
             this.naziv = naziv;
             this.cena = cena;
             this.kolicina = kolicina;
-            this.dostavljena_kolicina = dostavljena_kolicina;
+            this.delta_kolicina = delta_kolicina;
         }
 
         public ArtiklModel(long id)
@@ -67,7 +67,7 @@ namespace butik.models
 
         public int Kolicina { get { return kolicina; } set { kolicina = value; } }
 
-        public int Dostavljena_kolicina { get { return dostavljena_kolicina; } set { dostavljena_kolicina = value; } }
+        public int Delta_kolicina { get { return delta_kolicina; } set { delta_kolicina = value; } }
 
         public Boolean DodajUBazu()
         {
@@ -88,24 +88,29 @@ namespace butik.models
 
         public Boolean IsValid()
         {
-            return 
+            return
                 naziv.Length != 0 &&
-                kolicina >= 0 && 
-                cena >= 0 && 
-                dostavljena_kolicina >= 0;
+                kolicina >= 0 &&
+                cena >= 0 &&
+                delta_kolicina >= 0;
         }
 
         public void PrintModel()
         {
-            MessageBox.Show(
-                "id: " + id + "\n" + "naziv: " + naziv + "\n" + "cena: " + cena + "\n" + "kolicina: " + kolicina,
-                "ArtiklModel"
+            MessageUtil.Notification(
+                "ArtiklModel { id: " + id + "\n" + "naziv: " + naziv + "\n" + "cena: " + cena + "\n" + "kolicina: " + kolicina + " }"
             );
         }
 
-        public Boolean AzurirajKolicinu()
+        public Boolean DostaviKolicinu()
         {
-            kolicina += dostavljena_kolicina;
+            kolicina += delta_kolicina;
+            return true;
+        }
+
+        public Boolean ProdajKolicinu()
+        {
+            kolicina -= delta_kolicina;
             return true;
         }
 
@@ -117,7 +122,7 @@ namespace butik.models
                 "WHERE id_artikla = " + this.id;
 
             String err = String.Empty;
-            if(!SQLToolkit.NonSelectQuery(sql, ref err))
+            if (!SQLToolkit.NonSelectQuery(sql, ref err))
             {
                 MessageUtil.ShowError("Nije moguce update-ovati Artikl u bazi\n" + err);
                 return false;
@@ -125,9 +130,9 @@ namespace butik.models
             return true;
         }
 
-        public int GetDostavljenaKolicina()
+        public int GetDeltaKolicina()
         {
-            return this.dostavljena_kolicina;
+            return delta_kolicina;
         }
     }
 }

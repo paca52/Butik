@@ -5,14 +5,14 @@ using System.Collections.Generic;
 
 namespace butik.models
 {
-    public class DostavaArtikliModel
+    internal class ProdajaArtikliModel
     {
-        private long id_dostava;
+        private long id_prodaje;
         private List<ArtiklModel> artikli;
 
-        public DostavaArtikliModel(long id_dostava, List<ArtiklModel> list)
+        public ProdajaArtikliModel(long id_prodaje, List<ArtiklModel> list)
         {
-            this.id_dostava = id_dostava;
+            this.id_prodaje = id_prodaje;
             this.artikli = list;
         }
 
@@ -23,7 +23,7 @@ namespace butik.models
             {
                 tmp += item.Id + "(" + item.Naziv + ")";
             }
-            MessageUtil.ShowError($"id_dostava: {id_dostava}, artikli: {tmp}");
+            MessageUtil.ShowError($"id_prodaje: {id_prodaje}, artikli: {tmp}");
         }
 
         public Boolean Sacuvaj()
@@ -35,25 +35,22 @@ namespace butik.models
                     return false;
                 }
 
-
-                // povezi dostavu i item(artikl)
+                // povezi racun i item(artikl)
                 String err = String.Empty;
-                String sql = "INSERT INTO dbo.table_dostava_artikl " +
-                    "(id_dostava, id_artikla, dostavljena_kolicina)" +
-                    "VALUES (" + this.id_dostava + ", " + item.Id + ", " + item.GetDeltaKolicina() + ");";
+                String cena = item.Cena.ToString().Replace(',', '.');
 
+                String sql = "INSERT INTO dbo.table_racun_body " +
+                    "(id_artikla, id_racun_header, kolicina, prodajna_cena)" +
+                    "VALUES (" + item.Id + ", " + id_prodaje + ", " + item.GetDeltaKolicina() + ", " + cena + ");";
 
                 if (!SQLToolkit.NonSelectQuery(sql, ref err))
                 {
-                    MessageUtil.ShowError($"Nije moguce povezati {item.Naziv} sa dostavom.\n" + err);
+                    MessageUtil.ShowError($"Nije moguce povezati {item.Naziv} sa računom {id_prodaje}.\n" + err);
                     return false;
                 }
             }
 
             return true;
         }
-
-        // public Boolean 
-
     }
 }

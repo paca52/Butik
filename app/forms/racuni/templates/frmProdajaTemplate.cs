@@ -3,20 +3,21 @@ using butik.util;
 using SQLToolkitNS;
 using System;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace butik.forms.artikli
 {
-    public partial class frmDostavaArtikliTemplate : butik.forms.frmEmbeddedTemplate
+    public partial class frmProdajaTemplate : butik.forms.frmEmbeddedTemplate
     {
-        protected frmDostavaArtikli parent;
+        protected frmProdajaIndex parent;
 
         [Obsolete("Designer only", true)]
-        public frmDostavaArtikliTemplate()
+        public frmProdajaTemplate()
         {
             InitializeComponent();
         }
 
-        public frmDostavaArtikliTemplate(frmDostavaArtikli parent)
+        public frmProdajaTemplate(frmProdajaIndex parent)
         {
             InitializeComponent();
             this.parent = parent;
@@ -52,7 +53,7 @@ namespace butik.forms.artikli
         {
             long id = GetIdFromCombo();
             LockInputAndPutModel(id);
-            tBoxDostavljenaKolicina.Focus();
+            tBoxProdataKolicina.Focus();
         }
 
         protected void LockInputAndPutModel(long id)
@@ -67,6 +68,7 @@ namespace butik.forms.artikli
             tBoxCena.Text = model.Cena.ToString();
             tBoxNaziv.Text = model.Naziv;
         }
+
         protected void LockInputAndPutModel(ArtiklModel model)
         {
             cBoxId.Enabled = false;
@@ -74,11 +76,12 @@ namespace butik.forms.artikli
             tBoxCena.Enabled = false;
             tBoxNaziv.Enabled = false;
 
-            cBoxId.Text = model.Id.ToString();
+            cBoxId.Items.Add(model.Id.ToString());
+            cBoxId.SelectedIndex = 0;
             tBoxKolicina.Text = model.Kolicina.ToString();
             tBoxCena.Text = model.Cena.ToString();
             tBoxNaziv.Text = model.Naziv;
-            tBoxDostavljenaKolicina.Text = model.Dostavljena_kolicina.ToString();
+            tBoxProdataKolicina.Text = model.Delta_kolicina.ToString();
         }
 
         protected void btnExit_Click(object sender, EventArgs e)
@@ -86,23 +89,38 @@ namespace butik.forms.artikli
             this.Close();
         }
 
-        private void tBoxCena_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        private void tBoxProdataKolicina_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
             Char key = e.KeyChar;
-            if (Char.IsDigit(key) || Char.IsControl(key)) return;
-            if (key == '.' && tBoxCena.Text.Contains(".") == false) return;
-            e.Handled = true;
+            if (Char.IsControl(key)) return;
+            if (!Char.IsDigit(key))
+            {
+                e.Handled = true;
+                return;
+            }
+            int prodata_kolicina = Convert.ToInt32(tBoxProdataKolicina.Text + key);
+            int dostupna_kolicina = Convert.ToInt32(tBoxKolicina.Text);
+            if (prodata_kolicina > dostupna_kolicina)
+            {
+                MessageUtil.Notification("Nije moguće prodati više od dostupne količine!");
+                e.Handled = true;
+                return;
+            }
         }
 
-        private void tBoxDostavljenaKolicina_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
-        {
-            Char key = e.KeyChar;
-            if (Char.IsDigit(key) || Char.IsControl(key)) return;
-            e.Handled = true;
-        }
-        
         protected Boolean ValidateInputFields()
         {
+            if (cBoxId.Text.Length == 0)
+            {
+                lblIdGreska.Text = "Odaberite ID artikla!";
+                cBoxId.Focus();
+                return false;
+            }
+            else
+            {
+                lblIdGreska.Text = "";
+            }
+
             if (tBoxNaziv.Text.Length == 0)
             {
                 lblNazivGreska.Text = "Polje za naziv ne sme biti prazno!";
@@ -128,13 +146,13 @@ namespace butik.forms.artikli
 
             try
             {
-                Convert.ToInt32(tBoxDostavljenaKolicina.Text);
+                Convert.ToInt32(tBoxProdataKolicina.Text);
                 lblDostavljenaKolicinaGreska.Text = "";
             }
             catch
             {
                 lblDostavljenaKolicinaGreska.Text = "Nedozvoljena dostavljena količina!";
-                tBoxDostavljenaKolicina.Focus();
+                tBoxProdataKolicina.Focus();
                 return false;
             }
 
@@ -146,6 +164,7 @@ namespace butik.forms.artikli
             lblCenaGreska.Text = "";
             lblDostavljenaKolicinaGreska.Text = "";
             lblNazivGreska.Text = "";
+            lblIdGreska.Text = "";
         }
     }
 }

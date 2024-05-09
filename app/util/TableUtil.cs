@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace butik.util
@@ -34,9 +29,9 @@ namespace butik.util
             dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgv.DefaultCellStyle.Padding = new Padding(5, 3, 5, 3);
 
-            
 
-            foreach(DataGridViewColumn column in dgv.Columns)
+
+            foreach (DataGridViewColumn column in dgv.Columns)
             {
                 column.HeaderText = TableUtil.Rename(column.Name);
             }
@@ -46,16 +41,17 @@ namespace butik.util
 
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            
+
         }
 
         private static string Rename(string name)
         {
-            if(name == "kolicina") { return "Količina"; }
+            if (name == "kolicina") return "Količina";
+            if (name == "Delta_kolicina") return "Prodata Količina";
             string s = "";
-            for(int i=0; i<name.Length; i++)
+            for (int i = 0; i < name.Length; i++)
             {
-                if(i == 0 || name[i-1] == '_')
+                if (i == 0 || name[i - 1] == '_')
                 {
                     s += char.ToUpper(name[i]);
                 }

@@ -6,7 +6,7 @@ namespace butik.forms.artikli
 {
     public partial class frmDostavaArtikliDodaj : butik.forms.artikli.frmDostavaArtikliTemplate
     {
-        public frmDostavaArtikliDodaj(frmDostavaArtikli parent) : base(parent)
+        public frmDostavaArtikliDodaj(frmDostavaIndex parent) : base(parent)
         {
             InitializeComponent();
             this.parent = parent;
@@ -38,7 +38,7 @@ namespace butik.forms.artikli
             else
             {
                 artikl = new ArtiklModel(id);
-                artikl.Dostavljena_kolicina = Convert.ToInt32(tBoxDostavljenaKolicina.Text);
+                artikl.Delta_kolicina = Convert.ToInt32(tBoxDostavljenaKolicina.Text);
             }
 
             if (!artikl.IsValid())

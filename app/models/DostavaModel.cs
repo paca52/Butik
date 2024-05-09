@@ -1,8 +1,6 @@
 ﻿using butik.util;
 using SQLToolkitNS;
 using System;
-using System.Security.Cryptography.X509Certificates;
-using System.Windows.Forms;
 
 namespace butik.models
 {
@@ -17,8 +15,8 @@ namespace butik.models
             String err = String.Empty;
             String datum = DateTime.Today.ToString("yyyy-MM-dd");
             String sql =
-                "INSERT INTO dbo.table_dostava (datum_dostave, dostavljac) " +
-                "VALUES ('" + datum + "', 'NAZIV_DOSTAVLJACA');";
+                "INSERT INTO dbo.table_dostava (datum_dostave) " +
+                "VALUES ('" + datum + "');";
 
             if (!SQLToolkit.NonSelectQueryAndReturnId(sql, ref id, ref err))
             {

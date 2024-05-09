@@ -26,7 +26,8 @@ namespace butik.forms.artikli.templates
             tBoxCena.Enabled = true;
             tBoxNaziv.Enabled = true;
 
-            cBoxId.Text = model.Id.ToString();
+            cBoxId.Items.Add(model.Id.ToString());
+            cBoxId.SelectedIndex = 0;
             tBoxKolicina.Text = model.Kolicina.ToString();
             tBoxCena.Text = model.Cena.ToString();
             tBoxNaziv.Text = model.Naziv;

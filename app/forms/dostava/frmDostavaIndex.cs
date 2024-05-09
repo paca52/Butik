@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace butik.forms.artikli
 {
-    public partial class frmDostavaArtikli : butik.forms.frmEmbeddedTemplate
+    public partial class frmDostavaIndex : butik.forms.frmEmbeddedTemplate
     {
         private List<ArtiklModel> list = new List<ArtiklModel>();
         public Boolean UpdateList(long id, int Dostavljena_kolicina)
@@ -20,7 +20,7 @@ namespace butik.forms.artikli
                 return false;
             }
 
-            list[i].Dostavljena_kolicina = Dostavljena_kolicina;
+            list[i].Delta_kolicina = Dostavljena_kolicina;
 
             RefreshList();
             return true;
@@ -33,7 +33,7 @@ namespace butik.forms.artikli
             int i = list.FindIndex(item => item.Id == id);
 
             if (i != -1)
-                list[i].Dostavljena_kolicina += model.Dostavljena_kolicina;
+                list[i].Delta_kolicina += model.Delta_kolicina;
             else
                 list.Add(model);
 
@@ -59,7 +59,7 @@ namespace butik.forms.artikli
             return true;
         }
 
-        public frmDostavaArtikli()
+        public frmDostavaIndex()
         {
             InitializeComponent();
             list.Clear();
@@ -88,7 +88,7 @@ namespace butik.forms.artikli
                 return;
             }
 
-            list.ForEach(model => model.AzurirajKolicinu());
+            list.ForEach(model => model.DostaviKolicinu());
 
             DostavaArtikliModel akcija = new DostavaArtikliModel(dostava.Id, list);
             if (!akcija.Sacuvaj())
@@ -97,6 +97,7 @@ namespace butik.forms.artikli
                 return;
             }
 
+            MessageUtil.Notification("Dostava je uspešno sačuvana u bazu podataka!");
 
             this.Close();
             PanelHandler.RemoveTopForm();

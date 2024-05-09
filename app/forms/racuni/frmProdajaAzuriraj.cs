@@ -4,17 +4,17 @@ using System;
 
 namespace butik.forms.artikli
 {
-    public partial class frmDostavaArtikliAzuriraj : butik.forms.artikli.frmDostavaArtikliTemplate
+    public partial class frmProdajaAzuriraj : butik.forms.artikli.frmProdajaTemplate
     {
         ArtiklModel model;
 
-        public frmDostavaArtikliAzuriraj(frmDostavaArtikli parent, ArtiklModel model) : base(parent)
+        public frmProdajaAzuriraj(frmProdajaIndex parent, ArtiklModel model) : base(parent)
         {
             InitializeComponent();
             this.model = model;
 
             LockInputAndPutModel(model);
-            tBoxDostavljenaKolicina.Focus();
+            tBoxProdataKolicina.Focus();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace butik.forms.artikli
                 return;
             }
 
-            if (!parent.UpdateList(model.Id, Convert.ToInt32(tBoxDostavljenaKolicina.Text)))
+            if (!parent.UpdateList(model.Id, Convert.ToInt32(tBoxProdataKolicina.Text)))
                 MessageUtil.ShowError("Greška pri ažuriranju liste!");
 
             this.Close();

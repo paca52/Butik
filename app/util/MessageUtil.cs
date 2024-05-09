@@ -23,5 +23,15 @@ namespace butik.util
                 MessageBoxIcon.Question
             );
         }
+
+        static public void Notification(string meessage)
+        {
+            MessageBox.Show(
+                meessage,
+                "",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+        }
     }
 }
